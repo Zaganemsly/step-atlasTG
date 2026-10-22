@@ -1,0 +1,220 @@
+[
+  {
+    "id": "zander",
+    "name": "Судак",
+    "latin": "Sander lucioperca",
+    "peakMonths": [
+      4,
+      5,
+      10,
+      11
+    ],
+    "goodMonths": [
+      3,
+      6,
+      9,
+      12,
+      1,
+      2
+    ],
+    "airTempC": [
+      4,
+      22
+    ],
+    "activity": "dusk",
+    "why": "Холодолюбивый хищник: активнее всего в прохладной воде, весной и осенью. В жару уходит на глубокие ямы и берёт на утренней и вечерней зорьке. Зимой тоже берёт, но вяло.",
+    "photos": [
+      {
+        "file": "Sandre (Sander lucioperca).jpg",
+        "alt": "Судак",
+        "author": "Tylwyth Eldar",
+        "license": "CC BY-SA 4.0"
+      }
+    ]
+  },
+  {
+    "id": "catfish",
+    "name": "Сом",
+    "latin": "Silurus glanis",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      20,
+      34
+    ],
+    "activity": "night",
+    "why": "Теплолюбив: просыпается, когда вода прогревается, и лучше всего берёт летом, ночью и в сумерках. В холод почти не питается и стоит на зимовальных ямах.",
+    "photos": [
+      {
+        "file": "Silurus glanis 01.jpg",
+        "alt": "Сом",
+        "author": "Dieter Florian",
+        "license": "CC BY-SA 3.0 DE"
+      }
+    ]
+  },
+  {
+    "id": "carp",
+    "name": "Сазан",
+    "latin": "Cyprinus carpio",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      18,
+      32
+    ],
+    "activity": "dusk",
+    "why": "Любит тёплую воду: активно кормится, когда она прогрета, особенно утром и вечером. Весной ловля ограничена нерестовым запретом, осенью к холоду клёв затихает.",
+    "photos": [
+      {
+        "file": "Common carp - Cyprinus carpio.jpg",
+        "alt": "Сазан",
+        "author": "Bramans",
+        "license": "CC BY-SA 4.0"
+      }
+    ]
+  },
+  {
+    "id": "pike",
+    "name": "Щука",
+    "latin": "Esox lucius",
+    "peakMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "goodMonths": [
+      5,
+      9,
+      12,
+      1,
+      2
+    ],
+    "airTempC": [
+      0,
+      16
+    ],
+    "activity": "day",
+    "why": "Холодолюбива: лучшие периоды — ранняя весна и осенний жор перед зимой. Хорошо берёт в пасмурную прохладную погоду, в жару стоит в тени зарослей и клюёт слабо.",
+    "photos": [
+      {
+        "file": "Esox lucius Aquarium DG.jpg",
+        "alt": "Щука",
+        "author": "Dirk Godlinski",
+        "license": "CC BY-SA 3.0"
+      }
+    ]
+  },
+  {
+    "id": "asp",
+    "name": "Жерех",
+    "latin": "Leuciscus aspius",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      15,
+      30
+    ],
+    "activity": "dawn",
+    "why": "Быстрый хищник открытой воды: в тёплое время бьёт малька у поверхности, чаще утром и вечером. Не любит сильный ветер, лучше работает в тихую погоду.",
+    "photos": [
+      {
+        "file": "Aspius aspius by RpM.JPG",
+        "alt": "Жерех",
+        "author": "Reaperman",
+        "license": "CC BY-SA 3.0"
+      }
+    ]
+  },
+  {
+    "id": "bream",
+    "name": "Лещ",
+    "latin": "Abramis brama",
+    "peakMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8,
+      11
+    ],
+    "airTempC": [
+      10,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Стайная рыба ям и бровок: хорошо берёт при умеренном тепле, в стабильную погоду. В жару уходит глубже, в холод становится малоподвижной.",
+    "photos": [
+      {
+        "file": "Abramis brama by RpM.JPG",
+        "alt": "Лещ",
+        "author": "Reaperman",
+        "license": "CC BY-SA 3.0"
+      }
+    ]
+  },
+  {
+    "id": "perch",
+    "name": "Окунь",
+    "latin": "Perca fluviatilis",
+    "peakMonths": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "goodMonths": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      12
+    ],
+    "airTempC": [
+      2,
+      22
+    ],
+    "activity": "day",
+    "why": "Берёт круглый год, в том числе со льда. Лучше всего весной и осенью при умеренной температуре, в сильную жару прячется на глубину.",
+    "photos": [
+      {
+        "file": "Perca fluviatilis in aquarium.JPG",
+        "alt": "Окунь",
+        "author": "Reaperman",
+        "license": "CC BY-SA 3.0"
+      }
+    ]
+  }
+]
