@@ -10,11 +10,12 @@
   const blocked = new Set();
 
   const BAD_FILE = /\.(svg|gif|tif|tiff|webm|ogv|pdf)$/i;
-  const BAD_COMMON = /(\bmap\b|карта|flag|герб|logo|coat of arms|схема|diagram|stamp|марка|плакат|poster|scheme|locator|panorama of the city)/i;
+  const BAD_COMMON = /(eclipse|затмени|solar|satellite|imagery|nesdis|multi-spectral|спутник|космич|\bmap\b|карта|flag|герб|logo|coat of arms|схема|diagram|stamp|марка|плакат|poster|scheme|locator|panorama of the city)/i;
   const BAD_PEOPLE = /(portrait|selfie|wedding|\bman\b|\bmen\b|woman|women|people|person|girl|boy|child|children|family|tourist|group of|crowd|рыбак|человек|девушк|мужчин|женщин|портрет|семья|туристы|дети|ребён|толпа)/i;
   const BAD_FISH = /(fisherman|fishermen|angler|angling|holding|held|caught|catch|record|fishing|trophy|cooked|fillet|dish|recipe|market|coin|drawing|painting|illustration|lure|bait|hook|net\b|рыбак|улов|жарен|блюдо|рыбалк|человек|приманк|воблер|монет)/i;
+  const BAD_SKY = /(eclipse|затмени|solar|satellite|imagery|nesdis|multi-spectral|спутник|космич|aerial view from space|nasa)/i;
   const BAD_MIL = /(radar|радар|\bРЛС\b|military|army|armed forces|soldier|солдат|воен|армия|армейск|weapon|missile|ракет|зенит|\bПВО\b|air defen[cs]e|antenna|антенн|\btank\b|vehicle|camouflage|камуфляж|training ground|полигон|exercise|учени|aircraft|самол[её]т|helicopter|вертол[её]т|truck|грузовик|\bЗИЛ\b|Урал-|КамАЗ)/i;
-  const BAD_BUILD = /(ruin|ruins|развал|руин|abandon|заброш|derelict|building|здани|church|церк|храм|mosque|мечеть|house\b|дом\b|памятник|monument|street|улиц|\bcar\b|truck|\bbus\b|автобус|wreck|кладбищ|cemetery|interior|интерьер|museum|музей|bridge|мост|factory|завод|garbage|мусор|railway|вокзал|station)/i;
+  const BAD_BUILD = /(rzd|ржд|железн|railroad|rail\b|hotel|гостиниц|hostel|отел[ья]|рынок|ruin|ruins|развал|руин|abandon|заброш|derelict|building|здани|church|церк|храм|mosque|мечеть|house\b|дом\b|памятник|monument|street|улиц|\bcar\b|truck|\bbus\b|автобус|wreck|кладбищ|cemetery|interior|интерьер|museum|музей|bridge|мост|factory|завод|garbage|мусор|railway|вокзал|station)/i;
   const BAD_SPECIES = /(drawing|illustration|painting|herbarium|specimen|museum|taxiderm|\begg|skeleton|skull|stamp|coin|distribution|range map|рисунок|гербарий|чучело|яйц|скелет|ареал|logo|cooked|dish|zoo\b|cage|aquarium)/i;
 
   function strip(html) {
@@ -67,7 +68,7 @@
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
-      if (k && k.startsWith("stepPlaceC:")) {
+      if (k && k.startsWith("stepPlaceD:")) {
         const arr = lsGet(k) || [];
         arr.forEach(p => claimed.set(p.sourceUrl || p.url, k.slice(11)));
       }
@@ -118,7 +119,7 @@
     const cats = strip(md.Categories && md.Categories.value);
     const hay = title + " " + desc + " " + cats;
     const titleDesc = title + " " + desc;
-    if (BAD_MIL.test(hay)) return null;
+    if (BAD_MIL.test(hay) || BAD_SKY.test(hay)) return null;
     let weak = false;
     if (mode === "fish") {
       // рыба: строгий разбор по названию и описанию; категории не считаем, там часто «Fishing in …».
@@ -141,7 +142,7 @@
   }
 
   async function search(q, mode) {
-    const key = "s6:" + mode + ":" + q;
+    const key = "s7:" + mode + ":" + q;
     const hit = readCache(key);
     if (hit) return hit;
     const j = await api({ generator: "search", gsrsearch: q + " filetype:bitmap", gsrnamespace: "6", gsrlimit: "50" });
@@ -151,7 +152,7 @@
     return out;
   }
   async function category(cat, mode) {
-    const key = "c6:" + mode + ":" + cat;
+    const key = "c7:" + mode + ":" + cat;
     const hit = readCache(key);
     if (hit) return hit;
     const j = await api({ generator: "categorymembers", gcmtitle: cat, gcmtype: "file", gcmlimit: "80" });
@@ -188,7 +189,7 @@
           try { const d = await jfetch("https://api.inaturalist.org/v1/taxa/" + t.id); tp = (d.results && d.results[0] && d.results[0].taxon_photos) || tp; } catch (_) {}
         }
         out = tp.map(x => x && x.photo).filter(ph => ph && ph.license_code).map(ph => {
-          const url = ph.large_url || ph.medium_url || ph.url || "";
+          const url = ph.medium_url || ph.large_url || ph.url || "";
           if (!/^https:/.test(url)) return null;
           return {
             url,
@@ -205,6 +206,10 @@
     return out;
   }
 
+  /* Для «похожих» фото: только дельта, Волга, Каспий и область; без посёлков, улиц и зданий. */
+  const REGION_RE = /(astrakhan|астрахан|volga|волг|caspi|каспи|delta|дельт|akhtuba|ахтуб)/i;
+  const SETTLEMENT_RE = /(посёл|поселок|городск|village|\btown\b|\bcity\b|центр|district|район|улиц|street|school|школ)/i;
+
   /* Запасные запросы по типу точки: если нужного места нет, берём похожие поблизости. */
   const NEAR = {
     fishing: ["Волга Астраханская область", "река Ахтуба", "дельта Волги", "Волга река берег", "протока дельта Волги", "камыш река", "Волга рассвет", "Волга закат река", "река Россия берег камыш", "ерик Астраханская область"],
@@ -215,7 +220,7 @@
   async function forPlace(loc, want) {
     want = want || 4;
     const mode = loc.type === "places" ? "place" : "nature";
-    const key = "stepPlaceC:" + loc.id;
+    const key = "stepPlaceD:" + loc.id;
     let picks = (lsGet(key) || []).filter(p => !isBlocked(p));
     if (picks.length >= want) return picks.slice(0, want);
     const have = new Set(picks.map(p => p.url));
@@ -234,7 +239,9 @@
       for (const p0 of seededShuffle(list, hash(loc.id + (st.q || st.cat)))) {
         if (picks.length >= want) break;
         if (have.has(p0.url) || isBlocked(p0)) continue;
-        if (st.exact && !st.cat && must.length && !must.every(re => re.test(p0.hay || p0.alt || ""))) continue;
+        const hay0 = p0.hay || p0.alt || "";
+        if (st.exact && !st.cat && must.length && !must.every(re => re.test(hay0))) continue;
+        if (!st.exact && must.length && (!REGION_RE.test(hay0) || SETTLEMENT_RE.test(hay0))) continue;
         const owner = claimed.get(p0.sourceUrl || p0.url);
         if (owner && owner !== loc.id) continue;
         have.add(p0.url);
@@ -254,20 +261,26 @@
     if (fresh.length) lsSet(skey, fresh);
     return fresh;
   }
-  function forFish(fish, want) { want = want || 4; return withSaved("stepSp:f:" + fish.id, want, saved => computeFish(fish, want, saved)); }
-  function forSpecies(item, want) { want = want || 4; return withSaved("stepSp:s:" + (item.latin || item.name), want, saved => computeSpecies(item, want, saved)); }
+  function forFish(fish, want) { want = want || 4; return withSaved("stepSp2:f:" + fish.id, want, saved => computeFish(fish, want, saved)); }
+  function forSpecies(item, want) { want = want || 4; return withSaved("stepSp2:s:" + (item.latin || item.name), want, saved => computeSpecies(item, want, saved)); }
 
   async function computeFish(fish, want, saved) {
     const picked = saved.slice(), seen = new Set(saved.map(p => p.url));
-    const weakPool = [];
     const push = list => {
       for (const p of seededShuffle(list, hash(fish.id))) {
         if (picked.length >= want) break;
-        if (seen.has(p.url) || isBlocked(p)) continue;
-        if (p.weak) { weakPool.push(p); continue; }
+        if (seen.has(p.url) || isBlocked(p) || p.weak) continue;
         seen.add(p.url); picked.push(p);
       }
     };
+    // Основной источник: iNaturalist (фото именно этого вида, лучшие первыми). Commons по общим словам даёт мусор.
+    try {
+      for (const p of await inat(fish.latin)) {
+        if (picked.length >= want) break;
+        if (!seen.has(p.url) && !isBlocked(p)) { seen.add(p.url); picked.push(p); }
+      }
+    } catch (_) {}
+    if (picked.length >= 3) return picked;
     for (const c of fish.commons || []) {
       if (picked.length >= want) break;
       try { push(await category(c, "fish")); } catch (_) {}
@@ -275,13 +288,6 @@
     for (const t of fish.searchTerms || [fish.latin]) {
       if (picked.length >= want) break;
       try { push(await search(t, "fish")); } catch (_) {}
-    }
-    // Commons не дал 4 хороших: берём iNaturalist
-    if (picked.length < want) { try { push(await inat(fish.latin)); } catch (_) {} }
-    // всё ещё мало: добираем менее подходящие, но без людей и техники
-    for (const p of weakPool) {
-      if (picked.length >= want) break;
-      if (!seen.has(p.url)) { seen.add(p.url); picked.push(p); }
     }
     return picked;
   }
@@ -295,12 +301,18 @@
         if (!seen.has(p.url) && !isBlocked(p)) { seen.add(p.url); picked.push(p); }
       }
     };
+    try {
+      for (const p of await inat(item.latin)) {
+        if (picked.length >= want) break;
+        if (!seen.has(p.url) && !isBlocked(p)) { seen.add(p.url); picked.push(p); }
+      }
+    } catch (_) {}
+    if (picked.length >= 3) return picked;
     if (item.latin) { try { push(await category("Category:" + item.latin, "species")); } catch (_) {} }
     for (const t of [item.latin, item.name].filter(Boolean)) {
       if (picked.length >= want) break;
       try { push(await search(t, "species")); } catch (_) {}
     }
-    if (picked.length < want) { try { push(await inat(item.latin)); } catch (_) {} }
     return picked;
   }
 
