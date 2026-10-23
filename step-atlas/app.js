@@ -217,11 +217,15 @@ async function getWeather(loc) {
     return w;
   } finally { clearTimeout(timer); }
 }
-function fishListFor(loc) { return (loc.fish || []).map(id => fishById.get(id)).filter(Boolean); }
+function fishListFor(loc, forScore) {
+  const freq = loc.fishFreq || {};
+  return (loc.fish || []).filter(id => !(forScore && freq[id] === "rare")).map(id => fishById.get(id)).filter(Boolean);
+}
+const FREQ_TEXT = { often: "встречается часто", sometimes: "встречается иногда", rare: "встречается редко" };
 async function loadWeatherFor(loc, token) {
   try {
     const w = await getWeather(loc);
-    const analysis = StepWeather.analyze(w, fishListFor(loc), loc.type, loc.id);
+    const analysis = StepWeather.analyze(w, fishListFor(loc, true), loc.type, loc.id);
     updatePill(loc, w, analysis);
     if (token !== detailToken) return;
     renderWeather(w, analysis);
@@ -297,14 +301,26 @@ function renderFish(loc, analysis, token) {
   box.replaceChildren(el("h2", "Какая рыба здесь, когда клюёт и каков шанс"));
 
   const scoreById = new Map(analysis ? analysis.ranked.map(r => [r.fishId, r]) : []);
-  const order = analysis ? analysis.ranked.map(r => fishById.get(r.fishId)) : list;
+  let order = analysis ? analysis.ranked.map(r => fishById.get(r.fishId)).filter(Boolean) : list;
+  if (analysis) { const inOrder = new Set(order.map(f => f.id)); order = order.concat(list.filter(f => !inOrder.has(f.id))); }
+  const SHOW = 6;
+  const rows = [];
   order.forEach(f => {
     const row = el("div", null, "fish-row");
     const head = el("div", null, "fish-head");
     const title = el("div");
     title.append(el("strong", f.name), document.createTextNode(" "), el("em", f.latin));
     head.append(title);
+    const fq = loc.fishFreq && loc.fishFreq[f.id];
+    if (fq && FREQ_TEXT[fq]) head.append(el("span", FREQ_TEXT[fq], "fish-freq " + fq));
     row.append(head);
+    if (f.legal) {
+      const L = f.legal, bits = [];
+      bits.push(L.minCm ? "не мельче " + L.minCm + " см" : "размер не указан");
+      if (L.norm) bits.push("норма " + L.norm);
+      row.append(el("p", "Правила: " + bits.join(", ") + "." + (L.note ? " " + L.note : "") + " Сверьте с актуальными правилами.", "fish-legal"));
+    }
+    if (fq === "rare" && !scoreById.get(f.id)) row.append(el("p", "Встречается редко: шанс поймать сейчас не оцениваем.", "fish-note"));
     const s = scoreById.get(f.id);
     if (s) {
       const c = el("div");
@@ -329,8 +345,16 @@ function renderFish(loc, analysis, token) {
     gal.hidden = true;
     row.append(gal);
     lazyRun(row, () => fillFishGallery(f, gal, token));
-    box.append(row);
+    rows.push(row);
   });
+  rows.forEach((r, i) => { if (i >= SHOW) r.hidden = true; box.append(r); });
+  if (rows.length > SHOW) {
+    const more = el("button", "Показать ещё " + (rows.length - SHOW) + " " + (rows.length - SHOW === 1 ? "вид" : "видов"), "more-btn");
+    more.type = "button";
+    more.addEventListener("click", () => { rows.forEach(r => { r.hidden = false; }); more.remove(); });
+    box.append(more);
+  }
+  box.append(el("p", "Список видов составлен по справочным данным о нижней Волге и дельте. Это не наблюдения именно в этой точке. Запрещённые виды (осетровые, кутум, рыбец, налим и другие) смотрите в разделе «Запреты».", "fish-note"));
 }
 const fishPhotoCache = new Map();
 async function fillFishGallery(f, gal, token) {
@@ -489,7 +513,7 @@ async function refreshPill() {
   $("pillText").textContent = "Загружаем условия…";
   try {
     const w = await getWeather(selectedLoc);
-    updatePill(selectedLoc, w, StepWeather.analyze(w, fishListFor(selectedLoc), selectedLoc.type, selectedLoc.id));
+    updatePill(selectedLoc, w, StepWeather.analyze(w, fishListFor(selectedLoc, true), selectedLoc.type, selectedLoc.id));
   } catch (err) { console.warn("Погода недоступна", err); updatePillError(); }
 }
 

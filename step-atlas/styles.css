@@ -225,3 +225,25 @@ button:focus-visible, input:focus-visible, .leaflet-marker-icon:focus-visible {
 .me-arrow[hidden] { display: none; }
 .bottom-nav { gap: clamp(2px, 2vw, 28px); }
 .nav-item { min-width: 0; flex: 1 1 0; max-width: 90px; }
+
+.photo-retry { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 10px; border-radius: 10px; background: #f1efe3; font-size: 11.5px; color: #6c776d; }
+.photo-retry button { border: 1px solid var(--line); border-radius: 8px; background: #fffdf7; padding: 5px 10px; font-size: 11.5px; color: var(--forest); }
+
+.route-bar.idle { left: 12px; transform: none; width: calc(100% - 84px); max-width: 460px; }
+
+.fish-head { flex-wrap: wrap; gap: 4px 10px; }
+.fish-freq { align-self: center; padding: 2px 8px; border-radius: 99px; font-size: 10.5px; background: #edf0e6; color: #5b685d; }
+.fish-freq.often { background: #dcebd7; color: #2f5a3a; } .fish-freq.rare { background: #f1e6d4; color: #7a5a22; }
+.fish-legal { margin: 8px 0 0 !important; padding: 7px 10px; border-radius: 9px; background: #eef2f4; font-size: 12px !important; color: #3f5360 !important; }
+.more-btn { display: block; width: 100%; margin: 12px 0 4px; padding: 11px; border: 1px solid var(--line); border-radius: 12px; background: #fffdf7; color: var(--forest); font-weight: 700; font-size: 13px; }
+.fish-row[hidden] { display: none; }
+
+.layer-dot.gray { background: #7d8a82; }
+.svc { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 8px #0003; font-size: 13px; line-height: 1; background: #7d8a82; }
+.svc-fuel { background: #c8553d; } .svc-fishing { background: #2f6b8f; } .svc-shop { background: #6a8f4e; }
+.svc-pop { min-width: 190px; max-width: 240px; font-size: 12.5px; line-height: 1.45; }
+.svc-pop b { display: block; font-size: 14px; color: var(--forest); }
+.svc-sub { color: #6c776d; margin-bottom: 4px; }
+.svc-line { color: #3b4a3f; }
+.svc-pop .btn { margin-top: 8px; width: 100%; }
+.svc-src { margin-top: 6px; font-size: 10.5px; color: #8a9488; }
