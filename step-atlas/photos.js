@@ -51,7 +51,8 @@
   /* ---- чёрный список ---- */
   (lsGet("stepPhotoBlock") || []).forEach(u => blocked.add(u));
   function isBlocked(p) {
-    for (const b of blocked) if (p.sourceUrl === b || p.url === b || (b.length > 12 && (p.sourceUrl.includes(b) || p.url.includes(b)))) return true;
+    for (const b of blocked) if (b.startsWith("author:")) { if ((p.author || "").toLowerCase().includes(b.slice(7).toLowerCase())) return true; }
+    else if (p.sourceUrl === b || p.url === b || (b.length > 12 && (p.sourceUrl.includes(b) || p.url.includes(b)))) return true;
     return false;
   }
   function block(p) {
