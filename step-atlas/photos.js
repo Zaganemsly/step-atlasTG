@@ -84,7 +84,7 @@
     try {
       let lastErr;
       for (let i = 0; i < 3; i++) {
-        try { return await apiOnce(params); } catch (e) { lastErr = e; await sleep(600 * (i + 1)); }
+        try { const j = await apiOnce(params); root.StepPhotos && (root.StepPhotos.lastError = ""); return j; } catch (e) { lastErr = e; if (root.StepPhotos) root.StepPhotos.lastError = String(e && e.message || e); await sleep(600 * (i + 1)); }
       }
       throw lastErr;
     } finally { release(); }
@@ -240,5 +240,5 @@
     return picked;
   }
 
-  root.StepPhotos = { forPlace, forFish, forSpecies, block, setBlocked };
+  root.StepPhotos = { forPlace, forFish, forSpecies, block, setBlocked, lastError: "" };
 })(window);

@@ -328,7 +328,7 @@ function renderFish(loc, analysis, token) {
     const gal = el("div", null, "fish-gallery");
     gal.hidden = true;
     row.append(gal);
-    fillFishGallery(f, gal, token);
+    lazyRun(row, () => fillFishGallery(f, gal, token));
     box.append(row);
   });
 }
@@ -336,14 +336,14 @@ const fishPhotoCache = new Map();
 async function fillFishGallery(f, gal, token) {
   let photos = f.photos && f.photos.length ? f.photos : fishPhotoCache.get(f.id);
   if (!photos) {
-    try { photos = await StepPhotos.forFish(f, 3); } catch (_) { photos = []; }
+    try { photos = await StepPhotos.forFish(f, 4); } catch (_) { photos = []; }
     fishPhotoCache.set(f.id, photos);
   }
   if (token !== detailToken || !gal.isConnected) return;
   const again = () => { fishPhotoCache.delete(f.id); fillFishGallery(f, gal, detailToken); };
   const figs = photos.map(p => photoFigure(p, f.name, again)).filter(Boolean);
-  if (!figs.length) return;
   gal.hidden = false;
+  if (!figs.length) { gal.replaceChildren(retryNote(again)); return; }
   gal.replaceChildren(...figs);
 }
 const speciesCache = new Map();
@@ -361,7 +361,16 @@ async function fillSpecies(item, gal, token) {
   }
   if (token !== detailToken || !gal.isConnected) return;
   const again = () => { speciesCache.delete(key); fillSpecies(item, gal, detailToken); };
-  gal.replaceChildren(...photos.map(p => photoFigure(p, item.name, again)).filter(Boolean));
+  const figs = photos.map(p => photoFigure(p, item.name, again)).filter(Boolean);
+  gal.replaceChildren(...(figs.length ? figs : [retryNote(again)]));
+}
+function retryNote(again) {
+  const box = el("div", null, "photo-retry");
+  box.append(el("span", "Фото не загрузились (нет связи с Wikimedia Commons или ничего подходящего)." + (StepPhotos.lastError ? " Ошибка: " + StepPhotos.lastError + "." : "") + " "));
+  const b = el("button", "Повторить"); b.type = "button";
+  b.addEventListener("click", () => { b.disabled = true; again(); });
+  box.append(b);
+  return box;
 }
 function speciesGallery(item, token) {
   const gal = el("div", null, "fish-gallery");
@@ -1017,9 +1026,23 @@ function fmtDur(min) { return min >= 60 ? Math.floor(min / 60) + " ч " + (min %
 function renderRouteBar() {
   const bar = $("routeBar");
   const { start, dest } = route;
-  if (!start && !dest && !route.failure && !route.msg) { bar.hidden = true; bar.replaceChildren(); return; }
+  bar.classList.toggle("idle", !start && !dest && !route.failure && !route.msg && !nav.active);
   bar.hidden = false;
   if (nav.active) { renderNavBar(bar); return; }
+  if (!start && !dest && !route.failure && !route.msg) {
+    // Постоянная плашка: поставить «я здесь» и «куда ехать»
+    const idle = el("div", null, "rb-row");
+    const hint = route.mode === "pickStart" ? "Нажмите на карте, где вы находитесь."
+      : route.mode === "pickDest" ? "Нажмите на карте, куда нужно доехать."
+      : "Поставьте точку, где вы, и точку, куда ехать. Ехать можно прямо в приложении.";
+    idle.append(
+      button("Я здесь (определить)", "primary", locate),
+      button("Старт на карте", route.mode === "pickStart" ? "primary" : "", () => { route.mode = "pickStart"; toast("Нажмите на карте точку старта"); renderRouteBar(); }),
+      button("Куда ехать", route.mode === "pickDest" ? "primary" : "", () => { route.mode = "pickDest"; toast("Нажмите на карте, куда нужно доехать"); renderRouteBar(); })
+    );
+    bar.replaceChildren(el("p", "Маршрут", "rb-title"), el("p", hint, "rb-text"), idle);
+    return;
+  }
   const nodes = [];
   const row = el("div", null, "rb-row");
   const cancel = button("Сбросить", "ghost", clearRoute);
@@ -1036,7 +1059,7 @@ function renderRouteBar() {
       if (info.gapM > 300) text += " Дорога заканчивается примерно в " + StepNav.fmtKm(info.gapM) + " от точки, дальше без дороги.";
     }
     nodes.push(el("p", text, "rb-text"));
-    row.append(button("Поехать в приложении", "primary", startNav));
+    row.append(button("Продолжить здесь", "primary", startNav));
     routeLinks().forEach(([name, url]) => row.append(button(name + " ↗", "", () => openExternal(url))));
     row.append(cancel);
   } else if (start && !dest) {
@@ -1371,6 +1394,7 @@ detailSheet.inert = true;
 bansSheet.inert = true;
 $("banPill").addEventListener("click", openBans);
 $("closeBans").addEventListener("click", closeBans);
+renderRouteBar();
 initTelegram();
 syncNavigation();
 Promise.all([loadFish(), loadBlocklist(), loadBans()]).then(loadPoints);
