@@ -101,6 +101,7 @@ function openDetails(loc) {
   loadPlacePhotos(loc, token);
   renderPlants(loc);
   renderAnimals(loc);
+  renderDetailBans(loc);
   renderFish(loc, null, token);
   renderWeatherLoading();
   loadWeatherFor(loc, token);
@@ -180,6 +181,8 @@ function fmtTemp(t) {
   return (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r) + "°";
 }
 function fmtNum(n, digits) { return n.toFixed(digits).replace(".", ","); }
+function fmtSigned(n) { const r = Math.round(n * 10) / 10; return (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r).toFixed(1).replace(".", ","); }
+function fmtHM(h) { const m = Math.round(h * 60); return String(Math.floor(m / 60) % 24).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); }
 function pressureText(w) {
   if (w.pressureMmHg === null) return "нет данных";
   let t = w.pressureMmHg + " мм рт. ст.";
@@ -218,7 +221,7 @@ function fishListFor(loc) { return (loc.fish || []).map(id => fishById.get(id)).
 async function loadWeatherFor(loc, token) {
   try {
     const w = await getWeather(loc);
-    const analysis = StepWeather.analyze(w, fishListFor(loc), loc.type);
+    const analysis = StepWeather.analyze(w, fishListFor(loc), loc.type, loc.id);
     updatePill(loc, w, analysis);
     if (token !== detailToken) return;
     renderWeather(w, analysis);
@@ -259,8 +262,32 @@ function renderWeather(w, analysis) {
     analysis.care.forEach(t => ul.append(el("li", t.text, "wx-tip " + t.level)));
     box.append(ul);
   }
-  box.append(el("p", analysis.wish, "wx-wish"));
-  box.append(el("p", "Погода: Open-Meteo. Оценка клёва — ориентир по сезону, температуре, давлению, ветру и времени суток, а не гарантия.", "fish-note"));
+  const danger = analysis.care.some(t => t.level === "danger");
+  const v = analysis.verdict;
+  if (v && !danger) {
+    const head = el("div", null, "wx-verdict");
+    head.append(document.createTextNode("Клёв сегодня: "), el("span", v.label, "chance c" + v.level));
+    const bar = el("div", null, "bite-bar");
+    const fill = el("i", null, v.score >= 70 ? "" : v.score >= 45 ? "mid" : "low");
+    fill.style.width = Math.max(4, v.score) + "%";
+    bar.append(fill);
+    box.append(head, bar, el("p", v.text, "wx-wish"));
+  } else box.append(el("p", analysis.wish, "wx-wish"));
+  const used = [];
+  if (w.pressureMmHg !== null) {
+    let t = "давление " + w.pressureMmHg + " мм рт. ст.";
+    const parts = [];
+    if (w.pressureTrend3h !== null) parts.push("за 3 ч " + fmtSigned(w.pressureTrend3h * 0.750062));
+    if (w.pressureTrend24h !== null) parts.push("за сутки " + fmtSigned(w.pressureTrend24h * 0.750062));
+    if (parts.length) t += " (" + parts.join(", ") + ")";
+    used.push(t);
+  }
+  used.push("ветер " + fmtNum(w.windMs, 1) + " м/с");
+  if (w.cloud !== null) used.push("облачность " + Math.round(w.cloud) + "%");
+  if (w.sunriseH !== null && w.sunsetH !== null) used.push("восход " + fmtHM(w.sunriseH) + ", закат " + fmtHM(w.sunsetH));
+  if (w.moon) used.push("Луна: " + w.moon.name);
+  box.append(el("p", "Что учтено: " + used.join("; ") + ".", "fish-note"));
+  box.append(el("p", "Погода: Open-Meteo. Единой научной формулы клёва нет. Оценка собрана по рекомендациям рыболовных изданий: ровное давление и его плавный рост хороши, резкие скачки плохи, в жару рыба уходит на глубину, лучше всего зорьки. Это ориентир, а не гарантия.", "fish-note"));
 }
 function renderFish(loc, analysis, token) {
   const box = $("detailFish");
@@ -313,10 +340,33 @@ async function fillFishGallery(f, gal, token) {
     fishPhotoCache.set(f.id, photos);
   }
   if (token !== detailToken || !gal.isConnected) return;
-  const figs = photos.map(p => photoFigure(p, f.name, "fish-gallery")).filter(Boolean);
+  const again = () => { fishPhotoCache.delete(f.id); fillFishGallery(f, gal, detailToken); };
+  const figs = photos.map(p => photoFigure(p, f.name, again)).filter(Boolean);
   if (!figs.length) return;
   gal.hidden = false;
   gal.replaceChildren(...figs);
+}
+const speciesCache = new Map();
+function lazyRun(node, fn) {
+  if (!("IntersectionObserver" in window)) { fn(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); fn(); } }, { root: detailSheet, rootMargin: "250px" });
+  io.observe(node);
+}
+async function fillSpecies(item, gal, token) {
+  const key = item.latin || item.name;
+  let photos = item.photos && item.photos.length ? item.photos : speciesCache.get(key);
+  if (!photos) {
+    try { photos = await StepPhotos.forSpecies(item, 4); } catch (_) { photos = []; }
+    speciesCache.set(key, photos);
+  }
+  if (token !== detailToken || !gal.isConnected) return;
+  const again = () => { speciesCache.delete(key); fillSpecies(item, gal, detailToken); };
+  gal.replaceChildren(...photos.map(p => photoFigure(p, item.name, again)).filter(Boolean));
+}
+function speciesGallery(item, token) {
+  const gal = el("div", null, "fish-gallery");
+  lazyRun(gal, () => fillSpecies(item, gal, token));
+  return gal;
 }
 function renderPlants(loc) {
   const box = $("detailPlants");
@@ -330,8 +380,10 @@ function renderPlants(loc) {
     if (p.latin) row.append(document.createTextNode(" "), el("i", p.latin));
     if (p.rare) row.append(el("span", "редкий, Красная книга РФ", "rare"));
     if (p.note) row.append(el("div", p.note));
+    row.append(speciesGallery(p, detailToken));
     box.append(row);
   });
+  box.append(el("p", "Растения подобраны по справочникам для дельты и поймы Волги. Это значит, что они растут в регионе, но в конкретной точке их может не быть.", "fish-note"));
 }
 function renderAnimals(loc) {
   const box = $("detailAnimals");
@@ -344,23 +396,30 @@ function renderAnimals(loc) {
     row.append(el("b", a.name));
     if (a.latin) row.append(document.createTextNode(" "), el("i", a.latin));
     if (a.note) row.append(el("div", a.note));
+    row.append(speciesGallery(a, detailToken));
     box.append(row);
   });
-  box.append(el("p", "Список по справочным источникам для района, а не данные наблюдений в этой точке.", "fish-note"));
+  box.append(el("p", "Животные и птицы взяты из справочников для дельты и поймы Волги. Они обитают в регионе, но встретить их именно здесь не гарантировано.", "fish-note"));
 }
 
 /* ---------- Фото ---------- */
 function safeUrl(u) {
   try { const x = new URL(u); return x.protocol === "https:" ? x.href : ""; } catch (_) { return ""; }
 }
-function photoFigure(p, alt, cls) {
+function photoFigure(p, alt, onReject) {
   const src = safeUrl(p && p.url);
   if (!src) return null;
   const fig = document.createElement("figure");
   const img = document.createElement("img");
   img.src = src; img.alt = p.alt || alt || ""; img.loading = "lazy"; img.referrerPolicy = "no-referrer";
-  img.addEventListener("error", () => fig.remove());
+  img.addEventListener("error", () => { fig.remove(); if (onReject) onReject(null); });
   fig.append(img);
+  if (onReject) {
+    const x = el("button", "✕", "ph-x");
+    x.type = "button"; x.title = "Не то фото: убрать и заменить"; x.setAttribute("aria-label", "Не то фото: убрать и заменить");
+    x.addEventListener("click", e => { e.stopPropagation(); StepPhotos.block(p); fig.remove(); onReject(p); });
+    fig.append(x);
+  }
   const credit = [p.author, p.license].filter(Boolean).join(" · ");
   const src2 = safeUrl(p.sourceUrl);
   if (credit || src2) {
@@ -379,7 +438,7 @@ function renderPhotos(loc, photos, loading) {
   const box = $("detailGallery");
   box.replaceChildren();
   if (loading) { box.hidden = false; box.className = "photo-empty"; box.textContent = "Ищем фотографии места…"; return; }
-  const figs = (photos || []).map(p => photoFigure(p, loc.title)).filter(Boolean);
+  const figs = (photos || []).map(p => photoFigure(p, loc.title, () => { loc._photos = null; loadPlacePhotos(loc, detailToken); })).filter(Boolean);
   box.hidden = false;
   if (figs.length) {
     box.className = "detail-gallery";
@@ -395,7 +454,7 @@ async function loadPlacePhotos(loc, token) {
     const own = Array.isArray(loc.photos) ? loc.photos.slice() : [];
     let extra = [];
     if (own.length < 4) { try { extra = await StepPhotos.forPlace(loc, 4 - own.length); } catch (_) {} }
-    loc._photos = own.concat(extra);
+    loc._photos = own.concat(extra).slice(0, 4);
   }
   if (token !== detailToken) return;
   renderPhotos(loc, loc._photos, false);
@@ -409,7 +468,7 @@ function updatePill(loc, w, analysis) {
   $("pillTitle").textContent = loc.title.split(" — ")[0];
   const best = analysis.ranked[0];
   $("pillText").textContent =
-    (danger ? "⚠ " : "") + fmtTemp(w.tempC) + ", ветер " + fmtNum(w.windMs, 0) + " м/с" + (best ? ", шанс поймать: " + best.chance.label : "");
+    (danger ? "⚠ " : "") + fmtTemp(w.tempC) + ", ветер " + fmtNum(w.windMs, 0) + " м/с" + (analysis.verdict ? ", клёв: " + analysis.verdict.label : best ? ", шанс поймать: " + best.chance.label : "");
   $("weatherButton").dataset.level = danger ? "danger" : "ok";
 }
 function updatePillError() {
@@ -421,7 +480,7 @@ async function refreshPill() {
   $("pillText").textContent = "Загружаем условия…";
   try {
     const w = await getWeather(selectedLoc);
-    updatePill(selectedLoc, w, StepWeather.analyze(w, fishListFor(selectedLoc), selectedLoc.type));
+    updatePill(selectedLoc, w, StepWeather.analyze(w, fishListFor(selectedLoc), selectedLoc.type, selectedLoc.id));
   } catch (err) { console.warn("Погода недоступна", err); updatePillError(); }
 }
 
@@ -433,6 +492,12 @@ async function loadFish() {
     const data = await response.json();
     if (Array.isArray(data)) data.forEach(f => { if (f && f.id) fishById.set(f.id, f); });
   } catch (err) { console.error("Не удалось загрузить data/fish.json", err); }
+}
+async function loadBlocklist() {
+  try {
+    const r = await fetch("data/photo-blocklist.json");
+    if (r.ok) StepPhotos.setBlocked(await r.json());
+  } catch (_) {}
 }
 async function loadPoints() {
   try {
@@ -618,8 +683,195 @@ search.addEventListener("input", () => {
 });
 document.addEventListener("click", e => { if (!e.target.closest(".search-wrap")) hideResults(); });
 
+/* ================= Запреты и правила ================= */
+let bansData = null;
+const bansSheet = $("bansSheet");
+let bansPrevFocus = null;
+async function loadBans() {
+  try {
+    const r = await fetch("data/bans.json");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    bansData = await r.json();
+  } catch (err) { console.warn("Не удалось загрузить data/bans.json", err); }
+  updateBanPill();
+  if (selectedLoc && detailSheet.classList.contains("open")) renderDetailBans(selectedLoc);
+}
+function bansSnapshot() { return bansData && window.StepBans ? StepBans.snapshot(bansData, new Date()) : null; }
+function sourceLinks(ids) {
+  const p = el("p", null, "rule-src");
+  p.append(document.createTextNode("Источники: "));
+  let n = 0;
+  (ids || []).forEach(id => {
+    const s = bansData && bansData.sources && bansData.sources[id];
+    const url = s && safeUrl(s.url.replace(/^http:/, "https:"));
+    if (!s) return;
+    if (n++) p.append(document.createTextNode(" · "));
+    if (url) { const a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = s.title; p.append(a); }
+    else p.append(document.createTextNode(s.title));
+  });
+  return n ? p : document.createTextNode("");
+}
+function updateBanPill() {
+  const pill = $("banPill");
+  const snap = bansSnapshot();
+  if (!snap) { pill.hidden = true; return; }
+  const act = snap.active.find(i => i.rule.kind === "seasonal" && i.rule.level === "danger");
+  const soon = snap.upcoming.find(i => i.rule.kind === "seasonal" && i.rule.level === "danger" && i.status.daysToStart <= 30);
+  if (act) {
+    pill.hidden = false; pill.dataset.level = "on";
+    pill.textContent = "⚠ " + act.rule.title + " · ещё " + StepBans.daysText(act.status.daysLeft);
+  } else if (soon) {
+    pill.hidden = false; pill.dataset.level = "soon";
+    pill.textContent = "Скоро: " + soon.rule.title.toLowerCase() + " с " + StepBans.fmtDate(soon.status.start) + " (через " + StepBans.daysText(soon.status.daysToStart) + ")";
+  } else pill.hidden = true;
+}
+function ruleCard(item) {
+  const r = item.rule;
+  const d = document.createElement("details");
+  d.className = "rule " + r.level;
+  if (item.status.state === "active" && r.level === "danger") d.open = true;
+  const sum = document.createElement("summary");
+  sum.append(el("b", r.title), el("span", StepBans.statusLine(item), "rule-status"));
+  d.append(sum, el("p", r.short, "rule-short"));
+  const ul = el("ul", null, "rule-list");
+  (r.details || []).forEach(t => ul.append(el("li", t)));
+  d.append(ul);
+  if (r.note) d.append(el("p", "Важно: " + r.note, "rule-note"));
+  if (r.uncertain) d.append(el("p", "Данных недостаточно: проверьте перед выездом.", "rule-note"));
+  d.append(sourceLinks(r.sources));
+  return d;
+}
+function bansBanner(snap) {
+  const danger = snap.active.filter(i => i.rule.level === "danger" && i.rule.kind === "seasonal");
+  const box = el("div", null, "ban-banner " + (danger.length ? "on" : "off"));
+  if (danger.length) {
+    danger.forEach(i => {
+      box.append(el("b", "Сейчас действует: " + i.rule.title), el("p", StepBans.statusLine(i) + ". " + (i.rule.details && i.rule.details[1] ? i.rule.details[1] : i.rule.short)));
+    });
+  } else {
+    box.append(el("b", "Сезонного запрета на рыбу сейчас нет"));
+    const next = snap.upcoming[0];
+    box.append(el("p", next ? "Ближайший: " + next.rule.title.toLowerCase() + ". " + StepBans.statusLine(next) + "." : "Ближайших сезонных запретов в данных нет."));
+    box.append(el("p", "Постоянные правила действуют всегда: зимовальные ямы, запрещённые виды, размеры и нормы вылова."));
+  }
+  return box;
+}
+function timelineEl() {
+  const wrap = el("div", null, "tl");
+  const months = el("div", null, "tl-months");
+  StepBans.MONTH_SHORT.forEach(m => months.append(el("span", m)));
+  wrap.append(months);
+  StepBans.timeline(bansData).forEach(row => {
+    wrap.append(el("div", row.title, "tl-label"));
+    const track = el("div", null, "tl-track");
+    row.segments.forEach(([a, b]) => {
+      const s = el("i", null, "tl-seg " + row.level);
+      s.style.left = (a * 100) + "%"; s.style.width = ((b - a) * 100) + "%";
+      track.append(s);
+    });
+    wrap.append(track);
+  });
+  const now = el("div", null, "tl-now");
+  now.style.left = (StepBans.todayFraction(new Date()) * 100) + "%";
+  now.append(el("span", "сегодня"));
+  wrap.append(now);
+  return wrap;
+}
+function renderBans() {
+  const body = $("bansBody");
+  body.replaceChildren();
+  const snap = bansSnapshot();
+  if (!snap) {
+    body.append(el("div", "Не удалось загрузить данные о запретах. Проверьте интернет и откройте раздел ещё раз.", "wx-error"));
+    return;
+  }
+  body.append(bansBanner(snap));
+  body.append(el("h2", "Год по месяцам"), timelineEl());
+  const groups = [
+    ["Действуют сейчас", snap.active.filter(i => i.rule.kind !== "permanent")],
+    ["Скоро", snap.upcoming],
+    ["Всегда", snap.always],
+    ["Срок закончился, уточните", snap.expired]
+  ];
+  groups.forEach(([title, list]) => {
+    if (!list.length) return;
+    body.append(el("h2", title));
+    list.forEach(i => body.append(ruleCard(i)));
+  });
+  if (bansData.infoOtherRegion) {
+    const o = bansData.infoOtherRegion;
+    const box = el("div", null, "ban-banner off");
+    box.append(el("b", o.title), el("p", o.text), sourceLinks(o.sources));
+    body.append(box);
+  }
+  const foot = el("div", null, "rule-foot");
+  foot.append(el("p", bansData.disclaimer));
+  if (bansData.hotline) foot.append(el("p", bansData.hotline.name + ": " + bansData.hotline.phone));
+  foot.append(el("p", "Данные в атласе сверены: " + StepBans.fmtDate(new Date(bansData.checkedAt + "T12:00:00")) + "."));
+  const off = bansData.sources && bansData.sources.order695;
+  if (off) { const a = document.createElement("a"); a.href = off.url.replace(/^http:/, "https:"); a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = "Официальный текст Правил (приказ № 695)"; const p = el("p"); p.append(a); foot.append(p); }
+  body.append(foot);
+}
+function openBans() {
+  bansPrevFocus = document.activeElement;
+  closeDetails();
+  renderBans();
+  bansSheet.inert = false;
+  const appShell = document.querySelector(".app-shell");
+  if (appShell) appShell.inert = true;
+  bansSheet.classList.add("open");
+  sheetBackdrop.classList.add("open");
+  const tg = tgApp();
+  if (tg && tg.BackButton) { try { tg.BackButton.show(); } catch (_) {} }
+  bansSheet.scrollTop = 0;
+  bansSheet.focus({ preventScroll: true });
+}
+function closeBans() {
+  if (!bansSheet.classList.contains("open")) return;
+  bansSheet.classList.remove("open");
+  sheetBackdrop.classList.remove("open");
+  bansSheet.inert = true;
+  const appShell = document.querySelector(".app-shell");
+  if (appShell) appShell.inert = false;
+  const tg = tgApp();
+  if (tg && tg.BackButton) { try { tg.BackButton.hide(); } catch (_) {} }
+  if (bansPrevFocus && typeof bansPrevFocus.focus === "function") bansPrevFocus.focus({ preventScroll: true });
+}
+/* Блок «Запреты и правила» в карточке рыболовной точки */
+function renderDetailBans(loc) {
+  const box = $("detailBans");
+  const snap = bansSnapshot();
+  if (loc.type !== "fishing" || !snap) { box.hidden = true; box.replaceChildren(); return; }
+  box.hidden = false;
+  box.replaceChildren(el("h2", "Запреты и правила"));
+  const spawn = snap.active.find(i => i.rule.id === "spawn");
+  const others = snap.active.filter(i => i.rule.id !== "spawn" && i.rule.kind !== "permanent");
+  if (spawn) {
+    const b = el("div", null, "ban-banner on");
+    b.append(el("b", "Сейчас нерестовый запрет"), el("p", StepBans.statusLine(spawn) + ". " + spawn.rule.details[1]));
+    box.append(b);
+  } else {
+    const b = el("div", null, "ban-banner off");
+    b.append(el("b", "Сезонного запрета на рыбу сейчас нет"));
+    const next = snap.upcoming[0];
+    if (next) b.append(el("p", next.rule.title + ": " + StepBans.statusLine(next) + "."));
+    box.append(b);
+  }
+  others.forEach(i => box.append(el("p", i.rule.title + ": " + StepBans.statusLine(i) + ".", "fish-note")));
+  box.append(el("p", "Всегда: зимовальные ямы, запрещённые виды, минимальные размеры, нормы вылова и допустимые снасти.", "fish-note"));
+  const row = el("div", null, "detail-actions");
+  row.append(button("Календарь запретов", "primary", () => openBans()));
+  box.append(row);
+}
+
 /* ================= Где я и маршрут ================= */
-const route = { start: null, dest: null, mode: null, msg: "", info: null, line: null, destMarker: null, meMarker: null, meCircle: null, busy: false };
+const route = { start: null, dest: null, mode: null, msg: "", info: null, parsed: null, gap: 0, line: null, destMarker: null, meMarker: null, meCircle: null, busy: false };
+const nav = { active: false, watchId: null, poll: null, follow: true, voice: (() => { try { return localStorage.getItem("stepNavVoice") !== "0"; } catch (_) { return true; } })(), spoken: {}, hint: undefined, offCount: 0, lastReroute: 0, wake: null, pos: null, heading: null, arrived: false, tgFails: 0, voiceWarned: false, view: null };
+async function getPosition() {
+  let p = await tgLocation();
+  if (!p) p = await browserLocation();
+  return p;
+}
 
 function tgLocation() {
   return new Promise(resolve => {
@@ -655,10 +907,9 @@ async function locate() {
   renderRouteBar();
   toast("Определяем местоположение…");
   try {
-    let p = await tgLocation();
-    if (!p) p = await browserLocation();
+    const p = await getPosition();
     route.msg = "";
-    setStart({ lat: p.lat, lng: p.lng, acc: p.acc, name: "Моё местоположение" }, true);
+    setStart({ lat: p.lat, lng: p.lng, acc: p.acc, name: "Моё местоположение", gps: true }, true);
   } catch (err) {
     route.msg = "";
     locationFailed(err);
@@ -681,7 +932,7 @@ function setStart(p, fly) {
   route.failure = null;
   const ll = [p.lat, p.lng];
   if (!route.meMarker) {
-    route.meMarker = L.marker(ll, { icon: L.divIcon({ className: "", html: '<div class="me-dot"></div>', iconSize: [26, 26], iconAnchor: [13, 13] }), title: "Вы здесь", zIndexOffset: 900 }).addTo(map);
+    route.meMarker = L.marker(ll, { icon: meIcon(), title: "Вы здесь", zIndexOffset: 900 }).addTo(map);
     route.meMarker.on("click", e => { if (e.originalEvent) L.DomEvent.stopPropagation(e); onMeTap(); });
   } else { route.meMarker.setLatLng(ll); if (!map.hasLayer(route.meMarker)) route.meMarker.addTo(map); }
   if (route.meCircle) map.removeLayer(route.meCircle);
@@ -708,39 +959,50 @@ function setDestination(d) {
   renderRouteBar();
 }
 function clearRoute() {
-  route.start = route.dest = route.mode = route.info = null; route.msg = ""; route.failure = null;
+  if (nav.active) stopNav();
+  route.start = route.dest = route.mode = route.info = route.parsed = null; route.gap = 0; route.msg = ""; route.failure = null;
   [route.line, route.destMarker, route.meMarker, route.meCircle].forEach(l => { if (l) map.removeLayer(l); });
   route.line = route.destMarker = route.meMarker = route.meCircle = null;
   renderRouteBar();
 }
-async function buildRoute() {
-  const { start, dest } = route;
-  if (!start || !dest) return;
-  if (route.line) { map.removeLayer(route.line); route.line = null; }
-  route.info = null;
-  const straight = distKm(start, dest);
-  const bounds = L.latLngBounds([[start.lat, start.lng], [dest.lat, dest.lng]]);
-  map.fitBounds(bounds, { padding: [60, 60], maxZoom: 13 });
-  let drawn = false;
+async function requestRoute(a, b) {
   try {
     const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 9000);
-    const url = `https://router.project-osrm.org/route/v1/driving/${start.lng},${start.lat};${dest.lng},${dest.lat}?overview=full&geometries=geojson`;
+    const timer = setTimeout(() => ctrl.abort(), 12000);
+    const url = `https://router.project-osrm.org/route/v1/driving/${a.lng},${a.lat};${b.lng},${b.lat}?overview=full&geometries=geojson&steps=true`;
     const res = await fetch(url, { signal: ctrl.signal });
     clearTimeout(timer);
     const j = await res.json();
     if (j && j.routes && j.routes[0]) {
       const r = j.routes[0];
-      route.line = L.geoJSON(r.geometry, { style: { color: "#c2462d", weight: 5, opacity: .85 } }).addTo(map);
-      route.info = { km: r.distance / 1000, min: Math.round(r.duration / 60), straight: false };
-      drawn = true;
+      const parsed = StepNav.parseRoute(r);
+      const end = parsed.coords[parsed.coords.length - 1];
+      return { geometry: r.geometry, parsed, info: { km: r.distance / 1000, min: Math.round(r.duration / 60), straight: false, gapM: StepNav.dist(end, b) } };
     }
   } catch (_) {}
-  if (!drawn) {
-    route.line = L.polyline([[start.lat, start.lng], [dest.lat, dest.lng]], { color: "#c2462d", weight: 4, dashArray: "8 8" }).addTo(map);
-    route.info = { km: straight, min: null, straight: true };
+  return null;
+}
+function drawRoute(res, a, b) {
+  if (route.line) { map.removeLayer(route.line); route.line = null; }
+  if (res) {
+    route.line = L.geoJSON(res.geometry, { style: { color: "#c2462d", weight: 5, opacity: .85 } }).addTo(map);
+    route.parsed = res.parsed; route.info = res.info; route.gap = res.info.gapM;
+  } else {
+    route.line = L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: "#c2462d", weight: 4, dashArray: "8 8" }).addTo(map);
+    route.parsed = null; route.gap = 0; route.info = { km: distKm(a, b), min: null, straight: true };
   }
+}
+async function buildRoute() {
+  const { start, dest } = route;
+  if (!start || !dest) return;
+  if (route.line) { map.removeLayer(route.line); route.line = null; }
+  route.info = null; route.parsed = null; route.gap = 0;
+  if (!nav.active) map.fitBounds(L.latLngBounds([[start.lat, start.lng], [dest.lat, dest.lng]]), { padding: [60, 60], maxZoom: 13 });
+  const res = await requestRoute(start, dest);
+  if (!route.start || route.dest !== dest) return;
+  drawRoute(res, route.start || start, dest);
   renderRouteBar();
+  if (nav.active) updateNavProgress();
 }
 function routeLinks() {
   const { start: a, dest: b } = route;
@@ -757,6 +1019,7 @@ function renderRouteBar() {
   const { start, dest } = route;
   if (!start && !dest && !route.failure && !route.msg) { bar.hidden = true; bar.replaceChildren(); return; }
   bar.hidden = false;
+  if (nav.active) { renderNavBar(bar); return; }
   const nodes = [];
   const row = el("div", null, "rb-row");
   const cancel = button("Сбросить", "ghost", clearRoute);
@@ -765,10 +1028,16 @@ function renderRouteBar() {
   } else if (start && dest) {
     nodes.push(el("p", "Маршрут: " + (dest.name || "выбранная точка"), "rb-title"));
     const info = route.info;
-    nodes.push(el("p", !info ? "Строим маршрут…" : info.straight
-      ? "По прямой около " + fmtNum(info.km, 0) + " км. Дорожный маршрут не загрузился, откройте его в навигаторе ниже."
-      : "По дорогам около " + fmtNum(info.km, 0) + " км, примерно " + fmtDur(info.min) + ". В дельте и степи дороги могут быть грунтовыми или закрытыми, сверяйтесь с навигатором.", "rb-text"));
-    routeLinks().forEach(([name, url], i) => row.append(button(name, i === 0 ? "primary" : "", () => openExternal(url))));
+    let text;
+    if (!info) text = "Строим маршрут…";
+    else if (info.straight) text = "Дорожный маршрут не построился: по прямой около " + fmtNum(info.km, 0) + " км. В приложении можно ехать по азимуту, а полный маршрут откройте в навигаторе ниже.";
+    else {
+      text = "По дорогам около " + fmtNum(info.km, 0) + " км, примерно " + fmtDur(info.min) + ". В дельте и степи дороги бывают грунтовыми, закрытыми или затопленными.";
+      if (info.gapM > 300) text += " Дорога заканчивается примерно в " + StepNav.fmtKm(info.gapM) + " от точки, дальше без дороги.";
+    }
+    nodes.push(el("p", text, "rb-text"));
+    row.append(button("Поехать в приложении", "primary", startNav));
+    routeLinks().forEach(([name, url]) => row.append(button(name + " ↗", "", () => openExternal(url))));
     row.append(cancel);
   } else if (start && !dest) {
     nodes.push(el("p", "Вы здесь" + (start.acc ? " (±" + Math.round(start.acc) + " м)" : ""), "rb-title"));
@@ -791,6 +1060,238 @@ function renderRouteBar() {
   if (row.childNodes.length) nodes.push(row);
   bar.replaceChildren(...nodes);
 }
+
+/* ================= Навигация внутри приложения ================= */
+function speak(text) {
+  if (!nav.voice || !text) return;
+  if (!("speechSynthesis" in window)) {
+    if (!nav.voiceWarned) { nav.voiceWarned = true; toast("Голос не поддерживается на этом устройстве, подсказки останутся на экране."); }
+    return;
+  }
+  try {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "ru-RU"; u.rate = 1;
+    const v = speechSynthesis.getVoices().find(x => /^ru/i.test(x.lang));
+    if (v) u.voice = v;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  } catch (_) {}
+}
+async function keepAwake(on) {
+  try {
+    if (on) { if ("wakeLock" in navigator && !nav.wake) nav.wake = await navigator.wakeLock.request("screen"); }
+    else if (nav.wake) { await nav.wake.release(); nav.wake = null; }
+  } catch (_) { nav.wake = null; }
+}
+document.addEventListener("visibilitychange", () => { if (nav.active && document.visibilityState === "visible") { nav.wake = null; keepAwake(true); } });
+
+function meIcon() {
+  return L.divIcon({ className: "", html: '<div class="me-dot"></div><div class="me-arrow" hidden></div>', iconSize: [26, 26], iconAnchor: [13, 13] });
+}
+function moveMe(p) {
+  if (!route.meMarker) {
+    route.meMarker = L.marker([p.lat, p.lng], { icon: meIcon(), title: "Вы здесь", zIndexOffset: 900 }).addTo(map);
+    route.meMarker.on("click", e => { if (e.originalEvent) L.DomEvent.stopPropagation(e); onMeTap(); });
+  } else { route.meMarker.setLatLng([p.lat, p.lng]); if (!map.hasLayer(route.meMarker)) route.meMarker.addTo(map); }
+  const node = route.meMarker.getElement && route.meMarker.getElement();
+  const arrow = node && node.querySelector(".me-arrow");
+  if (arrow) {
+    if (nav.heading === null) arrow.hidden = true;
+    else { arrow.hidden = false; arrow.style.transform = "translate(-50%, -50%) rotate(" + Math.round(nav.heading) + "deg)"; }
+  }
+}
+
+function tgLocationOnce() {
+  return new Promise(resolve => {
+    const tg = tgApp();
+    const lm = tg && tg.LocationManager;
+    if (!lm || typeof lm.getLocation !== "function") return resolve(null);
+    let done = false;
+    const finish = v => { if (!done) { done = true; resolve(v); } };
+    setTimeout(() => finish(null), 6000);
+    const get = () => {
+      try {
+        lm.getLocation(d => finish(d && Number.isFinite(d.latitude)
+          ? { lat: d.latitude, lng: d.longitude, acc: d.horizontal_accuracy || null, heading: Number.isFinite(d.course) ? d.course : null, speed: Number.isFinite(d.speed) ? d.speed : null }
+          : null));
+      } catch (_) { finish(null); }
+    };
+    try { if (lm.isInited) get(); else lm.init(get); } catch (_) { finish(null); }
+  });
+}
+function startTracking() {
+  const useBrowser = () => {
+    if (!navigator.geolocation) { toast("Слежение за положением недоступно на этом устройстве."); return; }
+    nav.watchId = navigator.geolocation.watchPosition(
+      pos => onFix({ lat: pos.coords.latitude, lng: pos.coords.longitude, acc: pos.coords.accuracy, heading: Number.isFinite(pos.coords.heading) ? pos.coords.heading : null, speed: Number.isFinite(pos.coords.speed) ? pos.coords.speed : null }),
+      err => { if (err.code === 1) { toast("Нет доступа к геопозиции. Разрешите его в настройках."); stopNav(); } },
+      { enableHighAccuracy: true, maximumAge: 1000, timeout: 20000 }
+    );
+  };
+  const tg = tgApp();
+  if (tg && tg.LocationManager && typeof tg.LocationManager.getLocation === "function") {
+    const tick = async () => {
+      if (!nav.active || nav.arrived) return;
+      const p = await tgLocationOnce();
+      if (p) { nav.tgFails = 0; onFix(p); }
+      else if (++nav.tgFails >= 3) { nav.poll = null; useBrowser(); return; }
+      nav.poll = setTimeout(tick, 2500);
+    };
+    tick();
+  } else useBrowser();
+}
+function stopTracking() {
+  if (nav.watchId !== null && navigator.geolocation) { try { navigator.geolocation.clearWatch(nav.watchId); } catch (_) {} }
+  nav.watchId = null;
+  if (nav.poll) { clearTimeout(nav.poll); nav.poll = null; }
+}
+
+async function startNav() {
+  if (!route.dest || nav.active) return;
+  toast("Определяем ваше местоположение…");
+  let p;
+  try { p = await getPosition(); } catch (err) { locationFailed(err); return; }
+  Object.assign(nav, { active: true, follow: true, spoken: {}, hint: undefined, offCount: 0, arrived: false, pos: null, heading: null, tgFails: 0, view: { mode: "building" }, lastReroute: Date.now() });
+  document.querySelector(".map-wrap").classList.add("nav-on");
+  layerPanel.classList.remove("open");
+  setStart({ lat: p.lat, lng: p.lng, acc: p.acc, name: "Моё местоположение", gps: true }, false);
+  keepAwake(true);
+  startTracking();
+  onFix(p);
+  speak("Навигация включена");
+  toast("Дороги в дельте и степи бывают грунтовыми, закрытыми или затопленными. Следите за дорогой, а не за экраном.", 6500);
+}
+function stopNav() {
+  stopTracking();
+  keepAwake(false);
+  try { if ("speechSynthesis" in window) speechSynthesis.cancel(); } catch (_) {}
+  nav.active = false; nav.arrived = false; nav.view = null;
+  document.querySelector(".map-wrap").classList.remove("nav-on");
+  $("navBanner").hidden = true;
+  renderRouteBar();
+}
+function onFix(p) {
+  if (!nav.active) return;
+  const prev = nav.pos;
+  nav.pos = p;
+  let h = Number.isFinite(p.heading) && (!Number.isFinite(p.speed) || p.speed > 1) ? p.heading : null;
+  if (h === null && prev && StepNav.dist(prev, p) > 8) h = StepNav.bearing(prev, p);
+  if (h !== null) nav.heading = h;
+  moveMe(p);
+  route.start = Object.assign({}, route.start, { lat: p.lat, lng: p.lng, acc: p.acc });
+  if (nav.follow) map.setView([p.lat, p.lng], Math.max(map.getZoom(), 15), { animate: true });
+  updateNavProgress();
+}
+function updateNavProgress() {
+  const p = nav.pos;
+  if (!nav.active || nav.arrived || !p || !route.dest) return;
+  const toDest = StepNav.dist(p, route.dest);
+  let view;
+  if (route.parsed) {
+    const loc = StepNav.locate(route.parsed, p, nav.hint);
+    nav.hint = loc.idx;
+    nav.offCount = loc.off > 100 ? nav.offCount + 1 : 0;
+    if (nav.offCount >= 2 && Date.now() - nav.lastReroute > 12000) reroute(p);
+    const rem = StepNav.remaining(route.parsed, loc.along);
+    const nx = StepNav.nextManeuver(route.parsed, loc.along);
+    const lastMile = route.gap > 300 && rem.meters < 80;
+    if (toDest < 40 || (!lastMile && rem.meters < 30 && route.gap <= 300)) return arrive();
+    if (lastMile) view = { mode: "lastmile", g: StepNav.straightGuide(p, route.dest) };
+    else {
+      view = { mode: "road", nx, rem, offRoute: loc.off > 100 };
+      if (!view.offRoute && nx) { const cue = StepNav.voiceCue(nx, nav.spoken); if (cue) speak(cue); }
+    }
+  } else if (route.info && route.info.straight) {
+    if (toDest < 40) return arrive();
+    view = { mode: "straight", g: StepNav.straightGuide(p, route.dest) };
+  } else view = { mode: "building" };
+  nav.view = view;
+  renderNavBanner();
+  renderRouteBar();
+}
+async function reroute(p) {
+  nav.lastReroute = Date.now(); nav.offCount = 0;
+  const res = await requestRoute(p, route.dest);
+  if (!nav.active) return;
+  if (!res) { toast("Не удалось перестроить маршрут. Проверьте связь."); return; }
+  drawRoute(res, p, route.dest);
+  nav.hint = undefined; nav.spoken = {};
+  toast("Маршрут перестроен");
+  speak("Маршрут перестроен");
+  updateNavProgress();
+}
+function arrive() {
+  if (nav.arrived) return;
+  nav.arrived = true;
+  nav.view = { mode: "arrived" };
+  stopTracking();
+  speak("Вы приехали");
+  renderNavBanner();
+  renderRouteBar();
+}
+function renderNavBanner() {
+  const b = $("navBanner");
+  if (!nav.active || !nav.view) { b.hidden = true; return; }
+  b.hidden = false;
+  const v = nav.view;
+  let glyph = "↑", top = "", text = "", street = "", rot = null;
+  if (v.mode === "building") { glyph = "…"; text = "Строим маршрут"; }
+  else if (v.mode === "arrived") { glyph = "⚑"; text = "Вы приехали"; street = route.dest && route.dest.name || ""; }
+  else if (v.mode === "straight" || v.mode === "lastmile") {
+    glyph = "➤";
+    rot = Math.round(v.g.bearing - (nav.heading === null ? 0 : nav.heading));
+    top = StepNav.fmtKm(v.g.meters);
+    text = (v.mode === "lastmile" ? "Дорога закончилась. " : "") + "Двигайтесь на " + v.g.compass;
+    street = nav.heading === null ? "Стрелка показывает направление к точке при север-вверх на карте." : "Стрелка показывает направление к точке относительно вашего движения.";
+  } else if (v.offRoute) { glyph = "⟲"; text = "Вы сошли с маршрута"; street = "Перестраиваем маршрут…"; }
+  else if (v.nx) {
+    const ph = StepNav.phrase(v.nx.m);
+    glyph = ph.glyph; text = ph.text; street = ph.street;
+    const d = StepNav.fmtDist(v.nx.dist);
+    top = d.charAt(0).toUpperCase() + d.slice(1);
+  }
+  const gEl = el("div", glyph, "nb-glyph");
+  if (rot !== null) gEl.style.transform = "rotate(" + rot + "deg)";
+  const body = el("div", null, "nb-body");
+  if (top) body.append(el("div", top, "nb-dist"));
+  body.append(el("div", text, "nb-text"));
+  if (street) body.append(el("div", street, "nb-street"));
+  b.replaceChildren(gEl, body);
+}
+function renderNavBar(bar) {
+  const v = nav.view || {};
+  const nodes = [];
+  const row = el("div", null, "rb-row");
+  if (v.mode === "arrived") {
+    nodes.push(el("p", "Вы приехали", "rb-title"), el("p", "Навигация завершена. Проверьте правила и доступ на месте.", "rb-text"));
+    row.append(button("Готово", "primary", stopNav));
+  } else {
+    let title = "Строим маршрут…";
+    if (v.mode === "road" && v.rem) title = "Осталось " + StepNav.fmtKm(v.rem.meters) + ", около " + StepNav.fmtEta(v.rem.seconds);
+    else if (v.g) title = "До точки " + StepNav.fmtKm(v.g.meters) + " по прямой";
+    nodes.push(el("p", title, "rb-title"));
+    row.append(button(nav.voice ? "🔊 Голос" : "🔇 Голос", "", () => {
+      nav.voice = !nav.voice;
+      try { localStorage.setItem("stepNavVoice", nav.voice ? "1" : "0"); } catch (_) {}
+      if (!nav.voice) { try { speechSynthesis.cancel(); } catch (_) {} } else speak("Голос включён");
+      renderRouteBar();
+    }));
+    if (!nav.follow) row.append(button("К моему положению", "primary", () => { nav.follow = true; if (nav.pos) map.setView([nav.pos.lat, nav.pos.lng], Math.max(map.getZoom(), 15)); renderRouteBar(); }));
+    else row.append(button("Весь маршрут", "", () => {
+      nav.follow = false;
+      if (nav.pos && route.dest) map.fitBounds(L.latLngBounds([[nav.pos.lat, nav.pos.lng], [route.dest.lat, route.dest.lng]]), { padding: [70, 70], maxZoom: 14 });
+      renderRouteBar();
+    }));
+    if (nav.pos && route.dest) {
+      const a = nav.pos, d = route.dest;
+      row.append(button("Яндекс ↗", "", () => openExternal(`https://yandex.ru/maps/?rtext=${a.lat},${a.lng}~${d.lat},${d.lng}&rtt=auto`)));
+    }
+    row.append(button("Завершить", "ghost", () => { stopNav(); }));
+  }
+  nodes.push(row);
+  bar.replaceChildren(...nodes);
+}
+map.on("dragstart", () => { if (nav.active && nav.follow) { nav.follow = false; renderRouteBar(); } });
+
 map.on("click", e => {
   layerPanel.classList.remove("open");
   const p = { lat: e.latlng.lat, lng: e.latlng.lng };
@@ -801,10 +1302,11 @@ $("locate").addEventListener("click", locate);
 
 /* ================= Остальные обработчики ================= */
 $("closeDetail").addEventListener("click", closeDetails);
-sheetBackdrop.addEventListener("click", closeDetails);
+sheetBackdrop.addEventListener("click", () => { closeDetails(); closeBans(); });
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") {
     if (detailSheet.classList.contains("open")) closeDetails();
+    if (bansSheet.classList.contains("open")) closeBans();
     if (layerPanel.classList.contains("open")) {
       layerPanel.classList.remove("open");
       if (layersToggle) layersToggle.focus({ preventScroll: true });
@@ -834,6 +1336,7 @@ $("weatherButton").addEventListener("click", () => {
 });
 document.querySelectorAll(".nav-item").forEach(btn => {
   btn.addEventListener("click", () => {
+    if (btn.dataset.action === "bans") { openBans(); return; }
     const filter = btn.dataset.filter;
     Object.keys(layerGroups).forEach(key => setLayerVisible(key, filter === "all" || filter === key));
     syncNavigation();
@@ -857,6 +1360,7 @@ function initTelegram() {
     if (tg.BackButton && typeof tg.BackButton.onClick === "function") {
       tg.BackButton.onClick(() => {
         if (detailSheet.classList.contains("open")) closeDetails();
+        else if (bansSheet.classList.contains("open")) closeBans();
         else tg.BackButton.hide();
       });
       tg.BackButton.hide();
@@ -864,7 +1368,10 @@ function initTelegram() {
   } catch (err) { console.warn("Telegram WebApp initialization skipped", err); }
 }
 detailSheet.inert = true;
+bansSheet.inert = true;
+$("banPill").addEventListener("click", openBans);
+$("closeBans").addEventListener("click", closeBans);
 initTelegram();
 syncNavigation();
-loadFish().then(loadPoints);
+Promise.all([loadFish(), loadBlocklist(), loadBans()]).then(loadPoints);
 setTimeout(() => map.invalidateSize(), 100);

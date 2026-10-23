@@ -24,10 +24,12 @@
     const q = new URLSearchParams({
       latitude: String(lat),
       longitude: String(lng),
-      current: "temperature_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_gusts_10m,surface_pressure,is_day",
+      current: "temperature_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_gusts_10m,surface_pressure,is_day,cloud_cover",
       hourly: "surface_pressure",
-      past_hours: "6",
+      daily: "sunrise,sunset",
+      past_hours: "72",
       forecast_hours: "1",
+      forecast_days: "1",
       wind_speed_unit: "ms",
       timezone: "auto"
     });
@@ -52,7 +54,9 @@
       gustMs: num(c.wind_gusts_10m),
       pressureHpa: num(c.surface_pressure),
       isDay: c.is_day === 1,
-      pressureTrend3h: null
+      cloud: num(c.cloud_cover),
+      pressureTrend3h: null, pressureTrend6h: null, pressureTrend24h: null,
+      sunriseH: null, sunsetH: null, moon: null
     };
     if (w.tempC === null) return null;
     if (w.feelsC === null) w.feelsC = w.tempC;
@@ -64,12 +68,27 @@
     if (h && Array.isArray(h.time) && Array.isArray(h.surface_pressure) && w.pressureHpa !== null) {
       const key = c.time.slice(0, 13);
       const i = h.time.findIndex(t => typeof t === "string" && t.slice(0, 13) === key);
-      if (i >= 3 && num(h.surface_pressure[i - 3]) !== null) {
-        w.pressureTrend3h = Math.round((w.pressureHpa - h.surface_pressure[i - 3]) * 10) / 10;
-      }
+      const back = n => (i >= n && num(h.surface_pressure[i - n]) !== null) ? Math.round((w.pressureHpa - h.surface_pressure[i - n]) * 10) / 10 : null;
+      if (i >= 0) { w.pressureTrend3h = back(3); w.pressureTrend6h = back(6); w.pressureTrend24h = back(24); }
     }
+    const d = json.daily;
+    const hm = t => (typeof t === "string" && t.length >= 16) ? Number(t.slice(11, 13)) + Number(t.slice(14, 16)) / 60 : null;
+    if (d && Array.isArray(d.sunrise) && Array.isArray(d.sunset)) { w.sunriseH = hm(d.sunrise[0]); w.sunsetH = hm(d.sunset[0]); }
+    w.moon = moonInfo(Date.UTC(Number(c.time.slice(0, 4)), w.month - 1, w.day, 12));
     w.description = WMO[w.code] || "";
     return w;
+  }
+
+  function moonInfo(ms) {
+    const syn = 29.530588853, ref = Date.UTC(2000, 0, 6, 18, 14);
+    const ph = ((((ms - ref) / 86400000) % syn) + syn) % syn / syn;
+    let name;
+    if (ph < 0.03 || ph > 0.97) name = "новолуние";
+    else if (ph >= 0.47 && ph <= 0.53) name = "полнолуние";
+    else if (ph >= 0.22 && ph <= 0.28) name = "первая четверть";
+    else if (ph >= 0.72 && ph <= 0.78) name = "последняя четверть";
+    else name = ph < 0.5 ? "растущая луна" : "убывающая луна";
+    return { phase: ph, name, edge: ph < 0.04 || ph > 0.96 || (ph >= 0.46 && ph <= 0.54) };
   }
 
   function inSpawnBan(w) {
@@ -129,7 +148,33 @@
       else if (d >= 3) { score -= 6; reasons.push("давление резко растёт"); }
     }
 
-    if (w.gustMs >= 14) { score -= 15; reasons.push("сильные порывы ветра"); }
+    const pr = w.pressureMmHg;
+    if (pr !== null) {
+      if (pr >= 745 && pr <= 762) { score += 4; reasons.push("давление в рабочем диапазоне"); }
+      else if (pr < 735) { score -= 8; reasons.push("низкое давление: рыба вялая"); }
+      else if (pr > 768) { score -= 5; reasons.push("очень высокое давление"); }
+    }
+    if (w.pressureTrend24h !== null) {
+      const d24 = w.pressureTrend24h;
+      if (Math.abs(d24) <= 3) { score += 4; reasons.push("за сутки давление почти не менялось"); }
+      else if (d24 <= -6 && fish.kind !== "predator") { score -= 6; reasons.push("за сутки давление заметно упало"); }
+      else if (d24 >= 8) { score -= 4; reasons.push("за сутки давление сильно выросло"); }
+    }
+    if (fish.kind === "predator" && w.pressureTrend3h !== null && w.pressureTrend3h <= -1 && w.pressureTrend3h > -3) {
+      score += 5; reasons.push("давление медленно падает: хищник активнее перед фронтом");
+    }
+    if (w.cloud !== null) {
+      if (w.cloud >= 60 && fish.kind === "predator") { score += 4; reasons.push("пасмурно: хищник смелее выходит на охоту"); }
+      else if (w.cloud <= 20 && w.hour >= 11 && w.hour <= 16) { score -= 4; reasons.push("яркое солнце днём: рыба глубже"); }
+    }
+    if (w.sunriseH !== null && w.sunsetH !== null) {
+      const hr = w.hour + 0.5;
+      if (Math.abs(hr - w.sunriseH) <= 1.5 || Math.abs(hr - w.sunsetH) <= 1.5) { score += 4; reasons.push("рядом восход или закат"); }
+    }
+    if (w.moon && w.moon.edge) { score += 2; reasons.push("по народной примете: " + w.moon.name + " оживляет клёв"); }
+
+    if (w.gustMs >= 18 || w.windMs >= 12) { score -= 24; reasons.push("штормовой ветер"); }
+    else if (w.gustMs >= 14) { score -= 15; reasons.push("сильные порывы ветра"); }
     else if (w.windMs >= 10) { score -= 8; reasons.push("сильный ветер"); }
     else if (w.windMs <= 7) { score += 3; }
 
@@ -264,13 +309,77 @@
     return pool[i];
   }
 
-  function analyze(w, fishList, type) {
-    const ranked = fishList.map(f => scoreFish(f, w)).sort((a, b) => b.score - a.score);
-    const care = careTips(w);
-    return { ranked, care, wish: pickWish(type || "fishing", care, ranked), spawnBan: inSpawnBan(w) };
+  /* Общая оценка клёва: разные формулировки для каждого уровня, хвост зависит от погоды. */
+  const VERDICTS = [
+    ["Рыба сегодня отдыхает: поклёвок почти не ждите. Лучше выбрать другой день, а сегодня посмотреть виды.",
+     "Клёв спит. Если и клюнет, то случайная мелочь.",
+     "Шансов почти нет: вода как будто пустая. Возьмите термос и наслаждайтесь тишиной.",
+     "Сегодня не рыбацкий день. Самое время для степи, заката и чая у воды.",
+     "Рыба сыта и ленива. Хвосты придётся отложить до лучшей погоды."],
+    ["Пара поклёвок возможна, но трофеев не ждите.",
+     "Клёв слабый: терпение и тонкая оснастка, и одна-две рыбки будут.",
+     "Рыба вялая. Попробуйте утреннюю или вечернюю зорьку.",
+     "Поклёвки редкие, зато вода спокойна: хороший день для спокойной ловли.",
+     "Улов будет скромным. Зато красивый берег и свежий воздух гарантированы."],
+    ["Клёв капризный: придётся поработать с наживкой и глубиной.",
+     "Рыба берёт неохотно, но упорные без улова не останутся.",
+     "День не из лёгких: меняйте приманку и места, пара поклёвок найдётся.",
+     "Шанс есть, но рыбу нужно уговаривать. Не сидите на одном месте.",
+     "Клёв так себе: один-два хвоста вполне реальны."],
+    ["Рабочий день: пару хвостов поймаете без особых хитростей.",
+     "Клёв средний, но стабильный. Хороший день, чтобы не вернуться с пустыми руками.",
+     "Рыба берёт нормально: терпение вознаградится улововом на уху.",
+     "Погода рабочая. Пара-тройка хвостов точно ваша.",
+     "Клюёт ровно. Желаю хорошей поклёвки и добротного улова."],
+    ["Клёв хороший: готовьте подсачек, пара-тройка хвостов точно будет.",
+     "Условия отличные. Рыба активна, и поклёвки идут одна за другой.",
+     "День рыбацкий: ловите на зорьке, и без улова не останетесь.",
+     "Хороший клёв: можно рассчитывать на достойный улов и пару крупных рыб.",
+     "Рыба проснулась и ждёт вашу наживку. Удачного дня!"],
+    ["Звёзды сошлись! Готовьтесь к трофею.",
+     "Сегодня тот самый день: рыба берёт жадно, и трофей возможен.",
+     "Идеальные условия: бросайте всё и поезжайте на воду.",
+     "Жор! Давление и погода в вашу пользу. Берите подсачек побольше.",
+     "Рыбацкая удача рядом: бывают дни, когда всё складывается, и это один из них."]
+  ];
+  function hashStr(str) { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function verdictTails(w, topFish) {
+    const t = [];
+    const d3 = w.pressureTrend3h;
+    if (d3 !== null) {
+      if (d3 <= -3) t.push("Давление быстро падает: рыба капризничает.");
+      else if (d3 >= 3) t.push("Давление резко растёт: рыба привыкает к новому режиму.");
+      else if (d3 <= -1) t.push("Давление понемногу падает: хищник оживился.");
+      else if (Math.abs(d3) <= 1) t.push("Давление ровное, рыба ведёт себя предсказуемо.");
+    }
+    if (w.gustMs >= 14) t.push("Порывы сильные, забрасывать будет трудно.");
+    else if (w.windMs <= 2) t.push("Почти штиль: вода как зеркало, ловите осторожно.");
+    if (w.sunriseH !== null && (Math.abs(w.hour + 0.5 - w.sunriseH) <= 1.5 || Math.abs(w.hour + 0.5 - w.sunsetH) <= 1.5)) t.push("Сейчас самая рыбацкая пора: зорька.");
+    else if (isNight(w.hour) && topFish && topFish.activity === "night") t.push("Ночь: время сома.");
+    if (w.cloud !== null && w.cloud >= 70) t.push("Пасмурно: хищник смелее.");
+    return t.slice(0, 2);
+  }
+  function verdict(ranked, w, seedKey) {
+    if (!ranked.length) return null;
+    const best = ranked[0];
+    const top = ranked.slice(0, 3);
+    const mix = Math.round(0.6 * best.score + 0.4 * (top.reduce((a, r) => a + r.score, 0) / top.length));
+    const ch = chance(mix);
+    const seed = hashStr(seedKey + "|" + w.time.slice(0, 13) + "|" + ch.level);
+    const arr = VERDICTS[ch.level];
+    const topFish = (ranked.fishObj && ranked.fishObj.get(best.fishId)) || null;
+    const tails = verdictTails(w, topFish);
+    return { level: ch.level, label: ch.label, score: mix, text: arr[seed % arr.length] + (tails.length ? " " + tails.join(" ") : ""), bestFishId: best.fishId };
   }
 
-  const api = { chance, bestWindow, nextPeak, WISHES, weatherUrl, parseWeather, scoreFish, careTips, analyze, formatMonths, inSpawnBan, WMO, SPAWN_BAN };
+  function analyze(w, fishList, type, seedKey) {
+    const ranked = fishList.map(f => scoreFish(f, w)).sort((a, b) => b.score - a.score);
+    ranked.fishObj = new Map(fishList.map(f => [f.id, f]));
+    const care = careTips(w);
+    return { ranked, care, wish: pickWish(type || "fishing", care, ranked), spawnBan: inSpawnBan(w), verdict: verdict(ranked, w, seedKey || "x"), moon: w.moon };
+  }
+
+  const api = { moonInfo, VERDICTS, chance, bestWindow, nextPeak, WISHES, weatherUrl, parseWeather, scoreFish, careTips, analyze, formatMonths, inSpawnBan, WMO, SPAWN_BAN };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.StepWeather = api;
 })(typeof window !== "undefined" ? window : globalThis);
