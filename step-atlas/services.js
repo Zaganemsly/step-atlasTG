@@ -6,10 +6,12 @@
   if (typeof L === "undefined" || typeof map === "undefined") return;
   const layer = L.layerGroup();
   const ENDPOINTS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"];
+  // Заправки и рыболовные магазины лежат готовым файлом data/services.json (быстро, без внешних серверов).
+  // Обычные магазины подгружаются вживую, только при сильном приближении.
   const GROUPS = [
-    { id: "core", size: 0.5, minZoom: 9, body: b => 'nwr["amenity"="fuel"](' + b + ');nwr["shop"="fishing"](' + b + ');' },
     { id: "shops", size: 0.1, minZoom: 12, body: b => 'nwr["shop"~"^(convenience|supermarket|general|variety_store)$"](' + b + ');' }
   ];
+  const MIN_ZOOM = 8;
   const KIND = {
     fuel: { glyph: "⛽", label: "Заправка" },
     fishing: { glyph: "🎣", label: "Рыболовный магазин" },
@@ -30,7 +32,7 @@
     let lastErr;
     for (const url of ENDPOINTS) {
       const ctrl = new AbortController();
-      const t = setTimeout(() => ctrl.abort(), 25000);
+      const t = setTimeout(() => ctrl.abort(), 60000);
       try {
         const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "data=" + encodeURIComponent(query), signal: ctrl.signal });
         if (!res.ok) throw new Error("HTTP " + res.status);
@@ -55,7 +57,7 @@
         busy = true;
         try {
           const bbox = [iy * g.size, ix * g.size, (iy + 1) * g.size, (ix + 1) * g.size].map(x => x.toFixed(4)).join(",");
-          const j = await overpass("[out:json][timeout:25];(" + g.body(bbox) + ");out center tags 400;");
+          const j = await overpass("[out:json][timeout:50];(" + g.body(bbox) + ");out center tags 400;");
           (j.elements || []).forEach(el => {
             const lat = el.lat !== undefined ? el.lat : el.center && el.center.lat;
             const lng = el.lon !== undefined ? el.lon : el.center && el.center.lon;
@@ -64,7 +66,7 @@
           });
           done.add(key);
         } catch (err) {
-          if (!warned) { warned = true; toast("Заправки и магазины сейчас не загрузились. Попробуйте позже."); }
+          if (!warned) { warned = true; toast("Магазины рядом не загрузились. Заправки показаны из сохранённых данных."); }
         } finally { busy = false; }
         redraw();
       }
@@ -94,7 +96,7 @@
     let n = 0;
     for (const it of items.values()) {
       if (it.kind === "shop" && z < 12) continue;
-      if (z < 9) continue;
+      if (z < MIN_ZOOM) continue;
       if (!b.contains([it.lat, it.lng])) continue;
       if (++n > 300) break;
       const icon = L.divIcon({ className: "", html: '<div class="svc svc-' + it.kind + '">' + KIND[it.kind].glyph + "</div>", iconSize: [26, 26], iconAnchor: [13, 13] });
@@ -104,6 +106,18 @@
     }
   }
 
+  async function loadStatic() {
+    try {
+      const r = await fetch("data/services.json", { cache: "no-cache" });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const j = await r.json();
+      (j.items || []).forEach((x, i) => {
+        const tags = { name: x.n || "", brand: x.b || "", "addr:street": x.a || "", opening_hours: x.h || "", phone: x.p || "" };
+        items.set("s" + i, { id: "s" + i, kind: x.k === "f" ? "fuel" : "fishing", lat: x.la, lng: x.lo, tags });
+      });
+      redraw();
+    } catch (e) { console.warn("services.json:", e); }
+  }
   function schedule() { clearTimeout(timer); timer = setTimeout(ensure, 700); }
   function setEnabled(on) {
     enabled = on;
@@ -115,5 +129,6 @@
   if (box) { box.checked = enabled; box.addEventListener("change", () => setEnabled(box.checked)); }
   if (enabled) layer.addTo(map);
   map.on("moveend", schedule);
-  schedule();
+  loadStatic();
+schedule();
 })();
