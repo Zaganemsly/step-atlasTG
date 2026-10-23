@@ -117,8 +117,14 @@
     const desc = strip(md.ImageDescription && md.ImageDescription.value);
     const cats = strip(md.Categories && md.Categories.value);
     const hay = title + " " + desc + " " + cats;
-    if (BAD_PEOPLE.test(hay) || BAD_MIL.test(hay)) return null;
-    if (mode === "fish" && (BAD_FISH.test(hay) || ii.height > ii.width * 1.2)) return null;
+    const titleDesc = title + " " + desc;
+    if (BAD_MIL.test(hay)) return null;
+    let weak = false;
+    if (mode === "fish") {
+      // рыба: строгий разбор по названию и описанию; категории не считаем, там часто «Fishing in …».
+      if (BAD_PEOPLE.test(titleDesc) && /(fisherm|angler|holding|рыбак|человек|man\b|woman|person)/i.test(titleDesc)) return null;
+      if (BAD_FISH.test(titleDesc) || ii.height > ii.width * 1.2 || BAD_PEOPLE.test(cats)) weak = true;
+    } else if (BAD_PEOPLE.test(hay)) return null;
     if (mode === "nature" && (BAD_BUILD.test(hay) || ii.height > ii.width * 1.1)) return null;
     if (mode === "species" && (BAD_SPECIES.test(hay) || BAD_BUILD.test(title))) return null;
     const author = strip(md.Artist && md.Artist.value).slice(0, 80);
@@ -128,12 +134,13 @@
       alt: strip(md.ObjectName && md.ObjectName.value) || title.replace(/^File:/, "").replace(/\.[a-z]+$/i, ""),
       author: author || "Wikimedia Commons",
       license: license || "",
-      sourceUrl: ii.descriptionurl || ""
+      sourceUrl: ii.descriptionurl || "",
+      weak: weak || undefined
     };
   }
 
   async function search(q, mode) {
-    const key = "s4:" + mode + ":" + q;
+    const key = "s5:" + mode + ":" + q;
     const hit = readCache(key);
     if (hit) return hit;
     const j = await api({ generator: "search", gsrsearch: q + " filetype:bitmap", gsrnamespace: "6", gsrlimit: "50" });
@@ -143,7 +150,7 @@
     return out;
   }
   async function category(cat, mode) {
-    const key = "c4:" + mode + ":" + cat;
+    const key = "c5:" + mode + ":" + cat;
     const hit = readCache(key);
     if (hit) return hit;
     const j = await api({ generator: "categorymembers", gcmtitle: cat, gcmtype: "file", gcmlimit: "80" });
@@ -190,10 +197,13 @@
   async function forFish(fish, want) {
     want = want || 4;
     const picked = [], seen = new Set();
+    const weakPool = [];
     const push = list => {
       for (const p of seededShuffle(list, hash(fish.id))) {
         if (picked.length >= want) break;
-        if (!seen.has(p.url) && !isBlocked(p)) { seen.add(p.url); picked.push(p); }
+        if (seen.has(p.url) || isBlocked(p)) continue;
+        if (p.weak) { weakPool.push(p); continue; }
+        seen.add(p.url); picked.push(p);
       }
     };
     for (const c of fish.commons || []) {
@@ -203,6 +213,11 @@
     for (const t of fish.searchTerms || [fish.latin]) {
       if (picked.length >= want) break;
       try { push(await search(t, "fish")); } catch (_) {}
+    }
+    // не хватило идеальных: добираем менее подходящие, но без людей и техники
+    for (const p of weakPool) {
+      if (picked.length >= want) break;
+      if (!seen.has(p.url)) { seen.add(p.url); picked.push(p); }
     }
     return picked;
   }
