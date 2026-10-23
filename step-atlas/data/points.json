@@ -34,7 +34,19 @@
       "carp",
       "pike",
       "asp",
-      "perch"
+      "perch",
+      "roach",
+      "gustera",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "bream",
+      "tench",
+      "bersh",
+      "sinets",
+      "sapa",
+      "grasscarp",
+      "silvercarp"
     ],
     "plants": [
       {
@@ -101,7 +113,27 @@
       "Камызяк",
       "Кизань река Камызяк",
       "дельта Волги протока"
-    ]
+    ],
+    "fishFreq": {
+      "zander": "often",
+      "catfish": "often",
+      "carp": "often",
+      "pike": "often",
+      "asp": "sometimes",
+      "perch": "often",
+      "roach": "often",
+      "gustera": "often",
+      "chekhon": "often",
+      "rudd": "often",
+      "crucian": "often",
+      "bream": "sometimes",
+      "tench": "sometimes",
+      "bersh": "sometimes",
+      "sinets": "rare",
+      "sapa": "rare",
+      "grasscarp": "rare",
+      "silvercarp": "rare"
+    }
   },
   {
     "id": "ikryanoe",
@@ -138,7 +170,20 @@
       "bream",
       "catfish",
       "pike",
-      "perch"
+      "perch",
+      "roach",
+      "gustera",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "asp",
+      "sinets",
+      "sapa",
+      "tench",
+      "bersh",
+      "grasscarp",
+      "silvercarp",
+      "chub"
     ],
     "plants": [
       {
@@ -191,7 +236,28 @@
       "Икряное",
       "Бахтемир река",
       "дельта Волги рыбалка"
-    ]
+    ],
+    "fishFreq": {
+      "zander": "often",
+      "carp": "often",
+      "bream": "often",
+      "catfish": "often",
+      "pike": "often",
+      "perch": "often",
+      "roach": "often",
+      "gustera": "often",
+      "chekhon": "often",
+      "rudd": "often",
+      "crucian": "often",
+      "asp": "sometimes",
+      "sinets": "sometimes",
+      "sapa": "sometimes",
+      "tench": "sometimes",
+      "bersh": "sometimes",
+      "grasscarp": "rare",
+      "silvercarp": "rare",
+      "chub": "rare"
+    }
   },
   {
     "id": "petrovskiy",
@@ -227,7 +293,21 @@
       "catfish",
       "pike",
       "perch",
-      "asp"
+      "asp",
+      "roach",
+      "gustera",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "zander",
+      "bream",
+      "sapa",
+      "tench",
+      "sinets",
+      "bersh",
+      "grasscarp",
+      "silvercarp",
+      "chub"
     ],
     "plants": [
       {
@@ -291,10 +371,37 @@
     ],
     "source": "Точка поставлена по населённому пункту у воды, а не по конкретному месту лова: форумы редко дают точные координаты, и участок может быть закрыт или частным.",
     "photoQueries": [
-      "Петровский Астраханская область",
       "протока Ямная",
-      "дельта Волги камыш"
-    ]
+      "Петровский Астраханская область протока",
+      "Волга протока камыш закат"
+    ],
+    "photoNear": [
+      "протока дельта Волги",
+      "ерик дельта Волги камыш",
+      "дельта Волги лодка протока",
+      "река камыш рассвет"
+    ],
+    "fishFreq": {
+      "carp": "often",
+      "catfish": "often",
+      "pike": "often",
+      "perch": "often",
+      "asp": "sometimes",
+      "roach": "often",
+      "gustera": "often",
+      "chekhon": "often",
+      "rudd": "often",
+      "crucian": "often",
+      "zander": "sometimes",
+      "bream": "sometimes",
+      "sapa": "sometimes",
+      "tench": "sometimes",
+      "sinets": "rare",
+      "bersh": "rare",
+      "grasscarp": "rare",
+      "silvercarp": "rare",
+      "chub": "rare"
+    }
   },
   {
     "id": "astrakhan-volga",
@@ -330,7 +437,21 @@
       "asp",
       "bream",
       "carp",
-      "catfish"
+      "catfish",
+      "roach",
+      "gustera",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "pike",
+      "perch",
+      "sinets",
+      "sapa",
+      "tench",
+      "bersh",
+      "grasscarp",
+      "silvercarp",
+      "chub"
     ],
     "plants": [
       {
@@ -375,7 +496,28 @@
       "Волга Астрахань набережная",
       "Волга в Астрахани",
       "Астрахань река"
-    ]
+    ],
+    "fishFreq": {
+      "zander": "often",
+      "asp": "sometimes",
+      "bream": "often",
+      "carp": "often",
+      "catfish": "often",
+      "roach": "often",
+      "gustera": "often",
+      "chekhon": "often",
+      "rudd": "often",
+      "crucian": "often",
+      "pike": "sometimes",
+      "perch": "sometimes",
+      "sinets": "sometimes",
+      "sapa": "sometimes",
+      "tench": "sometimes",
+      "bersh": "sometimes",
+      "grasscarp": "sometimes",
+      "silvercarp": "sometimes",
+      "chub": "rare"
+    }
   },
   {
     "id": "kharabali-akhtuba",
@@ -413,7 +555,19 @@
       "pike",
       "asp",
       "bream",
-      "perch"
+      "perch",
+      "roach",
+      "gustera",
+      "sinets",
+      "bersh",
+      "sapa",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "grasscarp",
+      "silvercarp",
+      "chub",
+      "tench"
     ],
     "plants": [
       {
@@ -461,10 +615,38 @@
     "source": "Точка поставлена по населённому пункту у воды, а не по конкретному месту лова: форумы редко дают точные координаты, и участок может быть закрыт или частным.",
     "geocode": "Харабали",
     "photoQueries": [
-      "Харабали",
+      "река Ахтуба",
       "Ахтуба Харабали",
-      "река Ахтуба"
-    ]
+      "Ахтуба берег",
+      "Ахтуба закат"
+    ],
+    "photoNear": [
+      "Волго-Ахтубинская пойма",
+      "Волга Астраханская область",
+      "протока Ахтубы",
+      "Ахтуба разлив"
+    ],
+    "fishFreq": {
+      "carp": "often",
+      "catfish": "often",
+      "zander": "often",
+      "pike": "sometimes",
+      "asp": "often",
+      "bream": "often",
+      "perch": "often",
+      "roach": "often",
+      "gustera": "often",
+      "sinets": "often",
+      "bersh": "often",
+      "sapa": "sometimes",
+      "chekhon": "sometimes",
+      "rudd": "sometimes",
+      "crucian": "sometimes",
+      "grasscarp": "sometimes",
+      "silvercarp": "sometimes",
+      "chub": "sometimes",
+      "tench": "rare"
+    }
   },
   {
     "id": "akhtubinsk",
@@ -502,7 +684,20 @@
       "bream",
       "pike",
       "asp",
-      "perch"
+      "perch",
+      "catfish",
+      "roach",
+      "gustera",
+      "sinets",
+      "bersh",
+      "sapa",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "grasscarp",
+      "silvercarp",
+      "chub",
+      "tench"
     ],
     "plants": [
       {
@@ -537,7 +732,28 @@
         "url": "https://www.vokrugsveta.ru/articles/klevoe-mesto-top-7-napravlenii-dlya-rybalki-v-rossii-id5772035/"
       }
     ],
-    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным."
+    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным.",
+    "fishFreq": {
+      "carp": "often",
+      "zander": "often",
+      "bream": "often",
+      "pike": "sometimes",
+      "asp": "often",
+      "perch": "often",
+      "catfish": "often",
+      "roach": "often",
+      "gustera": "often",
+      "sinets": "often",
+      "bersh": "often",
+      "sapa": "sometimes",
+      "chekhon": "sometimes",
+      "rudd": "sometimes",
+      "crucian": "sometimes",
+      "grasscarp": "sometimes",
+      "silvercarp": "sometimes",
+      "chub": "sometimes",
+      "tench": "rare"
+    }
   },
   {
     "id": "enotaevka",
@@ -574,7 +790,21 @@
       "catfish",
       "bream",
       "carp",
-      "asp"
+      "asp",
+      "perch",
+      "roach",
+      "gustera",
+      "sinets",
+      "bersh",
+      "pike",
+      "sapa",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "grasscarp",
+      "silvercarp",
+      "tench",
+      "chub"
     ],
     "plants": [
       {
@@ -609,7 +839,28 @@
         "url": "https://www.vokrugsveta.ru/articles/klevoe-mesto-top-7-napravlenii-dlya-rybalki-v-rossii-id5772035/"
       }
     ],
-    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным."
+    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным.",
+    "fishFreq": {
+      "zander": "often",
+      "catfish": "often",
+      "bream": "often",
+      "carp": "often",
+      "asp": "often",
+      "perch": "often",
+      "roach": "often",
+      "gustera": "often",
+      "sinets": "often",
+      "bersh": "often",
+      "pike": "sometimes",
+      "sapa": "sometimes",
+      "chekhon": "sometimes",
+      "rudd": "sometimes",
+      "crucian": "sometimes",
+      "grasscarp": "sometimes",
+      "silvercarp": "sometimes",
+      "tench": "rare",
+      "chub": "rare"
+    }
   },
   {
     "id": "chyorny-yar",
@@ -646,7 +897,21 @@
       "asp",
       "bream",
       "carp",
-      "catfish"
+      "catfish",
+      "perch",
+      "roach",
+      "gustera",
+      "sinets",
+      "bersh",
+      "pike",
+      "sapa",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "grasscarp",
+      "silvercarp",
+      "tench",
+      "chub"
     ],
     "plants": [
       {
@@ -663,8 +928,8 @@
     "photos": [],
     "photoQueries": [
       "Чёрный Яр Волга",
-      "Волга Волгоградская Астраханская граница",
-      "Волга рыбалка берег"
+      "Волга Чёрный Яр Волгоградская область",
+      "Волга правый берег степь"
     ],
     "sources": [
       {
@@ -676,7 +941,35 @@
         "url": "https://www.vokrugsveta.ru/articles/klevoe-mesto-top-7-napravlenii-dlya-rybalki-v-rossii-id5772035/"
       }
     ],
-    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным."
+    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным.",
+    "photoNear": [
+      "Волга Волгоградская область берег",
+      "Волга излучина",
+      "Волга степь берег",
+      "Волга левый берег пойма",
+      "Волга рыбалка берег закат"
+    ],
+    "fishFreq": {
+      "zander": "often",
+      "asp": "often",
+      "bream": "often",
+      "carp": "often",
+      "catfish": "often",
+      "perch": "often",
+      "roach": "often",
+      "gustera": "often",
+      "sinets": "often",
+      "bersh": "often",
+      "pike": "sometimes",
+      "sapa": "sometimes",
+      "chekhon": "sometimes",
+      "rudd": "sometimes",
+      "crucian": "sometimes",
+      "grasscarp": "sometimes",
+      "silvercarp": "sometimes",
+      "tench": "rare",
+      "chub": "rare"
+    }
   },
   {
     "id": "narimanov",
@@ -713,7 +1006,21 @@
       "bream",
       "carp",
       "catfish",
-      "asp"
+      "asp",
+      "perch",
+      "roach",
+      "gustera",
+      "sinets",
+      "bersh",
+      "pike",
+      "sapa",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "grasscarp",
+      "silvercarp",
+      "tench",
+      "chub"
     ],
     "plants": [
       {
@@ -748,7 +1055,28 @@
         "url": "https://www.vokrugsveta.ru/articles/klevoe-mesto-top-7-napravlenii-dlya-rybalki-v-rossii-id5772035/"
       }
     ],
-    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным."
+    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным.",
+    "fishFreq": {
+      "zander": "often",
+      "bream": "often",
+      "carp": "often",
+      "catfish": "often",
+      "asp": "often",
+      "perch": "often",
+      "roach": "often",
+      "gustera": "often",
+      "sinets": "often",
+      "bersh": "often",
+      "pike": "sometimes",
+      "sapa": "sometimes",
+      "chekhon": "sometimes",
+      "rudd": "sometimes",
+      "crucian": "sometimes",
+      "grasscarp": "sometimes",
+      "silvercarp": "sometimes",
+      "tench": "rare",
+      "chub": "rare"
+    }
   },
   {
     "id": "liman",
@@ -785,7 +1113,15 @@
       "pike",
       "perch",
       "catfish",
-      "zander"
+      "zander",
+      "roach",
+      "chekhon",
+      "rudd",
+      "crucian",
+      "bream",
+      "gustera",
+      "asp",
+      "tench"
     ],
     "plants": [
       {
@@ -830,7 +1166,22 @@
         "url": "https://www.vokrugsveta.ru/articles/klevoe-mesto-top-7-napravlenii-dlya-rybalki-v-rossii-id5772035/"
       }
     ],
-    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным."
+    "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным.",
+    "fishFreq": {
+      "carp": "often",
+      "pike": "often",
+      "perch": "often",
+      "catfish": "sometimes",
+      "zander": "sometimes",
+      "roach": "often",
+      "chekhon": "often",
+      "rudd": "often",
+      "crucian": "often",
+      "bream": "sometimes",
+      "gustera": "sometimes",
+      "asp": "rare",
+      "tench": "rare"
+    }
   },
   {
     "id": "damchik-zapovednik",
@@ -1032,32 +1383,33 @@
     "verified": false,
     "coordsVerified": false,
     "updatedAt": "2026-10-23",
-    "title": "Володарский — ерики и пойма",
+    "title": "Володарский — протоки и пойма Волги",
     "category": "ПРИРОДА · ПТИЦЫ",
-    "description": "Посёлок в Волжской пойме. Ерики и озёра, окружённые тростником и ивняком, — типичная среда для цапель, лебедей и гусей дельтового комплекса.",
+    "description": "Посёлок в пойме Волги. Ерик — это небольшая протока, соединяющая озёра и рукава реки: вокруг них камыш, ивы и разливы. Здесь можно посмотреть на воду, траву и птиц. Фото подбираются про протоки, поля и камыши, а не про сам посёлок.",
     "details": [
       [
-        "Что это",
-        "Ерики и пойменные озёра Волжской долины"
+        "Что такое ерик",
+        "Небольшая протока между рукавами и озёрами; весной и в разлив заполняется водой"
       ],
       [
-        "Когда",
-        "Птицы заметнее в сезон пролёта (весна, осень) и на гнездовании"
+        "Что увидеть",
+        "Камыши, протоки, пойменные луга, птицы"
       ],
       [
         "Про координаты",
-        "Центр населённого пункта; на карте точка уточняется по OpenStreetMap."
+        "Центр посёлка; на карте точка уточняется по OpenStreetMap."
       ],
       [
         "Важно",
-        "Список видов типичен для дельты и поймы по справочным источникам, это не данные наблюдений именно в этой точке."
+        "Виды растений и животных ниже взяты из справочников для региона; встретить их именно здесь не гарантировано."
       ]
     ],
     "photos": [],
     "photoQueries": [
-      "Володарский Астраханская область",
-      "Волга пойма Астраханская область",
-      "ерик дельта Волги цапли"
+      "ерик Волга пойма",
+      "протока Волги камыш",
+      "пойма Волги луг",
+      "дельта Волги ерик"
     ],
     "sources": [
       {
@@ -1105,6 +1457,12 @@
         "latin": "Platalea leucorodia",
         "note": "Гнездится в дельте; встречается на мелководьях."
       }
+    ],
+    "photoNear": [
+      "Волго-Ахтубинская пойма",
+      "Астраханская область поле",
+      "озеро камыш Астраханская область",
+      "река протока Россия"
     ]
   },
   {
@@ -1283,9 +1641,10 @@
     ],
     "photos": [],
     "photoQueries": [
-      "Кордонная балка Баскунчак",
+      "степь Астраханская область",
+      "Прикаспийская низменность степь",
       "Баскунчак степь",
-      "степное разнотравье Астраханская область"
+      "Кордонная балка"
     ],
     "sources": [
       {
@@ -1297,7 +1656,15 @@
         "url": "https://www.kp.ru/russia/astrahan/mesta/ozero-baskunchak/"
       }
     ],
-    "source": "Координаты взяты из источника ниже. Правила посещения уточняйте у администрации территории."
+    "source": "Координаты взяты из источника ниже. Правила посещения уточняйте у администрации территории.",
+    "photoNear": [
+      "степное разнотравье",
+      "полынь степь",
+      "тюльпаны степь Россия",
+      "ковыль степь",
+      "солончак степь",
+      "Богдинско-Баскунчакский заповедник"
+    ]
   },
   {
     "id": "lebedinoe",
@@ -1478,8 +1845,8 @@
         "Протоки и камыши дельты"
       ],
       [
-        "Когда",
-        "Утро и вечер"
+        "Что увидеть",
+        "Камыши, протоки, птицы утром"
       ],
       [
         "Про координаты",
@@ -1487,14 +1854,15 @@
       ],
       [
         "Важно",
-        "Не заезжайте в заросли водной растительности на лодке."
+        "Не заезжайте в заросли водной растительности на лодке. Виды ниже взяты из справочников для региона."
       ]
     ],
     "photos": [],
     "photoQueries": [
       "Зеленга Астраханская область",
-      "дельта Волги протока",
-      "Волга дельта пейзаж"
+      "камыш дельта Волги",
+      "протока дельта Волги",
+      "ерик камыш"
     ],
     "sources": [],
     "source": "Точка поставлена по населённому пункту или району: координаты уточняются по OpenStreetMap при загрузке. Сверьте место перед поездкой: участок может быть закрыт или частным.",
@@ -1527,6 +1895,13 @@
         "latin": "Cygnus olor",
         "note": "Гнездовой вид дельты."
       }
+    ],
+    "photoNear": [
+      "камыш река",
+      "дельта Волги рассвет",
+      "дельта Волги лодка",
+      "река камыш закат",
+      "Волга дельта пейзаж"
     ]
   },
   {

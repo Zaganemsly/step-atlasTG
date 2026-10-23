@@ -33,7 +33,11 @@
       "zander fish",
       "Sander lucioperca pikeperch"
     ],
-    "kind": "predator"
+    "kind": "predator",
+    "legal": {
+      "minCm": 37,
+      "norm": "10 кг"
+    }
   },
   {
     "id": "catfish",
@@ -65,7 +69,12 @@
       "wels catfish",
       "Silurus glanis fish"
     ],
-    "kind": "predator"
+    "kind": "predator",
+    "legal": {
+      "minCm": 60,
+      "norm": "10 кг",
+      "note": "Каждый пойманный сом должен быть не короче 60 см."
+    }
   },
   {
     "id": "carp",
@@ -97,7 +106,11 @@
       "common carp fish",
       "Cyprinus carpio carp"
     ],
-    "kind": "peaceful"
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 40,
+      "norm": "10 кг"
+    }
   },
   {
     "id": "pike",
@@ -132,7 +145,11 @@
       "northern pike fish",
       "Esox lucius pike"
     ],
-    "kind": "predator"
+    "kind": "predator",
+    "legal": {
+      "minCm": 37,
+      "norm": "10 кг"
+    }
   },
   {
     "id": "asp",
@@ -165,7 +182,11 @@
       "asp fish Leuciscus aspius",
       "Aspius aspius fish"
     ],
-    "kind": "predator"
+    "kind": "predator",
+    "legal": {
+      "minCm": 37,
+      "norm": "10 кг"
+    }
   },
   {
     "id": "bream",
@@ -199,7 +220,11 @@
       "common bream fish",
       "Abramis brama bream"
     ],
-    "kind": "peaceful"
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 24,
+      "norm": "10 кг"
+    }
   },
   {
     "id": "perch",
@@ -237,6 +262,436 @@
       "European perch fish",
       "Perca fluviatilis perch"
     ],
-    "kind": "predator"
+    "kind": "predator",
+    "legal": {
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "bersh",
+    "name": "Берш",
+    "latin": "Sander volgensis",
+    "peakMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "goodMonths": [
+      3,
+      6,
+      8,
+      11
+    ],
+    "airTempC": [
+      6,
+      22
+    ],
+    "activity": "dusk",
+    "why": "Родственник судака поменьше: держится на течении и песчаных бровках, берёт на утренней и вечерней зорьке, лучше в прохладную воду.",
+    "photos": [],
+    "commons": [
+      "Category:Sander volgensis"
+    ],
+    "searchTerms": [
+      "Sander volgensis",
+      "Sander volgensis fish",
+      "берш"
+    ],
+    "kind": "predator",
+    "legal": {
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "roach",
+    "name": "Плотва",
+    "latin": "Rutilus rutilus",
+    "peakMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "goodMonths": [
+      3,
+      6,
+      7,
+      8,
+      11
+    ],
+    "airTempC": [
+      6,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Самая массовая рыба: берёт почти круглый год у кромки камыша и на небольшой глубине, лучше при ровной погоде.",
+    "photos": [],
+    "commons": [
+      "Category:Rutilus rutilus"
+    ],
+    "searchTerms": [
+      "Rutilus rutilus",
+      "roach fish",
+      "плотва"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 17,
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "gustera",
+    "name": "Густера",
+    "latin": "Blicca bjoerkna",
+    "peakMonths": [
+      5,
+      6,
+      9
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8,
+      10
+    ],
+    "airTempC": [
+      10,
+      26
+    ],
+    "activity": "dawn",
+    "why": "Стайная рыба спокойных заводей и ериков: хорошо берёт летом на мелкую насадку, часто попадается вместе с лещом.",
+    "photos": [],
+    "commons": [
+      "Category:Blicca bjoerkna"
+    ],
+    "searchTerms": [
+      "Blicca bjoerkna",
+      "silver bream fish",
+      "густера"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "sinets",
+    "name": "Синец",
+    "latin": "Ballerus ballerus",
+    "peakMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8
+    ],
+    "airTempC": [
+      10,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Придерживается течения и ям, питается у дна и в толще воды; лучше берёт в умеренное тепло и стабильное давление.",
+    "photos": [],
+    "commons": [
+      "Category:Ballerus ballerus"
+    ],
+    "searchTerms": [
+      "Ballerus ballerus",
+      "blue bream fish",
+      "синец"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "sapa",
+    "name": "Сапа (белоглазка)",
+    "latin": "Ballerus sapa",
+    "peakMonths": [
+      5,
+      6,
+      9
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8,
+      10
+    ],
+    "airTempC": [
+      10,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Похожа на синца: стайная, ходит по ямам и бровкам Волги, берёт в тёплые утренние и вечерние часы.",
+    "photos": [],
+    "commons": [
+      "Category:Ballerus sapa"
+    ],
+    "searchTerms": [
+      "Ballerus sapa",
+      "white-eye bream fish",
+      "белоглазка"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "В найденной таблице норм вида нет: действует общая норма 10 кг. Размер не указан."
+    }
+  },
+  {
+    "id": "chekhon",
+    "name": "Чехонь",
+    "latin": "Pelecus cultratus",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      14,
+      30
+    ],
+    "activity": "dawn",
+    "why": "Рыба открытой воды, собирает корм с поверхности: ловится на лёгкие снасти в тёплую погоду, лучше в утренние и вечерние часы.",
+    "photos": [],
+    "commons": [
+      "Category:Pelecus cultratus"
+    ],
+    "searchTerms": [
+      "Pelecus cultratus",
+      "sabrefish fish",
+      "чехонь"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 22,
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "rudd",
+    "name": "Краснопёрка",
+    "latin": "Scardinius erythrophthalmus",
+    "peakMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "goodMonths": [
+      4,
+      9
+    ],
+    "airTempC": [
+      14,
+      30
+    ],
+    "activity": "day",
+    "why": "Любит тихие заводи, ерики и заросли камыша; охотно берёт на мелкую насадку у поверхности в тёплую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Scardinius erythrophthalmus"
+    ],
+    "searchTerms": [
+      "Scardinius erythrophthalmus",
+      "common rudd fish",
+      "краснопёрка"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 17,
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "tench",
+    "name": "Линь",
+    "latin": "Tinca tinca",
+    "peakMonths": [
+      6,
+      7,
+      8
+    ],
+    "goodMonths": [
+      5,
+      9
+    ],
+    "airTempC": [
+      18,
+      30
+    ],
+    "activity": "dawn",
+    "why": "Осторожная рыба тихих заросших водоёмов, ерики и затоны: клюёт утром и вечером, любит прогретую воду.",
+    "photos": [],
+    "commons": [
+      "Category:Tinca tinca"
+    ],
+    "searchTerms": [
+      "Tinca tinca",
+      "tench fish",
+      "линь"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 22,
+      "norm": "10 кг"
+    }
+  },
+  {
+    "id": "crucian",
+    "name": "Карась",
+    "latin": "Carassius gibelio",
+    "peakMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "goodMonths": [
+      4,
+      9,
+      10
+    ],
+    "airTempC": [
+      14,
+      32
+    ],
+    "activity": "day",
+    "why": "Живуч и неприхотлив: берёт на мелких заросших водоёмах, ериках и старицах, днём в тёплую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Carassius gibelio"
+    ],
+    "searchTerms": [
+      "Carassius gibelio",
+      "Prussian carp fish",
+      "серебряный карась"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "не установлена",
+      "note": "Для карася суточная норма не установлена."
+    }
+  },
+  {
+    "id": "grasscarp",
+    "name": "Белый амур",
+    "latin": "Ctenopharyngodon idella",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      20,
+      32
+    ],
+    "activity": "day",
+    "why": "Растительноядная рыба, в низовьях встречается в основном в прогреваемых протоках и водоёмах с зарослями; берёт в жаркую погоду на растительные насадки.",
+    "photos": [],
+    "commons": [
+      "Category:Ctenopharyngodon idella"
+    ],
+    "searchTerms": [
+      "Ctenopharyngodon idella",
+      "grass carp fish",
+      "белый амур"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "Размер в найденной таблице не указан."
+    }
+  },
+  {
+    "id": "silvercarp",
+    "name": "Толстолобик",
+    "latin": "Hypophthalmichthys molitrix",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      20,
+      32
+    ],
+    "activity": "day",
+    "why": "Питается планктоном, поэтому клюёт нерегулярно и на специальные насадки; в Волге и пойме встречается, лучше в тёплую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Hypophthalmichthys molitrix"
+    ],
+    "searchTerms": [
+      "Hypophthalmichthys molitrix",
+      "silver carp fish",
+      "толстолобик"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "Размер в найденной таблице не указан."
+    }
+  },
+  {
+    "id": "chub",
+    "name": "Голавль",
+    "latin": "Squalius cephalus",
+    "peakMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8
+    ],
+    "airTempC": [
+      10,
+      26
+    ],
+    "activity": "dawn",
+    "why": "Рыба течения и перекатов: в низовьях редок, чаще встречается на Ахтубе и верхних участках Волги. Берёт на живую насадку и мелкие блёсны.",
+    "photos": [],
+    "commons": [
+      "Category:Squalius cephalus",
+      "Category:Leuciscus cephalus"
+    ],
+    "searchTerms": [
+      "Squalius cephalus",
+      "European chub fish",
+      "голавль"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "Нормы и размера вида в найденной таблице нет: действует общая норма 10 кг."
+    }
   }
 ]
