@@ -248,7 +248,7 @@ button:focus-visible, input:focus-visible, .step-marker:focus-visible {
 
 .layer-dot.gray { background: #7d8a82; }
 .svc { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 6px #0003; font-size: 11px; line-height: 1; background: #7d8a82; }
-.svc-fuel { background: #c8553d; } .svc-fishing { background: #2f6b8f; } .svc-shop { background: #6a8f4e; }
+.svc-fishing { background: #2f6b8f; } .svc-shop { background: #6a8f4e; }
 .svc-pop { min-width: 190px; max-width: 240px; font-size: 12.5px; line-height: 1.45; }
 .svc-pop b { display: block; font-size: 14px; color: var(--forest); }
 .svc-sub { color: #6c776d; margin-bottom: 4px; }
