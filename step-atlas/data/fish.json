@@ -23,13 +23,13 @@
     ],
     "activity": "dusk",
     "why": "Холодолюбивый хищник: активнее всего в прохладной воде, весной и осенью. В жару уходит на глубокие ямы и берёт на утренней и вечерней зорьке. Зимой тоже берёт, но вяло.",
-    "photos": [
-      {
-        "file": "Sandre (Sander lucioperca).jpg",
-        "alt": "Судак",
-        "author": "Tylwyth Eldar",
-        "license": "CC BY-SA 4.0"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Sander lucioperca"
+    ],
+    "searchTerms": [
+      "Sander lucioperca",
+      "судак"
     ]
   },
   {
@@ -52,13 +52,13 @@
     ],
     "activity": "night",
     "why": "Теплолюбив: просыпается, когда вода прогревается, и лучше всего берёт летом, ночью и в сумерках. В холод почти не питается и стоит на зимовальных ямах.",
-    "photos": [
-      {
-        "file": "Silurus glanis 01.jpg",
-        "alt": "Сом",
-        "author": "Dieter Florian",
-        "license": "CC BY-SA 3.0 DE"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Silurus glanis"
+    ],
+    "searchTerms": [
+      "Silurus glanis",
+      "сом обыкновенный"
     ]
   },
   {
@@ -81,13 +81,13 @@
     ],
     "activity": "dusk",
     "why": "Любит тёплую воду: активно кормится, когда она прогрета, особенно утром и вечером. Весной ловля ограничена нерестовым запретом, осенью к холоду клёв затихает.",
-    "photos": [
-      {
-        "file": "Common carp - Cyprinus carpio.jpg",
-        "alt": "Сазан",
-        "author": "Bramans",
-        "license": "CC BY-SA 4.0"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Cyprinus carpio"
+    ],
+    "searchTerms": [
+      "Cyprinus carpio",
+      "сазан"
     ]
   },
   {
@@ -113,13 +113,13 @@
     ],
     "activity": "day",
     "why": "Холодолюбива: лучшие периоды — ранняя весна и осенний жор перед зимой. Хорошо берёт в пасмурную прохладную погоду, в жару стоит в тени зарослей и клюёт слабо.",
-    "photos": [
-      {
-        "file": "Esox lucius Aquarium DG.jpg",
-        "alt": "Щука",
-        "author": "Dirk Godlinski",
-        "license": "CC BY-SA 3.0"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Esox lucius"
+    ],
+    "searchTerms": [
+      "Esox lucius",
+      "щука обыкновенная"
     ]
   },
   {
@@ -142,13 +142,14 @@
     ],
     "activity": "dawn",
     "why": "Быстрый хищник открытой воды: в тёплое время бьёт малька у поверхности, чаще утром и вечером. Не любит сильный ветер, лучше работает в тихую погоду.",
-    "photos": [
-      {
-        "file": "Aspius aspius by RpM.JPG",
-        "alt": "Жерех",
-        "author": "Reaperman",
-        "license": "CC BY-SA 3.0"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Aspius aspius",
+      "Category:Leuciscus aspius"
+    ],
+    "searchTerms": [
+      "Aspius aspius",
+      "жерех"
     ]
   },
   {
@@ -173,13 +174,13 @@
     ],
     "activity": "dawn",
     "why": "Стайная рыба ям и бровок: хорошо берёт при умеренном тепле, в стабильную погоду. В жару уходит глубже, в холод становится малоподвижной.",
-    "photos": [
-      {
-        "file": "Abramis brama by RpM.JPG",
-        "alt": "Лещ",
-        "author": "Reaperman",
-        "license": "CC BY-SA 3.0"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Abramis brama"
+    ],
+    "searchTerms": [
+      "Abramis brama",
+      "лещ"
     ]
   },
   {
@@ -208,13 +209,13 @@
     ],
     "activity": "day",
     "why": "Берёт круглый год, в том числе со льда. Лучше всего весной и осенью при умеренной температуре, в сильную жару прячется на глубину.",
-    "photos": [
-      {
-        "file": "Perca fluviatilis in aquarium.JPG",
-        "alt": "Окунь",
-        "author": "Reaperman",
-        "license": "CC BY-SA 3.0"
-      }
+    "photos": [],
+    "commons": [
+      "Category:Perca fluviatilis"
+    ],
+    "searchTerms": [
+      "Perca fluviatilis",
+      "речной окунь"
     ]
   }
 ]

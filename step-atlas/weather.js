@@ -103,7 +103,7 @@
 
   /* Оценка 0–100. Каждое слагаемое объясняется строкой в reasons. */
   function scoreFish(fish, w) {
-    let score = 35;
+    let score = 30;
     const reasons = [];
     const m = w.month;
 
@@ -135,6 +135,8 @@
 
     if (isMorningOrEvening(w.hour)) {
       if (fish.activity !== "day") { score += 8; reasons.push("утренняя или вечерняя зорька"); }
+    } else if (fish.activity !== "day" && !isNight(w.hour)) {
+      score -= 6; reasons.push("сейчас не зорька: днём вид стоит на глубине");
     }
     if (fish.activity === "night" && isNight(w.hour)) { score += 10; reasons.push("ночь — время этого вида"); }
     if (w.feelsC >= 30 && w.hour >= 11 && w.hour <= 17) { score -= 12; reasons.push("дневная жара"); }
@@ -143,12 +145,12 @@
     if (w.code !== null && w.code >= 95) { score = Math.min(score, 10); reasons.push("гроза"); }
 
     score = Math.max(0, Math.min(100, Math.round(score)));
-    const label = score >= 70 ? "хороший" : score >= 45 ? "средний" : "слабый";
-    return { fishId: fish.id, score, label, reasons };
+    const ch = chance(score);
+    return { fishId: fish.id, score, label: ch.label, chance: ch, reasons, window: bestWindow(fish), nextPeak: nextPeak(fish, w.month) };
   }
 
   /* Забота о рыбаке: холод, жара, ветер, гроза, туман, лёд. level: info | warn | danger */
-  function careTips(w, kind) {
+  function careTips(w) {
     const tips = [];
     const f = w.feelsC;
 
@@ -178,28 +180,97 @@
     if (w.code === 45 || w.code === 48) {
       tips.push({ level: "warn", text: "Туман. На воде легко потерять ориентир: возьмите навигатор и заряженный телефон, сообщите близким, где вы." });
     }
-    if (kind !== "walk" && inSpawnBan(w)) {
+    if (inSpawnBan(w)) {
       tips.push({ level: "warn", text: "Идёт нерестовый запрет (по публикациям — 16 мая — 20 июня). Сверьте действующие правила и разрешённые участки на сайте Волго-Каспийского территориального управления Росрыболовства." });
     }
     return tips;
   }
 
-  function wishFor(tips, ranked, kind) {
-    if (tips.some(t => t.level === "danger")) return "Сегодня главное — вернуться целым и в порядке. Рыба и птицы подождут, а хороший день ещё будет.";
-    if (kind === "walk") return "Хорошей дороги и ясного неба! Пусть прогулка будет спокойной, а наблюдения — удачными.";
+  /* Шанс поймать сейчас: словами, без ложной точности. */
+  function chance(score) {
+    if (score < 12) return { label: "минимальный", level: 0 };
+    if (score < 28) return { label: "низкий", level: 1 };
+    if (score < 45) return { label: "ниже среднего", level: 2 };
+    if (score < 60) return { label: "средний", level: 3 };
+    if (score < 75) return { label: "хороший", level: 4 };
+    return { label: "высокий", level: 5 };
+  }
+  function bestWindow(fish) {
+    switch (fish.activity) {
+      case "night": return "ночью и в сумерки (21:00–04:00)";
+      case "dusk": return "вечерняя зорька 18:00–22:00 и утро 04:00–08:00";
+      case "dawn": return "утренняя зорька 04:00–09:00 и вечер 18:00–21:00";
+      default: return "днём 10:00–17:00, лучше в пасмурную прохладную погоду";
+    }
+  }
+  function nextPeak(fish, month) {
+    if (fish.peakMonths.includes(month)) return { months: 0, name: MONTHS[month - 1] };
+    for (let k = 1; k <= 12; k++) {
+      const m = ((month - 1 + k) % 12) + 1;
+      if (fish.peakMonths.includes(m)) return { months: k, name: MONTHS[m - 1] };
+    }
+    return null;
+  }
+
+  /* 20 пожеланий: рыбалка, виды, отдых, путешествия. */
+  const WISHES = {
+    fishing: [
+      "Тихой воды и звонких поклёвок. Пусть каждая заря приносит трофей.",
+      "Пусть леска натянется так, что сердце замрёт, а удилище согнётся дугой.",
+      "Хорошего клёва и лёгкого ветра в спину!",
+      "Дельта щедра к тем, кто умеет ждать. Удачной охоты на сома.",
+      "Лови момент, а рыба сама придёт. Ровных вам течений.",
+      "Пусть щука будет с вас ростом, а байка о ней — ещё длиннее."
+    ],
+    views: [
+      "Встретьте рассвет над водой, когда небо цвета абрикоса.",
+      "Пусть лотосы раскроются именно там, где вы остановитесь.",
+      "Поймайте золотой час: степь в закатном свете стоит каждого километра.",
+      "Пусть горизонт будет широким, а кадры такими, что их захочется распечатать."
+    ],
+    rest: [
+      "Остановитесь, выдохните и послушайте степь.",
+      "Чай на костре и ни одного дедлайна: это и есть настоящий отпуск.",
+      "Пусть вечер будет тёплым, а в тишине слышен только камыш.",
+      "Отдыхайте так, будто спешить некуда. Здесь это правда."
+    ],
+    travel: [
+      "Лёгкой дороги и интересных поворотов, даже если они не по маршруту.",
+      "Пусть навигатор молчит, а любопытство ведёт вперёд.",
+      "Заправьтесь, запаситесь водой и поезжайте туда, где нет связи.",
+      "Пусть в дельте вам встретится то, чего нет ни в одном путеводителе.",
+      "Дорога длинная, а впечатления ещё длиннее. В путь!",
+      "Возвращайтесь с песком в ботинках и новыми историями."
+    ],
+    slowBite: [
+      "Клёв сегодня вялый, но вода, воздух и тишина всё равно ваши. Приезжайте на зорьку.",
+      "Рыба не торопится, и вам не стоит. Хороший термос тоже трофей."
+    ]
+  };
+  const lastWish = {};
+  function pickWish(type, tips, ranked) {
+    if (tips.some(t => t.level === "danger")) return "Сегодня главное — вернуться целым и невредимым. Рыба и виды подождут, хороший день ещё будет.";
     const best = ranked[0];
-    if (best && best.score >= 70) return "Условия отличные — желаю крупного улова! Пусть клюёт то, ради чего вы приехали.";
-    if (best && best.score >= 45) return "Погода рабочая. Желаю терпения и хорошей поклёвки — трофей любит упрямых.";
-    return "Клёв сегодня вялый, но на реке всё равно хорошо. Желаю хотя бы одной приличной поклёвки!";
+    let pool;
+    if (type === "fishing") {
+      pool = WISHES.fishing.slice();
+      if (best && best.score < 28) pool = pool.concat(WISHES.slowBite, WISHES.slowBite);
+      else if (best && best.score >= 70) pool.push("Условия отличные. Желаю крупного улова, пусть клюёт то, ради чего вы приехали!");
+    } else if (type === "nature") pool = WISHES.views.concat(WISHES.rest);
+    else pool = WISHES.travel.concat(WISHES.views);
+    let i = Math.floor(Math.random() * pool.length);
+    if (pool.length > 1 && lastWish[type] === pool[i]) i = (i + 1) % pool.length;
+    lastWish[type] = pool[i];
+    return pool[i];
   }
 
-  function analyze(w, fishList, kind) {
-    const ranked = (fishList || []).map(f => scoreFish(f, w)).sort((a, b) => b.score - a.score);
-    const care = careTips(w, kind);
-    return { ranked, care, wish: wishFor(care, ranked, kind), spawnBan: kind === "walk" ? false : inSpawnBan(w) };
+  function analyze(w, fishList, type) {
+    const ranked = fishList.map(f => scoreFish(f, w)).sort((a, b) => b.score - a.score);
+    const care = careTips(w);
+    return { ranked, care, wish: pickWish(type || "fishing", care, ranked), spawnBan: inSpawnBan(w) };
   }
 
-  const api = { weatherUrl, parseWeather, scoreFish, careTips, analyze, formatMonths, inSpawnBan, WMO, SPAWN_BAN };
+  const api = { chance, bestWindow, nextPeak, WISHES, weatherUrl, parseWeather, scoreFish, careTips, analyze, formatMonths, inSpawnBan, WMO, SPAWN_BAN };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.StepWeather = api;
 })(typeof window !== "undefined" ? window : globalThis);
