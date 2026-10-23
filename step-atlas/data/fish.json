@@ -29,8 +29,11 @@
     ],
     "searchTerms": [
       "Sander lucioperca",
-      "судак"
-    ]
+      "судак",
+      "zander fish",
+      "Sander lucioperca pikeperch"
+    ],
+    "kind": "predator"
   },
   {
     "id": "catfish",
@@ -58,8 +61,11 @@
     ],
     "searchTerms": [
       "Silurus glanis",
-      "сом обыкновенный"
-    ]
+      "сом обыкновенный",
+      "wels catfish",
+      "Silurus glanis fish"
+    ],
+    "kind": "predator"
   },
   {
     "id": "carp",
@@ -87,8 +93,11 @@
     ],
     "searchTerms": [
       "Cyprinus carpio",
-      "сазан"
-    ]
+      "сазан",
+      "common carp fish",
+      "Cyprinus carpio carp"
+    ],
+    "kind": "peaceful"
   },
   {
     "id": "pike",
@@ -119,8 +128,11 @@
     ],
     "searchTerms": [
       "Esox lucius",
-      "щука обыкновенная"
-    ]
+      "щука обыкновенная",
+      "northern pike fish",
+      "Esox lucius pike"
+    ],
+    "kind": "predator"
   },
   {
     "id": "asp",
@@ -149,8 +161,11 @@
     ],
     "searchTerms": [
       "Aspius aspius",
-      "жерех"
-    ]
+      "жерех",
+      "asp fish Leuciscus aspius",
+      "Aspius aspius fish"
+    ],
+    "kind": "predator"
   },
   {
     "id": "bream",
@@ -180,8 +195,11 @@
     ],
     "searchTerms": [
       "Abramis brama",
-      "лещ"
-    ]
+      "лещ",
+      "common bream fish",
+      "Abramis brama bream"
+    ],
+    "kind": "peaceful"
   },
   {
     "id": "perch",
@@ -215,7 +233,10 @@
     ],
     "searchTerms": [
       "Perca fluviatilis",
-      "речной окунь"
-    ]
+      "речной окунь",
+      "European perch fish",
+      "Perca fluviatilis perch"
+    ],
+    "kind": "predator"
   }
 ]
