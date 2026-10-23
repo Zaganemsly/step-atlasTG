@@ -12,8 +12,10 @@ const EDITOR = (() => {
   } catch (_) { return /[?&]edit=1/.test(location.search); }
 })();
 
-const map = L.map("map", { zoomControl: false, scrollWheelZoom: true }).setView(DEFAULT_CENTER, DEFAULT_ZOOM);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+const map = L.map("map", { zoomControl: false, scrollWheelZoom: true, attributionControl: false }).setView(DEFAULT_CENTER, DEFAULT_ZOOM);
+// Подпись карты: только обязательная ссылка на OpenStreetMap.
+L.control.attribution({ prefix: false }).addTo(map);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>'
 }).addTo(map);
@@ -177,7 +179,7 @@ function syncNavigation() {
 }
 function addLocation(loc) {
   if (!loc || !loc.id || !Object.prototype.hasOwnProperty.call(layerGroups, loc.type) || !Number.isFinite(loc.lat) || !Number.isFinite(loc.lng)) return;
-  const marker = L.marker([loc.lat, loc.lng], { icon: iconFor(loc.type), title: loc.title || "Точка атласа", alt: loc.title || "Точка атласа" });
+  const marker = L.marker([loc.lat, loc.lng], { icon: iconFor(loc.type), title: loc.title || "Точка атласа", alt: loc.title || "Точка атласа", zIndexOffset: 300 });
   marker.on("click", () => openDetails(loc));
   marker.addTo(layerGroups[loc.type]);
   markers.set(loc.id, marker);
@@ -674,7 +676,7 @@ function pickAddress(r) {
 }
 function placeSearchMarker(p) {
   if (searchMarker) map.removeLayer(searchMarker);
-  searchMarker = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "", html: '<div class="search-pin"></div>', iconSize: [24, 24], iconAnchor: [12, 12] }), title: p.name }).addTo(map);
+  searchMarker = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "", html: '<div class="search-pin"></div>', iconSize: [24, 24], iconAnchor: [12, 12] }), title: p.name, zIndexOffset: 600 }).addTo(map);
   const box = el("div");
   box.append(el("b", p.name || "Точка"), el("div", p.sub || fmtCoord(p), "fish-note"));
   const row = el("div", null, "rb-row");

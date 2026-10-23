@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#102b27" />
   <title>СТЕПЬ — Атлас Астраханского края</title>
-  <link rel="stylesheet" href="styles.css?v=15" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.11.0/ol.css" integrity="sha384-Jpg1uvTciFJuHq+90Ly0/2SKRT9yS5OhbIN5FuFoFWji9fc44ok8xxO88CJi8Z5W" crossorigin="anonymous" />
 </head>
 <body>
   <main class="app-shell">
@@ -28,14 +28,14 @@
 
     <section class="map-wrap" aria-label="Интерактивная карта Астраханской области">
       <div id="map"></div>
-      <div class="map-stamp"><span class="stamp-dot"></span> РЕДАКЦИЯ v15 <span>·</span> ДЕЛЬТА ВОЛГИ</div>
+      <div class="map-stamp"><span class="stamp-dot"></span> РЕДАКЦИЯ v17 <span>·</span> ДЕЛЬТА ВОЛГИ</div>
 
       <aside class="layer-panel" id="layerPanel">
         <div class="panel-heading"><strong>Слои атласа</strong><button id="closeLayers" class="tiny-close" aria-label="Закрыть">×</button></div>
         <label class="layer-option"><input type="checkbox" data-layer="fishing" checked /><span class="layer-dot blue"></span><span><b>Рыбалка</b><small>Места и виды рыб</small></span></label>
         <label class="layer-option"><input type="checkbox" data-layer="nature" checked /><span class="layer-dot orange"></span><span><b>Животные и птицы</b><small>Ареалы и наблюдения</small></span></label>
         <label class="layer-option"><input type="checkbox" data-layer="places" checked /><span class="layer-dot green"></span><span><b>Интересные места</b><small>Природа и история</small></span></label>
-        <label class="layer-option"><input type="checkbox" data-services checked /><span class="layer-dot gray"></span><span><b>Заправки и магазины</b><small>Видны при приближении карты</small></span></label>
+        <label class="layer-option"><input type="checkbox" data-services checked /><span class="layer-dot gray"></span><span><b>Заправки и магазины</b><small>Заправки и магазины, на среднем и крупном масштабе</small></span></label>
         <div id="editorTools" hidden>
           <button class="btn primary" id="lockPhotos" type="button">Зафиксировать подборку фото и скачать</button>
           <div id="lockStatus" class="lock-status"></div>
@@ -103,12 +103,13 @@
 
   <div class="toast" id="toast" role="status"></div>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
-  <script src="weather.js?v=15"></script>
-  <script src="photos.js?v=15"></script>
-  <script src="bans.js?v=15"></script>
-  <script src="nav.js?v=15"></script>
-  <script src="app.js?v=15"></script>
-  <script src="services.js?v=15"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@10.11.0/dist/ol.js" integrity="sha384-rwbCGPbgxLkcQaFvIra1Vz3KBT1yBeF2/1VgLs/gCCNCJ61GHJGimHpkufVKcqap" crossorigin="anonymous" onerror="document.write('<script src=&quot;https://unpkg.com/ol@10.11.0/dist/ol.js&quot; integrity=&quot;sha384-rwbCGPbgxLkcQaFvIra1Vz3KBT1yBeF2/1VgLs/gCCNCJ61GHJGimHpkufVKcqap&quot; crossorigin=&quot;anonymous&quot;><\/script>')"></script>
+  <script src="map-engine.js?v=17"></script>
+  <script src="weather.js?v=17"></script>
+  <script src="photos.js?v=17"></script>
+  <script src="bans.js?v=17"></script>
+  <script src="nav.js?v=17"></script>
+  <script src="app.js?v=17"></script>
+  <script src="services.js?v=17"></script>
 </body>
 </html>

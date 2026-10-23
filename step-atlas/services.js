@@ -1,5 +1,6 @@
 /* СТЕПЬ — заправки и магазины на карте.
-   Данные берутся из OpenStreetMap через Overpass API по той части карты, которую вы сейчас смотрите.
+   Заправки и рыболовные магазины читаются из data/services.json (выгрузка OpenStreetMap), обычные магазины —
+   вживую через Overpass API при сильном приближении.
    Базы отдыха намеренно не показываются. Загружается после app.js. */
 (function () {
   "use strict";
@@ -11,7 +12,7 @@
   const GROUPS = [
     { id: "shops", size: 0.1, minZoom: 12, body: b => 'nwr["shop"~"^(convenience|supermarket|general|variety_store)$"](' + b + ');' }
   ];
-  const MIN_ZOOM = 8;
+  const MIN_ZOOM = 9;
   const KIND = {
     fuel: { glyph: "⛽", label: "Заправка" },
     fishing: { glyph: "🎣", label: "Рыболовный магазин" },
@@ -66,7 +67,7 @@
           });
           done.add(key);
         } catch (err) {
-          if (!warned) { warned = true; toast("Магазины рядом не загрузились. Заправки показаны из сохранённых данных."); }
+          if (!warned) { warned = true; console.warn("Магазины рядом не загрузились (OpenStreetMap отвечает медленно):", err); }
         } finally { busy = false; }
         redraw();
       }
@@ -79,7 +80,9 @@
     const box = document.createElement("div");
     box.className = "svc-pop";
     const name = t.name || t.brand || t.operator || k.label;
-    box.append(el("b", name), el("div", k.label + (t.brand && t.brand !== name ? " · " + t.brand : ""), "svc-sub"));
+    box.append(el("b", name));
+    const sub = name === k.label ? "" : k.label + (t.brand && t.brand !== name ? " · " + t.brand : "");
+    if (sub) box.append(el("div", sub, "svc-sub"));
     const addr = [t["addr:street"], t["addr:housenumber"]].filter(Boolean).join(", ") || t["addr:place"] || t["addr:city"] || "";
     if (addr) box.append(el("div", addr, "svc-line"));
     if (t.opening_hours) box.append(el("div", "Часы: " + t.opening_hours, "svc-line"));
@@ -94,12 +97,20 @@
     if (!enabled) return;
     const z = map.getZoom(), b = map.getBounds().pad(0.2);
     let n = 0;
+    // На средних масштабах заправки не показываем гроздьями: по одной на клетку ~30 пикселей.
+    const cell = z < 13 ? (360 / (256 * Math.pow(2, z))) * 30 : 0;
+    const taken = new Set();
     for (const it of items.values()) {
       if (it.kind === "shop" && z < 12) continue;
       if (z < MIN_ZOOM) continue;
       if (!b.contains([it.lat, it.lng])) continue;
+      if (cell) {
+        const key = Math.floor(it.lat / cell) + ":" + Math.floor(it.lng / cell) + ":" + it.kind;
+        if (taken.has(key)) continue;
+        taken.add(key);
+      }
       if (++n > 300) break;
-      const icon = L.divIcon({ className: "", html: '<div class="svc svc-' + it.kind + '">' + KIND[it.kind].glyph + "</div>", iconSize: [26, 26], iconAnchor: [13, 13] });
+      const icon = L.divIcon({ className: "", html: '<div class="svc svc-' + it.kind + '">' + KIND[it.kind].glyph + "</div>", iconSize: [22, 22], iconAnchor: [11, 11] });
       const m = L.marker([it.lat, it.lng], { icon, title: (it.tags.name || KIND[it.kind].label), zIndexOffset: 100 });
       m.bindPopup(popupFor(it));
       m.addTo(layer);
@@ -128,7 +139,7 @@
   const box = document.querySelector("[data-services]");
   if (box) { box.checked = enabled; box.addEventListener("change", () => setEnabled(box.checked)); }
   if (enabled) layer.addTo(map);
-  map.on("moveend", schedule);
+  map.on("moveend", () => { redraw(); schedule(); });
   loadStatic();
-schedule();
+  schedule();
 })();
