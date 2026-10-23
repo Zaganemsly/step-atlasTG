@@ -160,6 +160,50 @@
     return out;
   }
 
+  /* Второй источник: iNaturalist (фото видов с авторами и CC-лицензиями, CORS открыт). */
+  async function jfetch(url) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 10000);
+    try {
+      const res = await fetch(url, { signal: ctrl.signal });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return await res.json();
+    } finally { clearTimeout(timer); }
+  }
+  async function inat(latin) {
+    if (!latin) return [];
+    const key = "i1:" + latin;
+    const hit = readCache(key);
+    if (hit) return hit;
+    await slot();
+    let out = [];
+    try {
+      const s = await jfetch("https://api.inaturalist.org/v1/taxa?q=" + encodeURIComponent(latin) + "&rank=species&per_page=5");
+      const list = s.results || [];
+      const t = list.find(x => String(x.name || "").toLowerCase() === latin.toLowerCase()) || list[0];
+      if (t) {
+        let tp = t.taxon_photos || [];
+        if (tp.length < 4 && t.id) {
+          try { const d = await jfetch("https://api.inaturalist.org/v1/taxa/" + t.id); tp = (d.results && d.results[0] && d.results[0].taxon_photos) || tp; } catch (_) {}
+        }
+        out = tp.map(x => x && x.photo).filter(ph => ph && ph.license_code).map(ph => {
+          const url = ph.large_url || ph.medium_url || ph.url || "";
+          if (!/^https:/.test(url)) return null;
+          return {
+            url,
+            alt: latin,
+            author: String(ph.attribution || "iNaturalist").replace(/^\(c\)\s*/i, "").replace(/,?\s*some rights reserved.*$/i, "").slice(0, 80),
+            license: "CC " + String(ph.license_code).replace(/^cc-?/i, "").toUpperCase().replace(/-/g, " "),
+            sourceUrl: ph.id ? "https://www.inaturalist.org/photos/" + ph.id : ""
+          };
+        }).filter(Boolean);
+      }
+    } catch (e) { root.StepPhotos && (root.StepPhotos.lastError = String(e && e.message || e)); }
+    finally { release(); }
+    if (out.length) writeCache(key, out);
+    return out;
+  }
+
   /* Запасные запросы по типу точки: если нужного места нет, берём похожие поблизости. */
   const NEAR = {
     fishing: ["Волга Астраханская область", "река Ахтуба", "дельта Волги", "Волга река берег", "протока дельта Волги", "камыш река", "Волга рассвет", "Волга закат река", "река Россия берег камыш", "ерик Астраханская область"],
@@ -214,7 +258,9 @@
       if (picked.length >= want) break;
       try { push(await search(t, "fish")); } catch (_) {}
     }
-    // не хватило идеальных: добираем менее подходящие, но без людей и техники
+    // Commons не дал 4 хороших: берём iNaturalist
+    if (picked.length < want) { try { push(await inat(fish.latin)); } catch (_) {} }
+    // всё ещё мало: добираем менее подходящие, но без людей и техники
     for (const p of weakPool) {
       if (picked.length >= want) break;
       if (!seen.has(p.url)) { seen.add(p.url); picked.push(p); }
@@ -237,6 +283,7 @@
       if (picked.length >= want) break;
       try { push(await search(t, "species")); } catch (_) {}
     }
+    if (picked.length < want) { try { push(await inat(item.latin)); } catch (_) {} }
     return picked;
   }
 
