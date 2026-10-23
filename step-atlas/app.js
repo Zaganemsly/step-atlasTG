@@ -3,6 +3,14 @@ const DEFAULT_ZOOM = 9;
 /* Астраханская область: left, top, right, bottom (для поиска адресов) */
 const OBLAST_VIEWBOX = "44.4,49.2,50.3,45.0";
 const $ = id => document.getElementById(id);
+/* Режим редактора: откройте страницу с ?edit=1 один раз. Только там видны ✕ и кнопки фиксации фото. */
+const EDITOR = (() => {
+  try {
+    if (/[?&]edit=1/.test(location.search)) localStorage.setItem("stepEditor", "1");
+    if (/[?&]edit=0/.test(location.search)) localStorage.removeItem("stepEditor");
+    return localStorage.getItem("stepEditor") === "1";
+  } catch (_) { return /[?&]edit=1/.test(location.search); }
+})();
 
 const map = L.map("map", { zoomControl: false, scrollWheelZoom: true }).setView(DEFAULT_CENTER, DEFAULT_ZOOM);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -356,15 +364,31 @@ function renderFish(loc, analysis, token) {
   }
   box.append(el("p", "Список видов составлен по справочным данным о нижней Волге и дельте. Это не наблюдения именно в этой точке. Запрещённые виды (осетровые, кутум, рыбец, налим и другие) смотрите в разделе «Запреты».", "fish-note"));
 }
+/* Зафиксированная подборка фото (data/photos.json): у всех пользователей одни и те же снимки. */
+let fixedPhotos = { places: {}, fish: {}, species: {} };
+async function loadFixedPhotos() {
+  try {
+    const r = await fetch("data/photos.json");
+    if (!r.ok) return;
+    const j = await r.json();
+    fixedPhotos = { places: j.places || {}, fish: j.fish || {}, species: j.species || {} };
+  } catch (_) {}
+}
+const failedUrls = new Set();
+const usable = list => (list || []).filter(p => p && p.url && !failedUrls.has(p.url));
 const fishPhotoCache = new Map();
 async function fillFishGallery(f, gal, token) {
-  let photos = f.photos && f.photos.length ? f.photos : fishPhotoCache.get(f.id);
-  if (!photos) {
-    try { photos = await StepPhotos.forFish(f, 4); } catch (_) { photos = []; }
-    fishPhotoCache.set(f.id, photos);
+  let photos = usable(f.photos && f.photos.length ? f.photos : fixedPhotos.fish[f.id]);
+  if (photos.length < 3) {
+    photos = fishPhotoCache.get(f.id);
+    if (!photos) {
+      try { photos = await StepPhotos.forFish(f, 4); } catch (_) { photos = []; }
+      fishPhotoCache.set(f.id, photos);
+    }
+    photos = usable(photos);
   }
   if (token !== detailToken || !gal.isConnected) return;
-  const again = () => { fishPhotoCache.delete(f.id); fillFishGallery(f, gal, detailToken); };
+  const again = (bad, broken) => { if (broken && bad) failedUrls.add(bad.url); fishPhotoCache.delete(f.id); fillFishGallery(f, gal, detailToken); };
   const figs = photos.map(p => photoFigure(p, f.name, again)).filter(Boolean);
   gal.hidden = false;
   if (!figs.length) { gal.replaceChildren(retryNote(again)); return; }
@@ -378,13 +402,17 @@ function lazyRun(node, fn) {
 }
 async function fillSpecies(item, gal, token) {
   const key = item.latin || item.name;
-  let photos = item.photos && item.photos.length ? item.photos : speciesCache.get(key);
-  if (!photos) {
-    try { photos = await StepPhotos.forSpecies(item, 4); } catch (_) { photos = []; }
-    speciesCache.set(key, photos);
+  let photos = usable(item.photos && item.photos.length ? item.photos : fixedPhotos.species[key]);
+  if (photos.length < 3) {
+    photos = speciesCache.get(key);
+    if (!photos) {
+      try { photos = await StepPhotos.forSpecies(item, 4); } catch (_) { photos = []; }
+      speciesCache.set(key, photos);
+    }
+    photos = usable(photos);
   }
   if (token !== detailToken || !gal.isConnected) return;
-  const again = () => { speciesCache.delete(key); fillSpecies(item, gal, detailToken); };
+  const again = (bad, broken) => { if (broken && bad) failedUrls.add(bad.url); speciesCache.delete(key); fillSpecies(item, gal, detailToken); };
   const figs = photos.map(p => photoFigure(p, item.name, again)).filter(Boolean);
   gal.replaceChildren(...(figs.length ? figs : [retryNote(again)]));
 }
@@ -445,15 +473,15 @@ function photoFigure(p, alt, onReject) {
   const fig = document.createElement("figure");
   const img = document.createElement("img");
   img.src = src; img.alt = p.alt || alt || ""; img.loading = "lazy"; img.referrerPolicy = "no-referrer";
-  img.addEventListener("error", () => { fig.remove(); if (onReject) onReject(null); });
+  img.addEventListener("error", () => { fig.remove(); if (onReject) onReject(p, true); });
   fig.append(img);
-  if (onReject) {
+  if (onReject && EDITOR) {
     const x = el("button", "✕", "ph-x");
     x.type = "button"; x.title = "Не то фото: убрать и заменить"; x.setAttribute("aria-label", "Не то фото: убрать и заменить");
     x.addEventListener("click", e => { e.stopPropagation(); StepPhotos.block(p); fig.remove(); onReject(p); });
     fig.append(x);
   }
-  const credit = [p.author, p.license].filter(Boolean).join(" · ");
+  const credit = [p.author, p.license, p.near ? "похожее место" : ""].filter(Boolean).join(" · ");
   const src2 = safeUrl(p.sourceUrl);
   if (credit || src2) {
     const cap = el("figcaption", credit);
@@ -471,7 +499,7 @@ function renderPhotos(loc, photos, loading) {
   const box = $("detailGallery");
   box.replaceChildren();
   if (loading) { box.hidden = false; box.className = "photo-empty"; box.textContent = "Ищем фотографии места…"; return; }
-  const figs = (photos || []).map(p => photoFigure(p, loc.title, () => { loc._photos = null; loadPlacePhotos(loc, detailToken); })).filter(Boolean);
+  const figs = (photos || []).map(p => photoFigure(p, loc.title, (bad, broken) => { if (broken && bad) failedUrls.add(bad.url); loc._photos = null; loadPlacePhotos(loc, detailToken); })).filter(Boolean);
   box.hidden = false;
   if (figs.length) {
     box.className = "detail-gallery";
@@ -484,10 +512,10 @@ function renderPhotos(loc, photos, loading) {
 async function loadPlacePhotos(loc, token) {
   if (loc.adhoc) { renderPhotos(loc, [], false); return; }
   if (!loc._photos) {
-    const own = Array.isArray(loc.photos) ? loc.photos.slice() : [];
+    const own = usable(Array.isArray(loc.photos) && loc.photos.length ? loc.photos : fixedPhotos.places[loc.id]).slice();
     let extra = [];
     if (own.length < 4) { try { extra = await StepPhotos.forPlace(loc, 4 - own.length); } catch (_) {} }
-    loc._photos = own.concat(extra).slice(0, 4);
+    loc._photos = usable(own.concat(extra)).slice(0, 4);
   }
   if (token !== detailToken) return;
   renderPhotos(loc, loc._photos, false);
@@ -1418,8 +1446,50 @@ detailSheet.inert = true;
 bansSheet.inert = true;
 $("banPill").addEventListener("click", openBans);
 $("closeBans").addEventListener("click", closeBans);
+$("editorTools").hidden = !EDITOR;
+$("lockPhotos").addEventListener("click", async () => {
+  const btn = $("lockPhotos"), st = $("lockStatus");
+  btn.disabled = true;
+  const out = { places: {}, fish: {}, species: {} };
+  const slim = l => (l || []).slice(0, 4).map(p => ({ url: p.url, alt: p.alt, author: p.author, license: p.license, sourceUrl: p.sourceUrl, near: p.near || undefined }));
+  const locs = locations.filter(l => !l.adhoc);
+  let i = 0;
+  for (const loc of locs) {
+    i++; st.textContent = "Фиксируем: " + i + " из " + locs.length + " (" + loc.title + ")";
+    try {
+      const fixed = usable(fixedPhotos.places[loc.id] || loc.photos);
+      out.places[loc.id] = slim(fixed.length >= 4 ? fixed : usable(fixed.concat(await StepPhotos.forPlace(loc, 4 - fixed.length))));
+    } catch (_) {}
+    for (const id of loc.fish || []) {
+      const f = fishById.get(id);
+      if (!f || out.fish[id]) continue;
+      try { const fx = usable(fixedPhotos.fish[id]); out.fish[id] = slim(fx.length >= 3 ? fx : usable(await StepPhotos.forFish(f, 4))); } catch (_) {}
+    }
+    for (const it of [].concat(loc.plants || [], loc.animals || [])) {
+      const key = it.latin || it.name;
+      if (!key || out.species[key]) continue;
+      try { const fx = usable(fixedPhotos.species[key]); out.species[key] = slim(fx.length >= 3 ? fx : usable(await StepPhotos.forSpecies(it, 4))); } catch (_) {}
+    }
+  }
+  const url = URL.createObjectURL(new Blob([JSON.stringify(out)], { type: "application/json" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = "photos.json"; a.textContent = "Скачать photos.json"; a.className = "btn primary";
+  st.replaceChildren(document.createTextNode("Готово: мест " + Object.keys(out.places).length + ", рыб " + Object.keys(out.fish).length + ", видов " + Object.keys(out.species).length + ". "), a);
+  btn.disabled = false;
+  try { a.click(); } catch (_) {}
+});
+$("exportBlocked").addEventListener("click", () => {
+  const list = StepPhotos.getBlocked();
+  const box = $("blockedText");
+  if (!list.length) { box.hidden = true; toast("Вы пока не убирали фото кнопкой ✕."); return; }
+  box.value = JSON.stringify(list, null, 2);
+  box.hidden = false; box.focus(); box.select();
+  let copied = false;
+  try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(box.value); copied = true; } } catch (_) {}
+  toast(copied ? "Список (" + list.length + ") скопирован. Отправьте его разработчику." : "Список (" + list.length + ") выделен: скопируйте его и отправьте разработчику.", 5000);
+});
 renderRouteBar();
 initTelegram();
 syncNavigation();
-Promise.all([loadFish(), loadBlocklist(), loadBans()]).then(loadPoints);
+Promise.all([loadFish(), loadBlocklist(), loadBans(), loadFixedPhotos()]).then(loadPoints);
 setTimeout(() => map.invalidateSize(), 100);

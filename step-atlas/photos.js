@@ -67,7 +67,7 @@
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
-      if (k && k.startsWith("stepPlaceB:")) {
+      if (k && k.startsWith("stepPlaceC:")) {
         const arr = lsGet(k) || [];
         arr.forEach(p => claimed.set(p.sourceUrl || p.url, k.slice(11)));
       }
@@ -135,12 +135,13 @@
       author: author || "Wikimedia Commons",
       license: license || "",
       sourceUrl: ii.descriptionurl || "",
+      hay: (mode === "nature" || mode === "place") ? hay.toLowerCase().slice(0, 300) : undefined,
       weak: weak || undefined
     };
   }
 
   async function search(q, mode) {
-    const key = "s5:" + mode + ":" + q;
+    const key = "s6:" + mode + ":" + q;
     const hit = readCache(key);
     if (hit) return hit;
     const j = await api({ generator: "search", gsrsearch: q + " filetype:bitmap", gsrnamespace: "6", gsrlimit: "50" });
@@ -150,7 +151,7 @@
     return out;
   }
   async function category(cat, mode) {
-    const key = "c5:" + mode + ":" + cat;
+    const key = "c6:" + mode + ":" + cat;
     const hit = readCache(key);
     if (hit) return hit;
     const j = await api({ generator: "categorymembers", gcmtitle: cat, gcmtype: "file", gcmlimit: "80" });
@@ -214,33 +215,50 @@
   async function forPlace(loc, want) {
     want = want || 4;
     const mode = loc.type === "places" ? "place" : "nature";
-    const key = "stepPlaceB:" + loc.id;
+    const key = "stepPlaceC:" + loc.id;
     let picks = (lsGet(key) || []).filter(p => !isBlocked(p));
     if (picks.length >= want) return picks.slice(0, want);
     const have = new Set(picks.map(p => p.url));
     picks.forEach(p => claimed.set(p.sourceUrl || p.url, loc.id));
-    const queries = (loc.photoQueries || []).concat(loc.photoNear || [], NEAR[loc.type] || []);
-    for (const q of queries) {
+    // Сначала фото ровно этого места (по названию, а у населённых пунктов ещё и с названием в описании), потом похожие.
+    let must = [];
+    try { must = (loc.photoMust || []).map(s => new RegExp(s, "i")); } catch (_) {}
+    const stages = [];
+    (loc.photoCategories || []).forEach(c => stages.push({ cat: c, exact: true }));
+    (loc.photoQueries || []).forEach(q => stages.push({ q, exact: true }));
+    (loc.photoNear || []).concat(NEAR[loc.type] || []).forEach(q => stages.push({ q, exact: false }));
+    for (const st of stages) {
       if (picks.length >= want) break;
       let list = [];
-      try { list = await search(q, mode); } catch (_) { continue; }
-      for (const p of seededShuffle(list, hash(loc.id + q))) {
+      try { list = st.cat ? await category(st.cat, mode) : await search(st.q, mode); } catch (_) { continue; }
+      for (const p0 of seededShuffle(list, hash(loc.id + (st.q || st.cat)))) {
         if (picks.length >= want) break;
-        if (have.has(p.url) || isBlocked(p)) continue;
-        const owner = claimed.get(p.sourceUrl || p.url);
+        if (have.has(p0.url) || isBlocked(p0)) continue;
+        if (st.exact && !st.cat && must.length && !must.every(re => re.test(p0.hay || p0.alt || ""))) continue;
+        const owner = claimed.get(p0.sourceUrl || p0.url);
         if (owner && owner !== loc.id) continue;
-        have.add(p.url);
-        claimed.set(p.sourceUrl || p.url, loc.id);
-        picks.push(p);
+        have.add(p0.url);
+        claimed.set(p0.sourceUrl || p0.url, loc.id);
+        picks.push(!st.exact && must.length ? Object.assign({}, p0, { near: true }) : p0);
       }
     }
     lsSet(key, picks);
     return picks;
   }
 
-  async function forFish(fish, want) {
-    want = want || 4;
-    const picked = [], seen = new Set();
+  /* Подборка рыбы и видов запоминается на устройстве, чтобы не менялась от запуска к запуску. */
+  async function withSaved(skey, want, compute) {
+    const saved = (lsGet(skey) || []).filter(p => p && p.url && !isBlocked(p));
+    if (saved.length >= want) return saved.slice(0, want);
+    const fresh = await compute(saved);
+    if (fresh.length) lsSet(skey, fresh);
+    return fresh;
+  }
+  function forFish(fish, want) { want = want || 4; return withSaved("stepSp:f:" + fish.id, want, saved => computeFish(fish, want, saved)); }
+  function forSpecies(item, want) { want = want || 4; return withSaved("stepSp:s:" + (item.latin || item.name), want, saved => computeSpecies(item, want, saved)); }
+
+  async function computeFish(fish, want, saved) {
+    const picked = saved.slice(), seen = new Set(saved.map(p => p.url));
     const weakPool = [];
     const push = list => {
       for (const p of seededShuffle(list, hash(fish.id))) {
@@ -269,9 +287,8 @@
   }
 
   /* Растения и животные: категория вида (латинское имя), затем поиск по латыни и по русскому названию. */
-  async function forSpecies(item, want) {
-    want = want || 4;
-    const picked = [], seen = new Set();
+  async function computeSpecies(item, want, saved) {
+    const picked = saved.slice(), seen = new Set(saved.map(p => p.url));
     const push = list => {
       for (const p of seededShuffle(list, hash(item.latin || item.name))) {
         if (picked.length >= want) break;
@@ -287,5 +304,5 @@
     return picked;
   }
 
-  root.StepPhotos = { forPlace, forFish, forSpecies, block, setBlocked, lastError: "" };
+  root.StepPhotos = { forPlace, forFish, forSpecies, block, setBlocked, getBlocked: () => (lsGet("stepPhotoBlock") || []).slice(), lastError: "" };
 })(window);
