@@ -23,7 +23,7 @@
     if (it.addr) box.append(el("div", it.addr, "svc-line"));
     box.append(
       button("Проложить маршрут сюда", "primary", () => { map.closePopup(); setDestination({ lat: it.lat, lng: it.lng, name: name }); }),
-      el("div", "Данные OpenStreetMap: могут быть неполными или устаревшими. Часы работы уточняйте.", "svc-src")
+      el("div", "© участники OpenStreetMap (ODbL). Данные могут быть неполными или устаревшими, часы работы уточняйте.", "svc-src")
     );
     return box;
   }

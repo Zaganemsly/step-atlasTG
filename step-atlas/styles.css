@@ -164,6 +164,7 @@ button:focus-visible, input:focus-visible, .step-marker:focus-visible {
 .btn { border: 1px solid #dfe1d5; background: white; color: var(--forest); border-radius: 11px; padding: 8px 12px; font-size: 11px; font-weight: 700; }
 .btn.primary { background: var(--forest); color: #f3dba0; border-color: var(--forest); }
 .btn.ghost { background: transparent; }
+a.btn { display: inline-block; text-decoration: none; }
 .detail-actions { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
 .chance { display: inline-block; margin-top: 2px; padding: 2px 9px; border-radius: 99px; font-size: 11px; font-weight: 800; }
 .chance.c0 { background: #ececec; color: #6b6b6b; } .chance.c1 { background: #f3e3d6; color: #8a4f22; } .chance.c2 { background: #f6ecc9; color: #7a5d12; }

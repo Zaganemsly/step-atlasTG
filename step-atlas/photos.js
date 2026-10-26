@@ -174,7 +174,7 @@
   }
   async function inat(latin) {
     if (!latin) return [];
-    const key = "i1:" + latin;
+    const key = "i2:" + latin;
     const hit = readCache(key);
     if (hit) return hit;
     await slot();
@@ -188,7 +188,9 @@
         if (tp.length < 4 && t.id) {
           try { const d = await jfetch("https://api.inaturalist.org/v1/taxa/" + t.id); tp = (d.results && d.results[0] && d.results[0].taxon_photos) || tp; } catch (_) {}
         }
-        out = tp.map(x => x && x.photo).filter(ph => ph && ph.license_code).map(ph => {
+        // Только лицензии, разрешающие коммерческое использование: без NC (некоммерческих) и ND.
+        const okLicense = new Set(["cc0", "cc-by", "cc-by-sa"]);
+        out = tp.map(x => x && x.photo).filter(ph => ph && okLicense.has(String(ph.license_code || "").toLowerCase())).map(ph => {
           const url = ph.medium_url || ph.large_url || ph.url || "";
           if (!/^https:/.test(url)) return null;
           return {

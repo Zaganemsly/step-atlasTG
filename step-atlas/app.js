@@ -104,8 +104,15 @@ function openDetails(loc) {
   const actions = $("detailActions");
   actions.replaceChildren(
     button("Проложить маршрут сюда", "primary", () => { closeDetails(); setDestination({ lat: loc.lat, lng: loc.lng, name: loc.title }); }),
-    button("Показать на карте", "", () => { closeDetails(); map.flyTo([loc.lat, loc.lng], Math.max(map.getZoom(), 12)); })
+    button("Показать на карте", "", () => { closeDetails(); map.flyTo([loc.lat, loc.lng], Math.max(map.getZoom(), 12)); }),
+    button("Скопировать координаты", "", () => {
+      const text = fmtCoord(loc);
+      copyText(text).then(ok => toast(ok ? "Координаты скопированы: " + text : "Не удалось скопировать. Координаты: " + text, 4500));
+    })
   );
+  const sos = el("a", "Экстренный вызов 112", "btn ghost");
+  sos.href = "tel:112";
+  actions.append(sos);
 
   renderPhotos(loc, null, true);
   loadPlacePhotos(loc, token);
@@ -301,7 +308,17 @@ function renderWeather(w, analysis) {
   if (w.sunriseH !== null && w.sunsetH !== null) used.push("восход " + fmtHM(w.sunriseH) + ", закат " + fmtHM(w.sunsetH));
   if (w.moon) used.push("Луна: " + w.moon.name);
   box.append(el("p", "Что учтено: " + used.join("; ") + ".", "fish-note"));
-  box.append(el("p", "Погода: Open-Meteo. Единой научной формулы клёва нет. Оценка собрана по рекомендациям рыболовных изданий: ровное давление и его плавный рост хороши, резкие скачки плохи, в жару рыба уходит на глубину, лучше всего зорьки. Это ориентир, а не гарантия.", "fish-note"));
+  const weatherNote = el("p", null, "fish-note");
+  const meteoLink = el("a", "Weather data by Open-Meteo.com");
+  meteoLink.href = "https://open-meteo.com/";
+  meteoLink.target = "_blank";
+  meteoLink.rel = "noopener noreferrer";
+  meteoLink.addEventListener("click", e => { e.preventDefault(); openExternal(meteoLink.href); });
+  weatherNote.append(
+    document.createTextNode("Погода: "), meteoLink,
+    document.createTextNode(". Единой научной формулы клёва нет. Оценка собрана по рекомендациям рыболовных изданий: ровное давление и его плавный рост хороши, резкие скачки плохи, в жару рыба уходит на глубину, лучше всего зорьки. Это ориентир, а не гарантия.")
+  );
+  box.append(weatherNote);
 }
 function renderFish(loc, analysis, token) {
   const box = $("detailFish");
@@ -548,11 +565,45 @@ async function refreshPill() {
 }
 
 /* ================= Данные и уточнение координат ================= */
+/* Данные копируются в localStorage: при плохой связи в дельте вместо пустого экрана показываем сохранённое. */
+const offlineState = { used: false };
+async function fetchJsonCached(url) {
+  const key = "stepData:" + url;
+  try {
+    const r = await fetch(url, { cache: "no-cache" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const text = await r.text();
+    const data = JSON.parse(text);
+    try { localStorage.setItem(key, text); } catch (_) {}
+    return data;
+  } catch (err) {
+    let cached = null;
+    try { cached = localStorage.getItem(key); } catch (_) {}
+    if (cached) {
+      try { const data = JSON.parse(cached); offlineState.used = true; return data; } catch (_) {}
+    }
+    throw err;
+  }
+}
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(text); return true; }
+  } catch (_) {}
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;opacity:0;left:-1000px";
+    document.body.append(ta); ta.select();
+    const ok = document.execCommand("copy");
+    ta.remove();
+    return ok;
+  } catch (_) { return false; }
+}
+window.addEventListener("offline", () => toast("Нет связи. Карта и точки работают из сохранённого, погода и фото могут не загрузиться.", 5500));
+window.addEventListener("online", () => toast("Связь восстановлена."));
 async function loadFish() {
   try {
-    const response = await fetch("data/fish.json");
-    if (!response.ok) throw new Error("HTTP " + response.status);
-    const data = await response.json();
+    const data = await fetchJsonCached("data/fish.json");
     if (Array.isArray(data)) data.forEach(f => { if (f && f.id) fishById.set(f.id, f); });
   } catch (err) { console.error("Не удалось загрузить data/fish.json", err); }
 }
@@ -564,18 +615,19 @@ async function loadBlocklist() {
 }
 async function loadPoints() {
   try {
-    const response = await fetch("data/points.json");
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
+    const data = await fetchJsonCached("data/points.json");
     if (!Array.isArray(data)) throw new Error("Формат points.json должен быть массивом");
     locations = data;
     locations.forEach(addLocation);
     if (!selectedLoc && locations.length) selectedLoc = locations[0];
     refreshPill();
     snapAll();
+    if (offlineState.used) toast("Нет связи: показаны сохранённые точки.", 5500);
   } catch (err) {
     console.error("Не удалось загрузить data/points.json", err);
-    toast("Не удалось загрузить точки. Запустите проект через локальный сервер (см. README).");
+    toast(navigator.onLine === false
+      ? "Нет связи, а сохранённых данных ещё нет. Откройте приложение там, где есть сеть."
+      : "Не удалось загрузить точки. Закройте приложение и откройте снова.", 6000);
   }
 }
 
@@ -752,9 +804,7 @@ const bansSheet = $("bansSheet");
 let bansPrevFocus = null;
 async function loadBans() {
   try {
-    const r = await fetch("data/bans.json");
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    bansData = await r.json();
+    bansData = await fetchJsonCached("data/bans.json");
   } catch (err) { console.warn("Не удалось загрузить data/bans.json", err); }
   updateBanPill();
   if (selectedLoc && detailSheet.classList.contains("open")) renderDetailBans(selectedLoc);
