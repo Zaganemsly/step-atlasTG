@@ -105,6 +105,7 @@ function openDetails(loc) {
   actions.replaceChildren(
     button("Проложить маршрут сюда", "primary", () => { closeDetails(); setDestination({ lat: loc.lat, lng: loc.lng, name: loc.title }); }),
     button("Показать на карте", "", () => { closeDetails(); map.flyTo([loc.lat, loc.lng], Math.max(map.getZoom(), 12)); }),
+    button("Поделиться точкой", "", () => sharePoint(loc)),
     button("Скопировать координаты", "", () => {
       const text = fmtCoord(loc);
       copyText(text).then(ok => toast(ok ? "Координаты скопированы: " + text : "Не удалось скопировать. Координаты: " + text, 4500));
@@ -599,6 +600,36 @@ async function copyText(text) {
     return ok;
   } catch (_) { return false; }
 }
+/* Ссылки на точки: t.me/AtlasFishingbot/atlas?startapp=<id точки>. Откроется приложение сразу на этой точке. */
+const APP_LINK = "https://t.me/AtlasFishingbot/atlas";
+function pointLink(id) { return APP_LINK + "?startapp=" + encodeURIComponent(id); }
+function sharePoint(loc) {
+  const link = pointLink(loc.id);
+  const tg = tgApp();
+  const shareUrl = "https://t.me/share/url?url=" + encodeURIComponent(link) + "&text=" + encodeURIComponent(loc.title + " — СТЕПЬ, атлас Астраханского края");
+  try {
+    if (tg && typeof tg.openTelegramLink === "function") return tg.openTelegramLink(shareUrl);
+  } catch (_) {}
+  copyText(link).then(ok => toast(ok ? "Ссылка на точку скопирована" : "Ссылка: " + link, 4500));
+}
+function startParamId() {
+  try {
+    const tg = tgApp();
+    const sp = tg && tg.initDataUnsafe && tg.initDataUnsafe.start_param;
+    if (sp) return String(sp);
+  } catch (_) {}
+  try {
+    const q = new URLSearchParams(window.location.search);
+    return q.get("point") || q.get("tgWebAppStartParam") || "";
+  } catch (_) { return ""; }
+}
+function openFromStartParam() {
+  const id = startParamId();
+  if (!id) return;
+  const target = locations.find(l => l.id === id);
+  if (!target) return;
+  setTimeout(() => { map.setView([target.lat, target.lng], 12); openDetails(target); }, 400);
+}
 window.addEventListener("offline", () => toast("Нет связи. Карта и точки работают из сохранённого, погода и фото могут не загрузиться.", 5500));
 window.addEventListener("online", () => toast("Связь восстановлена."));
 async function loadFish() {
@@ -623,6 +654,7 @@ async function loadPoints() {
     refreshPill();
     snapAll();
     if (offlineState.used) toast("Нет связи: показаны сохранённые точки.", 5500);
+    openFromStartParam();
   } catch (err) {
     console.error("Не удалось загрузить data/points.json", err);
     toast(navigator.onLine === false
