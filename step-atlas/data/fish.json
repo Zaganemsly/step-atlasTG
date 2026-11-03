@@ -1,0 +1,827 @@
+[
+  {
+    "id": "zander",
+    "name": "Судак",
+    "latin": "Sander lucioperca",
+    "peakMonths": [
+      4,
+      5,
+      10,
+      11
+    ],
+    "goodMonths": [
+      3,
+      6,
+      9,
+      12,
+      1,
+      2
+    ],
+    "airTempC": [
+      4,
+      22
+    ],
+    "activity": "dusk",
+    "why": "Холодолюбивый хищник: активнее всего в прохладной воде, весной и осенью. В жару уходит на глубокие ямы и берёт на утренней и вечерней зорьке. Зимой тоже берёт, но вяло.",
+    "photos": [],
+    "commons": [
+      "Category:Sander lucioperca"
+    ],
+    "searchTerms": [
+      "Sander lucioperca",
+      "судак",
+      "zander fish",
+      "Sander lucioperca pikeperch"
+    ],
+    "kind": "predator",
+    "legal": {
+      "minCm": 37,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Sander lucioperca 1.jpg",
+      "Sandre (Sander lucioperca).jpg",
+      "Zander.jpg",
+      "StizostedionLuciopercaAquarium.JPG",
+      "Rousse Ecomuseum - Sander lucioperca.jpg",
+      "Hal - Sander lucioperca - 1.jpg"
+    ]
+  },
+  {
+    "id": "catfish",
+    "name": "Сом",
+    "latin": "Silurus glanis",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      20,
+      34
+    ],
+    "activity": "night",
+    "why": "Теплолюбив: просыпается, когда вода прогревается, и лучше всего берёт летом, ночью и в сумерках. В холод почти не питается и стоит на зимовальных ямах.",
+    "photos": [],
+    "commons": [
+      "Category:Silurus glanis"
+    ],
+    "searchTerms": [
+      "Silurus glanis",
+      "сом обыкновенный",
+      "wels catfish",
+      "Silurus glanis fish"
+    ],
+    "kind": "predator",
+    "legal": {
+      "minCm": 60,
+      "norm": "10 кг",
+      "note": "Каждый пойманный сом должен быть не короче 60 см."
+    },
+    "photoFiles": [
+      "Silurus glanis 02.jpg",
+      "European Catfish (Silurus glanis) (13532570755).jpg",
+      "Silurus glanis 01.jpg",
+      "Freischwimmender Wels.jpg",
+      "Silurus glanis white2.JPG",
+      "Silurus glanis white1.JPG"
+    ]
+  },
+  {
+    "id": "carp",
+    "name": "Сазан",
+    "latin": "Cyprinus carpio",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      18,
+      32
+    ],
+    "activity": "dusk",
+    "why": "Любит тёплую воду: активно кормится, когда она прогрета, особенно утром и вечером. Весной ловля ограничена нерестовым запретом, осенью к холоду клёв затихает.",
+    "photos": [],
+    "commons": [
+      "Category:Cyprinus carpio"
+    ],
+    "searchTerms": [
+      "Cyprinus carpio",
+      "сазан",
+      "common carp fish",
+      "Cyprinus carpio carp"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 40,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Common carp.jpg",
+      "Common carp - Cyprinus carpio.jpg",
+      "Common Carp (Cyprinus carpio) (19488145985).jpg",
+      "Cyprinus carpio 2021 G2.jpg",
+      "Cyprinus carpio 2021 G1.jpg",
+      "Cyprinus carpio, Sunshine Aquarium.jpg",
+      "Carp (Cyprinus carpio) in aquarium.JPG",
+      "Common carp (white background).jpg"
+    ]
+  },
+  {
+    "id": "pike",
+    "name": "Щука",
+    "latin": "Esox lucius",
+    "peakMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "goodMonths": [
+      5,
+      9,
+      12,
+      1,
+      2
+    ],
+    "airTempC": [
+      0,
+      16
+    ],
+    "activity": "day",
+    "why": "Холодолюбива: лучшие периоды — ранняя весна и осенний жор перед зимой. Хорошо берёт в пасмурную прохладную погоду, в жару стоит в тени зарослей и клюёт слабо.",
+    "photos": [],
+    "commons": [
+      "Category:Esox lucius"
+    ],
+    "searchTerms": [
+      "Esox lucius",
+      "щука обыкновенная",
+      "northern pike fish",
+      "Esox lucius pike"
+    ],
+    "kind": "predator",
+    "legal": {
+      "minCm": 37,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Esox lucius1.jpg",
+      "Northern pike fish underwater esox lucius linnaeus.jpg",
+      "Brochet Luc Viatour.jpg",
+      "Esox lucius Prague Vltava 2.jpg",
+      "Esox lucius 2021 G2.jpg",
+      "Esox lucius Aquarium DG.jpg",
+      "Esox Lucius-1.jpg",
+      "Esox lucius.jpg",
+      "Esox lucius ZOO 1.jpg"
+    ]
+  },
+  {
+    "id": "asp",
+    "name": "Жерех",
+    "latin": "Leuciscus aspius",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      15,
+      30
+    ],
+    "activity": "dawn",
+    "why": "Быстрый хищник открытой воды: в тёплое время бьёт малька у поверхности, чаще утром и вечером. Не любит сильный ветер, лучше работает в тихую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Aspius aspius",
+      "Category:Leuciscus aspius"
+    ],
+    "searchTerms": [
+      "Aspius aspius",
+      "жерех",
+      "asp fish Leuciscus aspius",
+      "Aspius aspius fish"
+    ],
+    "kind": "predator",
+    "legal": {
+      "minCm": 37,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Aspius aspius.jpg",
+      "Aspius aspius by RpM.JPG",
+      "Aspius aspius Prague Vltava 1.jpg",
+      "Aspius aspius Prague Vltava 2.jpg",
+      "Aspius aspius 9503.jpg"
+    ]
+  },
+  {
+    "id": "bream",
+    "name": "Лещ",
+    "latin": "Abramis brama",
+    "peakMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8,
+      11
+    ],
+    "airTempC": [
+      10,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Стайная рыба ям и бровок: хорошо берёт при умеренном тепле, в стабильную погоду. В жару уходит глубже, в холод становится малоподвижной.",
+    "photos": [],
+    "commons": [
+      "Category:Abramis brama"
+    ],
+    "searchTerms": [
+      "Abramis brama",
+      "лещ",
+      "common bream fish",
+      "Abramis brama bream"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 24,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Abramis brama by RpM.JPG",
+      "Abramis brama Prague Vltava 1.jpg",
+      "Bronze coloured Abramis brama.jpg",
+      "Blei brachse.jpg",
+      "Abramis-brama-laichausschlag.jpg"
+    ]
+  },
+  {
+    "id": "perch",
+    "name": "Окунь",
+    "latin": "Perca fluviatilis",
+    "peakMonths": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "goodMonths": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      12
+    ],
+    "airTempC": [
+      2,
+      22
+    ],
+    "activity": "day",
+    "why": "Берёт круглый год, в том числе со льда. Лучше всего весной и осенью при умеренной температуре, в сильную жару прячется на глубину.",
+    "photos": [],
+    "commons": [
+      "Category:Perca fluviatilis"
+    ],
+    "searchTerms": [
+      "Perca fluviatilis",
+      "речной окунь",
+      "European perch fish",
+      "Perca fluviatilis perch"
+    ],
+    "kind": "predator",
+    "legal": {
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Perca fluviatilis - Perche commune - European perch.jpg",
+      "Perch fish underwater perca fluviatilis.jpg",
+      "Perca fluviatilis 148981408.jpg",
+      "Perca fluviatilis.jpg",
+      "Europeanperch.jpg",
+      "Perca fluviatilis1.jpg",
+      "PercaFluviatilisMediumSize.JPG",
+      "Egli (Perca fluviatilis) 001.jpg"
+    ]
+  },
+  {
+    "id": "bersh",
+    "name": "Берш",
+    "latin": "Sander volgensis",
+    "peakMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "goodMonths": [
+      3,
+      6,
+      8,
+      11
+    ],
+    "airTempC": [
+      6,
+      22
+    ],
+    "activity": "dusk",
+    "why": "Родственник судака поменьше: держится на течении и песчаных бровках, берёт на утренней и вечерней зорьке, лучше в прохладную воду.",
+    "photos": [],
+    "commons": [
+      "Category:Sander volgensis"
+    ],
+    "searchTerms": [
+      "Sander volgensis",
+      "Sander volgensis fish",
+      "берш"
+    ],
+    "kind": "predator",
+    "legal": {
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Bersh 01.jpg"
+    ]
+  },
+  {
+    "id": "roach",
+    "name": "Плотва",
+    "latin": "Rutilus rutilus",
+    "peakMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "goodMonths": [
+      3,
+      6,
+      7,
+      8,
+      11
+    ],
+    "airTempC": [
+      6,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Самая массовая рыба: берёт почти круглый год у кромки камыша и на небольшой глубине, лучше при ровной погоде.",
+    "photos": [],
+    "commons": [
+      "Category:Rutilus rutilus"
+    ],
+    "searchTerms": [
+      "Rutilus rutilus",
+      "roach fish",
+      "плотва"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 17,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Rutilus rutilus by Algirdas cropped.jpg",
+      "Common Roach.JPG",
+      "Rutilus rutilus Prague Vltava 3.jpg",
+      "Common Roach (Rutilus rutilus) - Oslo, Norway 2020-08-04 (01).jpg",
+      "Rutilus rutilus.JPG",
+      "Hal - Rutilus rutilus - 1.jpg",
+      "Hal - Rutilus rutilus - 3.jpg"
+    ]
+  },
+  {
+    "id": "gustera",
+    "name": "Густера",
+    "latin": "Blicca bjoerkna",
+    "peakMonths": [
+      5,
+      6,
+      9
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8,
+      10
+    ],
+    "airTempC": [
+      10,
+      26
+    ],
+    "activity": "dawn",
+    "why": "Стайная рыба спокойных заводей и ериков: хорошо берёт летом на мелкую насадку, часто попадается вместе с лещом.",
+    "photos": [],
+    "commons": [
+      "Category:Blicca bjoerkna"
+    ],
+    "searchTerms": [
+      "Blicca bjoerkna",
+      "silver bream fish",
+      "густера"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "SilverBreamBliccaBjoerknaCropped.JPG",
+      "SilverBreamBliccaBjoerkna.JPG",
+      "Blicca bjoerkna.jpg",
+      "Brasem Kolblei.JPG",
+      "Kolblei.JPG"
+    ]
+  },
+  {
+    "id": "sinets",
+    "name": "Синец",
+    "latin": "Ballerus ballerus",
+    "peakMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8
+    ],
+    "airTempC": [
+      10,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Придерживается течения и ям, питается у дна и в толще воды; лучше берёт в умеренное тепло и стабильное давление.",
+    "photos": [],
+    "commons": [
+      "Category:Ballerus ballerus"
+    ],
+    "searchTerms": [
+      "Ballerus ballerus",
+      "blue bream fish",
+      "синец"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Abramis ballerus.jpg"
+    ]
+  },
+  {
+    "id": "sapa",
+    "name": "Сапа (белоглазка)",
+    "latin": "Ballerus sapa",
+    "peakMonths": [
+      5,
+      6,
+      9
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8,
+      10
+    ],
+    "airTempC": [
+      10,
+      24
+    ],
+    "activity": "dawn",
+    "why": "Похожа на синца: стайная, ходит по ямам и бровкам Волги, берёт в тёплые утренние и вечерние часы.",
+    "photos": [],
+    "commons": [
+      "Category:Ballerus sapa"
+    ],
+    "searchTerms": [
+      "Ballerus sapa",
+      "white-eye bream fish",
+      "белоглазка"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "В найденной таблице норм вида нет: действует общая норма 10 кг. Размер не указан."
+    },
+    "photoFiles": [
+      "Ballerus sapa.JPG"
+    ]
+  },
+  {
+    "id": "chekhon",
+    "name": "Чехонь",
+    "latin": "Pelecus cultratus",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      14,
+      30
+    ],
+    "activity": "dawn",
+    "why": "Рыба открытой воды, собирает корм с поверхности: ловится на лёгкие снасти в тёплую погоду, лучше в утренние и вечерние часы.",
+    "photos": [],
+    "commons": [
+      "Category:Pelecus cultratus"
+    ],
+    "searchTerms": [
+      "Pelecus cultratus",
+      "sabrefish fish",
+      "чехонь"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 22,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Pelecus cultratus Hungary.jpg",
+      "Ciosa.jpg"
+    ]
+  },
+  {
+    "id": "rudd",
+    "name": "Краснопёрка",
+    "latin": "Scardinius erythrophthalmus",
+    "peakMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "goodMonths": [
+      4,
+      9
+    ],
+    "airTempC": [
+      14,
+      30
+    ],
+    "activity": "day",
+    "why": "Любит тихие заводи, ерики и заросли камыша; охотно берёт на мелкую насадку у поверхности в тёплую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Scardinius erythrophthalmus"
+    ],
+    "searchTerms": [
+      "Scardinius erythrophthalmus",
+      "common rudd fish",
+      "краснопёрка"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 17,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Common rudd.JPG",
+      "Scardinius erythropthalmus 2009 G1.jpg",
+      "Scardinius erythrophthalmus.jpg",
+      "Hal - Scardinius erythrophthalmus - 1.jpg",
+      "Scardinius erythrophthalmus vörösszárnyú keszeg.jpg"
+    ]
+  },
+  {
+    "id": "tench",
+    "name": "Линь",
+    "latin": "Tinca tinca",
+    "peakMonths": [
+      6,
+      7,
+      8
+    ],
+    "goodMonths": [
+      5,
+      9
+    ],
+    "airTempC": [
+      18,
+      30
+    ],
+    "activity": "dawn",
+    "why": "Осторожная рыба тихих заросших водоёмов, ерики и затоны: клюёт утром и вечером, любит прогретую воду.",
+    "photos": [],
+    "commons": [
+      "Category:Tinca tinca"
+    ],
+    "searchTerms": [
+      "Tinca tinca",
+      "tench fish",
+      "линь"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "minCm": 22,
+      "norm": "10 кг"
+    },
+    "photoFiles": [
+      "Tinca tinca Prague Vltava 3.jpg",
+      "FemaleTench1.JPG",
+      "JuvenileTenchTincaTinca.JPG"
+    ]
+  },
+  {
+    "id": "crucian",
+    "name": "Карась",
+    "latin": "Carassius gibelio",
+    "peakMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "goodMonths": [
+      4,
+      9,
+      10
+    ],
+    "airTempC": [
+      14,
+      32
+    ],
+    "activity": "day",
+    "why": "Живуч и неприхотлив: берёт на мелких заросших водоёмах, ериках и старицах, днём в тёплую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Carassius gibelio"
+    ],
+    "searchTerms": [
+      "Carassius gibelio",
+      "Prussian carp fish",
+      "серебряный карась"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "не установлена",
+      "note": "Для карася суточная норма не установлена."
+    },
+    "photoFiles": [
+      "Carassius gibelio 2008 G1.jpg",
+      "Carassius gibelio dark 2009 G1.jpg",
+      "Carassius gibelio male head 2009 G1.jpg",
+      "CarassiusAuratusGibelio.JPG",
+      "Carassius wild golden fish 2013 G1 (white background).jpg",
+      "Giebel Goudvis.JPG"
+    ]
+  },
+  {
+    "id": "grasscarp",
+    "name": "Белый амур",
+    "latin": "Ctenopharyngodon idella",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      20,
+      32
+    ],
+    "activity": "day",
+    "why": "Растительноядная рыба, в низовьях встречается в основном в прогреваемых протоках и водоёмах с зарослями; берёт в жаркую погоду на растительные насадки.",
+    "photos": [],
+    "commons": [
+      "Category:Ctenopharyngodon idella"
+    ],
+    "searchTerms": [
+      "Ctenopharyngodon idella",
+      "grass carp fish",
+      "белый амур"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "Размер в найденной таблице не указан."
+    },
+    "photoFiles": [
+      "Ctenopharyngodon idella 01 Pengo.jpg",
+      "Grass carp portrait.jpg",
+      "Ctenopharyngodon idella - Murg IMGP0837.JPG",
+      "Grass carp fexx.jpg",
+      "Hal - Ctenopharyngodon idella - 1.jpg"
+    ]
+  },
+  {
+    "id": "silvercarp",
+    "name": "Толстолобик",
+    "latin": "Hypophthalmichthys molitrix",
+    "peakMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "goodMonths": [
+      5,
+      10
+    ],
+    "airTempC": [
+      20,
+      32
+    ],
+    "activity": "day",
+    "why": "Питается планктоном, поэтому клюёт нерегулярно и на специальные насадки; в Волге и пойме встречается, лучше в тёплую погоду.",
+    "photos": [],
+    "commons": [
+      "Category:Hypophthalmichthys molitrix"
+    ],
+    "searchTerms": [
+      "Hypophthalmichthys molitrix",
+      "silver carp fish",
+      "толстолобик"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "Размер в найденной таблице не указан."
+    },
+    "photoFiles": [
+      "Silver Carp Adult (Hypophthalmichthys molitrix).jpg",
+      "Hypophthalmichthys molitrix.jpg",
+      "Hypophthalmichthys molitrix Hungary.jpg",
+      "Tolstolobik bílý.jpg"
+    ]
+  },
+  {
+    "id": "chub",
+    "name": "Голавль",
+    "latin": "Squalius cephalus",
+    "peakMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "goodMonths": [
+      4,
+      7,
+      8
+    ],
+    "airTempC": [
+      10,
+      26
+    ],
+    "activity": "dawn",
+    "why": "Рыба течения и перекатов: в низовьях редок, чаще встречается на Ахтубе и верхних участках Волги. Берёт на живую насадку и мелкие блёсны.",
+    "photos": [],
+    "commons": [
+      "Category:Squalius cephalus",
+      "Category:Leuciscus cephalus"
+    ],
+    "searchTerms": [
+      "Squalius cephalus",
+      "European chub fish",
+      "голавль"
+    ],
+    "kind": "peaceful",
+    "legal": {
+      "norm": "10 кг",
+      "note": "Нормы и размера вида в найденной таблице нет: действует общая норма 10 кг."
+    },
+    "photoFiles": [
+      "Squalius cephalus Prague Vltava 2.jpg",
+      "Oniria - Squalius cephalus 03.jpg",
+      "Chevesne.JPG",
+      "Döbel Hochrhein10.JPG",
+      "LeuciscusCephalusJuvenile.JPG"
+    ]
+  }
+]

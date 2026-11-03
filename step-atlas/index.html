@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#102b27" />
+  <title>СТЕПЬ — Атлас Астраханского края</title>
+  <link rel="stylesheet" href="styles.css?v=36" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.11.0/ol.css" integrity="sha384-Jpg1uvTciFJuHq+90Ly0/2SKRT9yS5OhbIN5FuFoFWji9fc44ok8xxO88CJi8Z5W" crossorigin="anonymous" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="СТЕПЬ — на главную">
+        <span class="brand-mark">✳</span>
+        <span><strong>СТЕПЬ</strong><small>Атлас Астраханского края</small></span>
+      </a>
+      <div class="search-wrap">
+        <label class="searchbox">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="Адрес, село, река, рыба…" autocomplete="off" enterkeyhint="search" />
+        </label>
+        <div id="searchResults" class="search-results" hidden></div>
+      </div>
+      <button class="icon-button round-btn" id="locate" title="Где я и маршрут" aria-label="Где я и маршрут" aria-controls="routeBar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.3" fill="currentColor"/><path d="M12 2.5v3.3M12 18.2v3.3M2.5 12h3.3M18.2 12h3.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <i class="locate-dot" id="locateDot" hidden></i>
+      </button>
+      <button class="icon-button" id="layersToggle" title="Слои карты" aria-label="Слои карты">▤</button>
+    </header>
+
+    <section class="map-wrap" aria-label="Интерактивная карта Астраханской области">
+      <div id="map"></div>
+      <div class="map-stamp"><span class="stamp-dot"></span> РЕДАКЦИЯ <span id="appVer">v36</span> <span>·</span> ДЕЛЬТА ВОЛГИ</div>
+
+      <aside class="layer-panel" id="layerPanel">
+        <div class="panel-heading"><strong>Слои атласа</strong><button id="closeLayers" class="tiny-close" aria-label="Закрыть">×</button></div>
+        <label class="layer-option"><input type="checkbox" data-layer="fishing" checked /><span class="layer-dot blue"></span><span><b>Рыбалка</b><small>Места и виды рыб</small></span></label>
+        <label class="layer-option"><input type="checkbox" data-layer="nature" checked /><span class="layer-dot orange"></span><span><b>Животные и птицы</b><small>Ареалы и наблюдения</small></span></label>
+        <label class="layer-option"><input type="checkbox" data-layer="places" checked /><span class="layer-dot green"></span><span><b>Интересные места</b><small>Природа и история</small></span></label>
+        <label class="layer-option" id="proLayerOption" hidden><input type="checkbox" data-layer="pro" checked /><span class="layer-dot gold"></span><span><b>Места Pro</b><small id="proLayerHint">30 мест со свободным доступом</small></span></label>
+        <div id="editorTools" hidden>
+          <button class="btn primary" id="lockPhotos" type="button">Зафиксировать подборку фото и скачать</button>
+          <div id="lockStatus" class="lock-status"></div>
+          <button class="btn" id="exportBlocked" type="button">Убранные фото: показать список</button>
+          <textarea id="blockedText" class="blocked-text" readonly hidden></textarea>
+        </div>
+        <p class="panel-note">Метки — ориентиры по открытым источникам, редактор их ещё не вычитал. Перед поездкой сверьте координаты, правила и доступ.</p>
+      </aside>
+
+      <div class="map-controls">
+        <button id="zoomIn" aria-label="Приблизить">＋</button>
+        <button id="zoomOut" aria-label="Отдалить">−</button>
+        <button id="resetView" aria-label="Показать область" title="Показать область">⌖</button>
+      </div>
+
+      <div class="map-legend">
+        <span><i class="legend-dot blue"></i> Рыбалка</span>
+        <span><i class="legend-dot orange"></i> Животные</span>
+        <span><i class="legend-dot green"></i> Места</span>
+      </div>
+
+      <div class="nav-banner" id="navBanner" hidden></div>
+      <button class="ban-pill" id="banPill" hidden></button>
+      <div class="route-bar" id="routeBar" hidden></div>
+
+      <button class="weather-pill" id="weatherButton">
+        <span class="weather-icon" id="pillIcon">☼</span>
+        <span><b id="pillTitle">Погода на месте</b><small id="pillText">Загружаем условия…</small></span>
+        <span class="pill-arrow">↗</span>
+      </button>
+    </section>
+
+  </main>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Разделы" style="--i:0">
+      <span class="nav-bubble" aria-hidden="true"></span>
+      <button class="nav-item active" data-tab="map" type="button" aria-label="Карта" aria-pressed="true">
+        <svg class="ni ni-map" viewBox="0 0 24 24" aria-hidden="true"><g class="pin"><path d="M12 21.2s-6.7-5.7-6.7-11.2a6.7 6.7 0 0 1 13.4 0c0 5.5-6.7 11.2-6.7 11.2z"/><circle class="dot" cx="12" cy="10" r="2.5"/></g><ellipse class="shadow" cx="12" cy="22.3" rx="4" ry="1"/></svg>
+        <b>Карта</b>
+      </button>
+      <button class="nav-item" data-tab="tours" type="button" aria-label="Туры" aria-pressed="false">
+        <svg class="ni ni-tours" viewBox="0 0 24 24" aria-hidden="true"><circle class="ring" cx="12" cy="12" r="9.2"/><g class="needle"><path d="M15.8 8.2l-2.2 5.4-5.4 2.2 2.2-5.4z"/></g><circle class="hub" cx="12" cy="12" r="1"/></svg>
+        <b>Туры</b>
+      </button>
+      <button class="nav-item" data-tab="petrovich" type="button" aria-label="Петрович, помощник по рыбалке" aria-pressed="false">
+        <svg class="ni ni-petro" viewBox="0 0 24 24" aria-hidden="true"><path class="bub" d="M4.2 4.6h15.6a1.7 1.7 0 0 1 1.7 1.7v8.2a1.7 1.7 0 0 1-1.7 1.7h-7.1l-4.2 3.6v-3.6H4.2a1.7 1.7 0 0 1-1.7-1.7V6.3a1.7 1.7 0 0 1 1.7-1.7z"/><g class="fsh"><path d="M7.4 10.9c1.7-2.2 4.8-2.2 6.5 0-1.7 2.2-4.8 2.2-6.5 0z"/><path d="M13.9 10.9l2.5-1.7v3.4z"/></g></svg>
+        <b>Петрович</b>
+      </button>
+      <button class="nav-item" data-tab="awards" type="button" aria-label="Награды" aria-pressed="false">
+        <svg class="ni ni-awards" viewBox="0 0 24 24" aria-hidden="true"><g class="ribbon"><path d="M8.2 2.6l3.8 6.2M15.8 2.6L12 8.8"/></g><g class="coin"><circle cx="12" cy="14.6" r="6"/><path class="star" d="M12 11.3l1 2.1 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z"/></g></svg>
+        <b>Награды</b>
+      </button>
+      <button class="nav-item" data-tab="bans" type="button" aria-label="Запреты" aria-pressed="false">
+        <svg class="ni ni-bans" viewBox="0 0 24 24" aria-hidden="true"><g class="tri"><path d="M12 3.4l9.6 16.6H2.4z"/><path class="bang" d="M12 9.8v4.6"/><circle class="bangdot" cx="12" cy="17.2" r=".9"/></g></svg>
+        <b>Запреты</b>
+      </button>
+      <button class="nav-item" data-tab="layers" type="button" aria-label="Слои карты" aria-pressed="false">
+        <svg class="ni ni-layers" viewBox="0 0 24 24" aria-hidden="true"><path class="l3" d="M3 16.4l9 4.3 9-4.3"/><path class="l2" d="M3 12l9 4.3 9-4.3"/><path class="l1" d="M12 3.2l9 4.4-9 4.4-9-4.4z"/></svg>
+        <b>Слои</b>
+      </button>
+    </nav>
+
+  <div class="sheet-backdrop" id="sheetBackdrop"></div>
+  <section class="detail-sheet" id="detailSheet" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-describedby="detailDescription" tabindex="-1">
+    <div class="sheet-grabber"></div>
+    <div class="sheet-topline"><span id="detailCategory" class="category-label">ТОЧКА АТЛАСА</span><button id="closeDetail" class="tiny-close" aria-label="Закрыть">×</button></div>
+    <h1 id="detailTitle">Выберите точку на карте</h1>
+    <p id="detailDescription">Нажмите на цветной флажок, чтобы открыть карточку места.</p>
+    <div id="detailActions" class="detail-actions"></div>
+    <div id="detailGallery" class="detail-gallery" hidden></div>
+    <div id="detailWeather" class="detail-block" hidden></div>
+    <div id="detailBans" class="detail-block" hidden></div>
+    <div id="detailContent" class="detail-content"></div>
+    <div id="detailFish" class="detail-block" hidden></div>
+    <div id="detailPlants" class="detail-block" hidden></div>
+    <div id="detailAnimals" class="detail-block" hidden></div>
+    <div id="detailSafety" class="detail-block" hidden></div>
+    <div id="detailSky" class="detail-block" hidden></div>
+    <div class="source-note" id="sourceNote">Проверенные данные и ссылки на источники будут добавляться вместе с наполнением атласа.</div>
+  </section>
+
+  <section class="detail-sheet" id="bansSheet" role="dialog" aria-modal="true" aria-labelledby="bansTitle" tabindex="-1">
+    <div class="sheet-grabber"></div>
+    <div class="sheet-topline"><span class="category-label">РЫБАЛКА · ПРАВИЛА</span><button id="closeBans" class="tiny-close" aria-label="Закрыть">×</button></div>
+    <h1 id="bansTitle">Запреты и календарь</h1>
+    <div id="bansBody"></div>
+  </section>
+
+  <section class="detail-sheet big-sheet" id="proSheet" role="dialog" aria-modal="true" aria-labelledby="proTitle" tabindex="-1">
+    <div class="sheet-grabber"></div>
+    <div class="sheet-topline"><button id="proBack" class="tiny-close" aria-label="Назад" hidden>‹</button><span id="proLabel" class="category-label">PRO</span><button id="closePro" class="tiny-close" aria-label="Закрыть">×</button></div>
+    <h1 id="proTitle">Туры</h1>
+    <div id="proBody"></div>
+  </section>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@10.11.0/dist/ol.js" integrity="sha384-rwbCGPbgxLkcQaFvIra1Vz3KBT1yBeF2/1VgLs/gCCNCJ61GHJGimHpkufVKcqap" crossorigin="anonymous" onerror="document.write('<script src=&quot;https://unpkg.com/ol@10.11.0/dist/ol.js&quot; integrity=&quot;sha384-rwbCGPbgxLkcQaFvIra1Vz3KBT1yBeF2/1VgLs/gCCNCJ61GHJGimHpkufVKcqap&quot; crossorigin=&quot;anonymous&quot;><\/script>')"></script>
+  <script src="map-engine.js?v=36"></script>
+  <script src="weather.js?v=36"></script>
+  <script src="photos.js?v=36"></script>
+  <script src="bans.js?v=36"></script>
+  <script src="nav.js?v=36"></script>
+  <script src="config.js?v=36"></script>
+  <script src="medals.js?v=36"></script>
+  <script src="app.js?v=36"></script>
+  <script src="pro.js?v=36"></script>
+  <script>
+    /* Номер версии на карте берётся из адреса скриптов (?v=…), поэтому всегда совпадает с загруженными файлами. */
+    (function () { try { var s = document.querySelector('script[src*="app.js"]'), m = s && s.getAttribute("src").match(/[?&]v=(\d+)/), e = document.getElementById("appVer"); if (m && e) e.textContent = "v" + m[1]; } catch (_) {} })();
+  </script>
+</body>
+</html>

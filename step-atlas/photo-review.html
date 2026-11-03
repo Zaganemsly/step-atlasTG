@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СТЕПЬ: проверка фото</title>
+<style>
+  :root { --bg: #f4f0e4; --card: #fffdf7; --ink: #1d2b24; --muted: #6c776d; --line: #e0dccb; --forest: #1f3a2f; --red: #b3321f; --gold: #c9962f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif; padding-bottom: 150px; }
+  header { padding: 18px 16px 8px; max-width: 980px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font: 700 22px Georgia, serif; color: var(--forest); }
+  h2 { margin: 26px 0 8px; font: 700 17px Georgia, serif; color: var(--forest); }
+  p { margin: 6px 0; }
+  .how { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; font-size: 13px; }
+  .how b { color: var(--forest); }
+  #progress { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+  main { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+  .row { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px 12px; margin: 10px 0; }
+  .row.low { border-color: var(--red); }
+  .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .head b { font-size: 14px; color: var(--forest); }
+  .head i { color: var(--muted); font-size: 12px; }
+  .cnt { margin-left: auto; font-size: 11.5px; color: var(--muted); }
+  .row.low .cnt { color: var(--red); font-weight: 700; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  figure { margin: 0; position: relative; }
+  figure img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; display: block; background: #e4e8da; cursor: zoom-in; }
+  figcaption { font-size: 9.5px; color: #899187; line-height: 1.3; margin-top: 2px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  figure.bad img { opacity: .25; filter: grayscale(1); }
+  figure.bad::after { content: "✕"; position: absolute; left: 0; right: 0; top: 0; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; font-size: 38px; color: var(--red); pointer-events: none; }
+  figure.broken img { outline: 2px dashed var(--red); }
+  .empty { grid-column: 1 / -1; padding: 14px; text-align: center; color: var(--red); font-size: 12.5px; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 7px; border-radius: 99px; background: #e6efe0; color: var(--forest); }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; background: #17251e; color: #f1ead6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); z-index: 10; }
+  .bar .in { max-width: 980px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .bar .sum { flex: 1 1 100%; font-size: 12px; color: #cbd5c4; }
+  button { font: inherit; border: 0; border-radius: 10px; padding: 9px 13px; background: #f0cf7a; color: #2b2208; font-weight: 700; cursor: pointer; }
+  button.alt { background: #2f4a3d; color: #f1ead6; }
+  button:disabled { opacity: .5; }
+  #lb { position: fixed; inset: 0; background: rgba(8, 14, 11, .92); z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px; gap: 10px; }
+  #lb[hidden] { display: none; }
+  #lb img { max-width: 100%; max-height: 66vh; border-radius: 10px; background: #222; }
+  #lb .cap { color: #dfe6d8; font-size: 12px; text-align: center; max-width: 560px; }
+  #lb .cap a { color: #bcd0f5; }
+  #lb .btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Проверка фото</h1>
+  <div class="how">
+    <p><b>Что это.</b> Здесь все снимки, которые приложение показывает у растений, птиц, зверей и рыб, и фото из данных Pro (районы, Млечный Путь, Луна).</p>
+    <p><b>Что делать.</b> Нажмите на снимок: он откроется крупно. Если он не подходит (не тот вид, мёртвое животное, люди, рисунок, плохое качество), нажмите «Убрать». Убранное станет серым с крестиком.</p>
+    <p><b>Когда закончите.</b> Внизу нажмите «Скачать photos.json» и «Скачать photo-blocklist.json» и загрузите оба файла в папку <b>data</b> на GitHub. У видов, где осталось меньше 3 хороших фото, приложение подберёт новые само, убранные больше не покажет.</p>
+    <p><b>Фото Pro</b> (в самом низу, с номерами): убранные не удаляются автоматически. Нажмите внизу «Скопировать список убранных Pro» и отправьте мне.</p>
+  </div>
+  <div id="progress">Загружаем снимки…</div>
+</header>
+<main id="root"></main>
+<div class="bar"><div class="in">
+  <div class="sum" id="sum">Убрано: 0</div>
+  <button id="dlPhotos" disabled>Скачать photos.json</button>
+  <button id="dlBlock" class="alt" disabled>Скачать photo-blocklist.json</button>
+  <button id="cpStatic" class="alt" disabled>Скопировать список убранных Pro</button>
+</div></div>
+<div id="lb" hidden>
+  <img id="lbImg" alt="">
+  <div class="cap" id="lbCap"></div>
+  <div class="btns"><button id="lbBad">Убрать</button><button id="lbClose" class="alt">Закрыть</button></div>
+</div>
+<script src="photos.js?v=33"></script>
+<script>
+(function () {
+  "use strict";
+  const DATA = {"species":[{"name":"Большая белая цапля","latin":"Ardea alba","kind":"animal"},{"name":"Большой баклан","latin":"Phalacrocorax carbo","kind":"animal"},{"name":"Золотистая щурка","latin":"Merops apiaster","kind":"animal"},{"name":"Кабан","latin":"Sus scrofa","kind":"animal"},{"name":"Колпица","latin":"Platalea leucorodia","kind":"animal"},{"name":"Кудрявый пеликан","latin":"Pelecanus crispus","kind":"animal"},{"name":"Лебедь-шипун","latin":"Cygnus olor","kind":"animal"},{"name":"Лисица","latin":"Vulpes vulpes","kind":"animal"},{"name":"Ондатра","latin":"Ondatra zibethicus","kind":"animal"},{"name":"Орлан-белохвост","latin":"Haliaeetus albicilla","kind":"animal"},{"name":"Серая цапля","latin":"Ardea cinerea","kind":"animal"},{"name":"Серый гусь","latin":"Anser anser","kind":"animal"},{"name":"Шакал обыкновенный","latin":"Canis aureus","kind":"animal"},{"name":"Гребенщик (тамарикс)","latin":"Tamarix","kind":"plant"},{"name":"Дуб черешчатый","latin":"Quercus robur","kind":"plant"},{"name":"Ива белая (тал)","latin":"Salix alba","kind":"plant"},{"name":"Ирис жёлтый (касатик)","latin":"Iris pseudacorus","kind":"plant"},{"name":"Кубышка жёлтая","latin":"Nuphar lutea","kind":"plant"},{"name":"Кувшинка белая","latin":"Nymphaea alba","kind":"plant"},{"name":"Лотос орехоносный","latin":"Nelumbo nucifera","kind":"plant"},{"name":"Полынь","latin":"Artemisia","kind":"plant"},{"name":"Рогоз","latin":"Typha","kind":"plant"},{"name":"Сусак зонтичный","latin":"Butomus umbellatus","kind":"plant"},{"name":"Тополь чёрный (осокорь)","latin":"Populus nigra","kind":"plant"},{"name":"Тростник южный","latin":"Phragmites australis","kind":"plant"},{"name":"Чилим (водяной орех)","latin":"Trapa natans","kind":"plant"},{"name":"Болотная черепаха","latin":"Emys orbicularis","kind":"animal"},{"name":"Водяной уж","latin":"Natrix tessellata","kind":"animal"},{"name":"Озёрная лягушка","latin":"Pelophylax ridibundus","kind":"animal"},{"name":"Дозорщик-император","latin":"Anax imperator","kind":"animal"},{"name":"Перелётная саранча","latin":"Locusta migratoria","kind":"animal"},{"name":"Обыкновенная квакша","latin":"Hyla arborea","kind":"animal"},{"name":"Махаон","latin":"Papilio machaon","kind":"animal"},{"name":"Зелёная жаба","latin":"Bufotes viridis","kind":"animal"},{"name":"Степная гадюка","latin":"Vipera renardi","kind":"animal"},{"name":"Богомол обыкновенный","latin":"Mantis religiosa","kind":"animal"},{"name":"Каракурт","latin":"Latrodectus tredecimguttatus","kind":"animal"},{"name":"Прыткая ящерица","latin":"Lacerta agilis","kind":"animal"},{"name":"Круглоголовка-вертихвостка","latin":"Phrynocephalus guttatus","kind":"animal"},{"name":"Южнорусский тарантул","latin":"Lycosa singoriensis","kind":"animal"}],"static":[{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(2).jpg/960px-%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(2).jpg","alt":"Где то между Волгой и Ахтубой - panoramio (2)","author":"Андрей Матвеев","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(2).jpg","group":"Район: Ахтуба","n":1},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(3).jpg/960px-%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(3).jpg","alt":"Где то между Волгой и Ахтубой - panoramio (3)","author":"Андрей Матвеев","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(3).jpg","group":"Район: Ахтуба","n":2},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0.jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0.jpg","alt":"Харабали. Природа","author":"Илга Гондарева","license":"CC BY 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0.jpg","group":"Район: Ахтуба","n":3},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg","alt":"Харабали. Природа (2)","author":"Илга Гондарева","license":"CC BY 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg","group":"Район: Ахтуба","n":4},{"url":"https://upload.wikimedia.org/wikipedia/commons/7/70/Boats_in_Bakhtemir_river,_Novo-Bulgary.jpg","alt":"Boats in Bakhtemir river, Novo-Bulgary","author":"Dor Shabashewitz","license":"CC BY 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Boats_in_Bakhtemir_river,_Novo-Bulgary.jpg","group":"Район: Бахтемир","n":5},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%95%D1%80%D0%B8%D0%BA.jpg/960px-%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%95%D1%80%D0%B8%D0%BA.jpg","alt":"Камызяк. Ерик","author":"Илга Гондарева","license":"CC BY 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%95%D1%80%D0%B8%D0%BA.jpg","group":"Район: Бахтемир","n":6},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Gandurino_River_near_Khmelyovka.jpg/960px-Gandurino_River_near_Khmelyovka.jpg","alt":"Gandurino River near Khmelyovka","author":"Dor Shabashewitz","license":"CC BY 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Gandurino_River_near_Khmelyovka.jpg","group":"Район: Бахтемир","n":7},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg/960px-%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg","alt":"Астраханский биосферный заповедник. Лотосовое поле. Сентябрь 2016","author":"ЕленаЕв","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg","group":"Район: Бахтемир","n":8},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Volga_near_Astrakhan.jpg/960px-Volga_near_Astrakhan.jpg","alt":"Volga near Astrakhan","author":"Sergey Sebelev","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Volga_near_Astrakhan.jpg","near":true,"group":"Район: Нижняя Волга","n":9},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg/960px-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg","alt":"Волга Кировский район Астрахань","author":"Vladislav Bezrukov","license":"CC BY 2.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg","near":true,"group":"Район: Нижняя Волга","n":10},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Astrakhan_Volga_River_P5101027_2200.jpg/960px-Astrakhan_Volga_River_P5101027_2200.jpg","alt":"Astrakhan Volga River P5101027 2200","author":"Alexxx1979","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Astrakhan_Volga_River_P5101027_2200.jpg","group":"Район: Нижняя Волга","n":11},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg/960px-%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg","alt":"Вид на волгу с острова - panoramio","author":"stallewar","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg","near":true,"group":"Район: Нижняя Волга","n":12},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Milky_Way_over_the_valley_of_Marukha_River%2C_Arkhyz%2C_Russi%D0%B0.jpg/960px-Milky_Way_over_the_valley_of_Marukha_River%2C_Arkhyz%2C_Russi%D0%B0.jpg","alt":"Млечный Путь над долиной реки (Архыз, Россия)","author":"Alexander Kurilov","license":"CC BY 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Milky_Way_over_the_valley_of_Marukha_River,_Arkhyz,_Russi%D0%B0.jpg","group":"Млечный Путь","n":13},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Milky_Way_over_Lake_McDonald_%2817178666872%29.jpg/960px-Milky_Way_over_Lake_McDonald_%2817178666872%29.jpg","alt":"Млечный Путь над озером","author":"GlacierNPS","license":"Public domain","sourceUrl":"https://commons.wikimedia.org/wiki/File:Milky_Way_over_Lake_McDonald_(17178666872).jpg","group":"Млечный Путь","n":14},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bontecou_Lake_Milky_Way_panorama.jpg/960px-Bontecou_Lake_Milky_Way_panorama.jpg","alt":"Панорама Млечного Пути над озером","author":"Juliancolton","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Bontecou_Lake_Milky_Way_panorama.jpg","group":"Млечный Путь","n":15},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Milky_way%2C_Lake_Son_Kol%2C_Kyrgyzstan.jpg/960px-Milky_way%2C_Lake_Son_Kol%2C_Kyrgyzstan.jpg","alt":"Млечный Путь над степным озером (Сон-Куль, Киргизия)","author":"Benjamin Goetzinger","license":"CC BY-SA 4.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Milky_way,_Lake_Son_Kol,_Kyrgyzstan.jpg","group":"Млечный Путь","n":16},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Moon_phases_ru.jpg/960px-Moon_phases_ru.jpg","alt":"Фазы Луны","author":"Orion 8","license":"CC BY-SA 3.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Moon_phases_ru.jpg","group":"Луна","n":17},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/October_Hunters_Moon_setting_over_the_Bear_River_Valley_south_of_Cokeville%2C_WY_%2822729907107%29.jpg/960px-October_Hunters_Moon_setting_over_the_Bear_River_Valley_south_of_Cokeville%2C_WY_%2822729907107%29.jpg","alt":"Полная луна садится над речной долиной","author":"USFWS Mountain-Prairie","license":"Public domain","sourceUrl":"https://commons.wikimedia.org/wiki/File:October_Hunters_Moon_setting_over_the_Bear_River_Valley_south_of_Cokeville,_WY_(22729907107).jpg","group":"Луна","n":18},{"url":"https://upload.wikimedia.org/wikipedia/commons/a/ac/Sebasticook_River_and_Full_Moon%3B_Benton%2C_Maine.jpg","alt":"Полная луна над рекой","author":"Jody Roberts","license":"CC BY 2.0","sourceUrl":"https://commons.wikimedia.org/wiki/File:Sebasticook_River_and_Full_Moon;_Benton,_Maine.jpg","group":"Луна","n":19}]};
+  const $ = id => document.getElementById(id);
+  function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n; }
+  const keyOf = p => p.sourceUrl || p.url;
+  const slim = p => ({ url: p.url, alt: p.alt, author: p.author, license: p.license, sourceUrl: p.sourceUrl, near: p.near || undefined });
+  const bad = new Set(), broken = new Set();
+  const items = [];           // виды и рыбы: что закрепляем
+  const statics = [];         // фото Pro: только список для меня
+  let fixed = { places: {}, fish: {}, species: {} }, blocklist = [];
+
+  async function loadJson(path, def) { try { const r = await fetch(path + "?r=" + Date.now()); if (!r.ok) return def; return await r.json(); } catch (_) { return def; } }
+
+  function refresh(it) {
+    const good = it.list.filter(p => !bad.has(keyOf(p)) && !broken.has(keyOf(p))).length;
+    if (it.cnt) { it.cnt.textContent = good >= 3 ? "хороших: " + good + " из " + it.list.length : "хороших: " + good + " (мало, приложение подберёт новые)"; }
+    if (it.box) it.box.classList.toggle("low", good < 3);
+    const nBad = [...bad].length;
+    const nStatic = statics.filter(s => bad.has(keyOf(s.p))).length;
+    $("sum").textContent = "Убрано: " + (nBad - nStatic) + " (виды и рыбы), фото Pro: " + nStatic + ". Закрепится: " + items.filter(i => i.list.filter(p => !bad.has(keyOf(p)) && !broken.has(keyOf(p))).length >= 3).length + " из " + items.length + " рядов.";
+  }
+  let current = null;
+  function setBad(p, fig, value) {
+    const k = keyOf(p);
+    if (value) bad.add(k); else bad.delete(k);
+    if (fig) fig.classList.toggle("bad", value);
+    const it = items.find(i => i.list.includes(p));
+    if (it) refresh(it); else refresh({ list: [] });
+  }
+  function open(p, fig) {
+    current = { p, fig };
+    $("lbImg").src = p.url; $("lbImg").alt = p.alt || "";
+    const cap = $("lbCap"); cap.replaceChildren(document.createTextNode([p.alt, p.author, p.license].filter(Boolean).join(" · ") + " "));
+    if (/^https:/.test(p.sourceUrl || "")) { const a = el("a", null, "страница снимка"); a.href = p.sourceUrl; a.target = "_blank"; a.rel = "noopener noreferrer"; cap.append(a); }
+    $("lbBad").textContent = bad.has(keyOf(p)) ? "Вернуть" : "Убрать";
+    $("lb").hidden = false;
+  }
+  $("lbClose").onclick = () => { $("lb").hidden = true; current = null; };
+  $("lbBad").onclick = () => { if (!current) return; setBad(current.p, current.fig, !bad.has(keyOf(current.p))); $("lbBad").textContent = bad.has(keyOf(current.p)) ? "Вернуть" : "Убрать"; };
+  $("lb").addEventListener("click", e => { if (e.target === $("lb")) $("lbClose").click(); });
+
+  function figure(p, it) {
+    const fig = el("figure");
+    const img = document.createElement("img");
+    img.loading = "lazy"; img.referrerPolicy = "no-referrer"; img.alt = p.alt || ""; img.src = p.url;
+    img.addEventListener("error", () => { broken.add(keyOf(p)); fig.classList.add("broken"); if (it) refresh(it); });
+    img.addEventListener("click", () => open(p, fig));
+    fig.append(img, el("figcaption", null, [p.author, p.license].filter(Boolean).join(" · ")));
+    if (bad.has(keyOf(p))) fig.classList.add("bad");
+    return fig;
+  }
+  function section(title) { const h = el("h2", null, title); $("root").append(h); return h; }
+  function addRow(it, titleNote) {
+    const box = el("section", "row");
+    const head = el("div", "head");
+    head.append(el("b", null, it.title));
+    if (it.sub) head.append(el("i", null, it.sub));
+    if (titleNote) head.append(el("span", "tag", titleNote));
+    const cnt = el("span", "cnt"); head.append(cnt);
+    const grid = el("div", "grid");
+    if (!it.list.length) grid.append(el("div", "empty", "Снимков не нашлось. Приложение попробует подобрать при открытии."));
+    const dg = it.store === "fish" && window.StepPhotos && window.StepPhotos.diag && window.StepPhotos.diag[it.item.id];
+    if (dg && it.list.length < 3) grid.append(el("div", "empty", "Откуда взялись снимки: подборка " + dg.pick + ", Википедия " + dg.wiki + ", iNaturalist " + dg.inat + ", Commons " + dg.commons + ", наблюдения " + dg.obs + (dg.err.length ? ". Ошибки: " + dg.err.slice(0, 3).join("; ") : "") + "."));
+    it.list.forEach(p => grid.append(figure(p, it)));
+    box.append(head, grid);
+    $("root").append(box);
+    it.box = box; it.cnt = cnt; refresh(it);
+  }
+
+  async function pool(tasks, n, onDone) {
+    let i = 0, done = 0;
+    await Promise.all(Array.from({ length: n }, async () => {
+      while (i < tasks.length) { const t = tasks[i++]; try { await t(); } catch (_) {} done++; onDone(done, tasks.length); }
+    }));
+  }
+
+  async function main() {
+    const fish = await loadJson("data/fish.json", []);
+    fixed = Object.assign({ places: {}, fish: {}, species: {} }, await loadJson("data/photos.json", {}));
+    blocklist = await loadJson("data/photo-blocklist.json", []);
+    StepPhotos.setBlocked(blocklist);
+    const defs = [];
+    DATA.species.slice().sort((x, y) => (x.kind === y.kind ? 0 : x.kind === "plant" ? -1 : 1)).forEach(s => defs.push({ group: s.kind === "plant" ? "Растения" : "Животные", title: s.name, sub: s.latin, store: "species", key: s.latin || s.name, item: s }));
+    fish.forEach(f => defs.push({ group: "Рыбы", title: f.name, sub: f.latin, store: "fish", key: f.id, item: f }));
+    const loaders = defs.map(d => async () => {
+      const pinned = ((d.store === "fish" ? (d.item.photos && d.item.photos.length ? d.item.photos : fixed.fish[d.key]) : fixed.species[d.key]) || []).filter(p => p && p.url);
+      d.pinned = pinned.length >= 3;
+      d.list = d.pinned ? pinned.slice(0, 4) : (d.store === "fish" ? await StepPhotos.forFish(d.item, 4) : await StepPhotos.forSpecies(d.item, 4));
+      d.list = (d.list || []).filter(p => p && p.url).slice(0, 4);
+    });
+    await pool(loaders, 3, (a, b) => { $("progress").textContent = "Загружено " + a + " из " + b + "…"; });
+    let last = "";
+    defs.forEach(d => { if (d.group !== last) { section(d.group); last = d.group; } items.push(d); addRow(d, d.pinned ? "закреплено" : ""); });
+    section("Фото Pro (районы, Млечный Путь, Луна)");
+    const groups = {};
+    DATA.static.forEach(p => { (groups[p.group] = groups[p.group] || []).push(p); });
+    Object.keys(groups).forEach(g => {
+      const list = groups[g];
+      const box = el("section", "row"), head = el("div", "head"), grid = el("div", "grid");
+      head.append(el("b", null, g), el("i", null, "№ " + list.map(p => p.n).join(", ")));
+      list.forEach(p => {
+        const fig = figure(p, null);
+        fig.querySelector("figcaption").textContent = "№" + p.n + " " + (p.alt || "");
+        grid.append(fig); statics.push({ p, fig });
+      });
+      box.append(head, grid); $("root").append(box);
+    });
+    $("progress").textContent = "Готово. Всего рядов: " + items.length + ", фото Pro: " + DATA.static.length + ". Нажимайте на снимки.";
+    ["dlPhotos", "dlBlock", "cpStatic"].forEach(id => { $(id).disabled = false; });
+    refresh({ list: [] });
+  }
+
+  function download(name, obj) {
+    const url = URL.createObjectURL(new Blob([JSON.stringify(obj)], { type: "application/json" }));
+    const a = document.createElement("a"); a.href = url; a.download = name; document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+  $("dlPhotos").onclick = () => {
+    const out = { places: fixed.places || {}, fish: Object.assign({}, fixed.fish), species: Object.assign({}, fixed.species) };
+    items.forEach(it => {
+      const good = it.list.filter(p => !bad.has(keyOf(p)) && !broken.has(keyOf(p)));
+      if (good.length >= 3) out[it.store][it.key] = good.slice(0, 4).map(slim); else delete out[it.store][it.key];
+    });
+    download("photos.json", out);
+  };
+  $("dlBlock").onclick = () => {
+    const staticKeys = new Set(statics.map(s => keyOf(s.p)));
+    const add = [...bad].filter(k => !staticKeys.has(k));
+    download("photo-blocklist.json", [...new Set(blocklist.concat(add))]);
+  };
+  $("cpStatic").onclick = async () => {
+    const lines = statics.filter(s => bad.has(keyOf(s.p))).map(s => "№" + s.p.n + " " + s.p.group + ": " + (s.p.alt || ""));
+    const text = lines.length ? "Убрать фото Pro:\n" + lines.join("\n") : "Фото Pro все подходят.";
+    try { await navigator.clipboard.writeText(text); $("cpStatic").textContent = "Скопировано"; } catch (_) { window.prompt("Скопируйте и отправьте мне:", text); }
+    setTimeout(() => { $("cpStatic").textContent = "Скопировать список убранных Pro"; }, 2500);
+  };
+  main().catch(e => { $("progress").textContent = "Ошибка загрузки: " + (e && e.message || e); });
+})();
+</script>
+</body>
+</html>

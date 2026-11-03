@@ -1,0 +1,2704 @@
+{
+ "places": {
+  "kamyzyak": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%95%D1%80%D0%B8%D0%BA.jpg/960px-%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%95%D1%80%D0%B8%D0%BA.jpg",
+    "alt": "Камызяк. Ерик",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%95%D1%80%D0%B8%D0%BA.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/%D0%9A%D0%B8%D0%B7%D0%B0%D0%BD%D1%8C_%D1%83_%D0%9B%D0%B5%D0%B1%D1%8F%D0%B6%D1%8C%D0%B5%D0%B3%D0%BE_-_panoramio.jpg/960px-%D0%9A%D0%B8%D0%B7%D0%B0%D0%BD%D1%8C_%D1%83_%D0%9B%D0%B5%D0%B1%D1%8F%D0%B6%D1%8C%D0%B5%D0%B3%D0%BE_-_panoramio.jpg",
+    "alt": "Кизань у Лебяжьего - panoramio",
+    "author": "sergeymarutin",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B8%D0%B7%D0%B0%D0%BD%D1%8C_%D1%83_%D0%9B%D0%B5%D0%B1%D1%8F%D0%B6%D1%8C%D0%B5%D0%B3%D0%BE_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Gandurino_River_near_Khmelyovka.jpg/960px-Gandurino_River_near_Khmelyovka.jpg",
+    "alt": "Gandurino River near Khmelyovka",
+    "author": "Dor Shabashewitz",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gandurino_River_near_Khmelyovka.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Boats_in_Gandurino_River_near_Khmelyovka.jpg/960px-Boats_in_Gandurino_River_near_Khmelyovka.jpg",
+    "alt": "Boats in Gandurino River near Khmelyovka",
+    "author": "Dor Shabashewitz",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boats_in_Gandurino_River_near_Khmelyovka.jpg"
+   }
+  ],
+  "kamyzyak-city": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%92%D0%B8%D0%B4_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0.jpg/960px-%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%92%D0%B8%D0%B4_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0.jpg",
+    "alt": "Камызяк. Вид города",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%92%D0%B8%D0%B4_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%92%D0%B8%D0%B4_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0._%D0%A5%D1%80%D0%B0%D0%BC.jpg/960px-%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%92%D0%B8%D0%B4_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0._%D0%A5%D1%80%D0%B0%D0%BC.jpg",
+    "alt": "Камызяк. Вид города. Храм",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%BC%D1%8B%D0%B7%D1%8F%D0%BA._%D0%92%D0%B8%D0%B4_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0._%D0%A5%D1%80%D0%B0%D0%BC.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BA%D1%83_%D1%81%D0%BE_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B_%D1%85%D1%80%D0%B0%D0%BC%D0%B0.jpg/960px-%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BA%D1%83_%D1%81%D0%BE_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B_%D1%85%D1%80%D0%B0%D0%BC%D0%B0.jpg",
+    "alt": "Вид на реку со стороны храма",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BA%D1%83_%D1%81%D0%BE_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B_%D1%85%D1%80%D0%B0%D0%BC%D0%B0.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Kizan_Ferry.jpg/960px-Kizan_Ferry.jpg",
+    "alt": "Kizan Ferry",
+    "author": "Tadusik",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kizan_Ferry.jpg"
+   }
+  ],
+  "chyorny-yar": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/%D0%9F%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%8C_%D0%A7%D1%91%D1%80%D0%BD%D0%BE%D0%B3%D0%BE_%D0%AF%D1%80%D0%B0.jpg/960px-%D0%9F%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%8C_%D0%A7%D1%91%D1%80%D0%BD%D0%BE%D0%B3%D0%BE_%D0%AF%D1%80%D0%B0.jpg",
+    "alt": "Пристань Чёрного Яра",
+    "author": "автор неизвестен",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%8C_%D0%A7%D1%91%D1%80%D0%BD%D0%BE%D0%B3%D0%BE_%D0%AF%D1%80%D0%B0.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Chyorny_Yar.jpg/960px-Chyorny_Yar.jpg",
+    "alt": "Chyorny Yar",
+    "author": "Dogad75",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chyorny_Yar.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Chyorny_Yar_1.jpg/960px-Chyorny_Yar_1.jpg",
+    "alt": "Chyorny Yar 1",
+    "author": "Dogad75",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chyorny_Yar_1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%94%D0%B5%D0%B4%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%A5%D1%83%D1%82%D0%BE%D1%80%D0%B0_-_panoramio.jpg/960px-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%94%D0%B5%D0%B4%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%A5%D1%83%D1%82%D0%BE%D1%80%D0%B0_-_panoramio.jpg",
+    "alt": "Волга возле Дедушкиного Хутора - panoramio",
+    "author": "Андрей Матвеев",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%94%D0%B5%D0%B4%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%A5%D1%83%D1%82%D0%BE%D1%80%D0%B0_-_panoramio.jpg"
+   }
+  ],
+  "enotaevka": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(2).jpg/960px-%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(2).jpg",
+    "alt": "Где то между Волгой и Ахтубой - panoramio (2)",
+    "author": "Андрей Матвеев",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(2).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(3).jpg/960px-%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(3).jpg",
+    "alt": "Где то между Волгой и Ахтубой - panoramio (3)",
+    "author": "Андрей Матвеев",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B4%D0%B5_%D1%82%D0%BE_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9_%D0%B8_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%BE%D0%B9_-_panoramio_(3).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Yenotayevsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(1).jpg/960px-Yenotayevsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(1).jpg",
+    "alt": "Yenotayevsky District, Astrakhan Oblast, Russia - panoramio (1)",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yenotayevsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(1).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Yenotayevsky_District,_Astrakhan_Oblast,_Russia_-_panoramio.jpg/960px-Yenotayevsky_District,_Astrakhan_Oblast,_Russia_-_panoramio.jpg",
+    "alt": "Yenotayevsky District, Astrakhan Oblast, Russia - panoramio",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yenotayevsky_District,_Astrakhan_Oblast,_Russia_-_panoramio.jpg"
+   }
+  ],
+  "ikryanoe": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Boats_in_Bakhtemir_river,_Novo-Bulgary.jpg",
+    "alt": "Boats in Bakhtemir river, Novo-Bulgary",
+    "author": "Dor Shabashewitz",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boats_in_Bakhtemir_river,_Novo-Bulgary.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Ikryanoye,_Astrakhanskaya_oblast',_Russia_-_panoramio_(1).jpg/960px-Ikryanoye,_Astrakhanskaya_oblast',_Russia_-_panoramio_(1).jpg",
+    "alt": "Ikryanoye, Astrakhanskaya oblast', Russia - panoramio (1)",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ikryanoye,_Astrakhanskaya_oblast',_Russia_-_panoramio_(1).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ikryanoye,_Astrakhanskaya_oblast',_Russia_-_panoramio.jpg/960px-Ikryanoye,_Astrakhanskaya_oblast',_Russia_-_panoramio.jpg",
+    "alt": "Ikryanoye, Astrakhanskaya oblast', Russia - panoramio",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ikryanoye,_Astrakhanskaya_oblast',_Russia_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg/960px-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg",
+    "alt": "Волга Кировский район Астрахань",
+    "author": "Vladislav Bezrukov",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg"
+   }
+  ],
+  "liman": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/%D0%90%D0%B2%D0%B0%D0%BD%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8.jpg/960px-%D0%90%D0%B2%D0%B0%D0%BD%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8.jpg",
+    "alt": "Авандельта Волги",
+    "author": "Wladimir1470",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%B2%D0%B0%D0%BD%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Astrakan_Reserve-2.jpg/960px-Astrakan_Reserve-2.jpg",
+    "alt": "Astrakan Reserve-2",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-2.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Cruising_to_Astrakhan_05_Cormorants_(4137879539).jpg/960px-Cruising_to_Astrakhan_05_Cormorants_(4137879539).jpg",
+    "alt": "Cruising to Astrakhan 05 Cormorants (4137879539)",
+    "author": "michael clarke stuff",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cruising_to_Astrakhan_05_Cormorants_(4137879539).jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg/960px-%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg",
+    "alt": "Астраханский биосферный заповедник. Лотосовое поле. Сентябрь 2016",
+    "author": "ЕленаЕв",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg",
+    "near": true
+   }
+  ],
+  "olya-avandelta": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/%D0%9F%D0%BE%D1%80%D1%82_%D0%9E%D0%BB%D1%8F,_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB.,_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F.jpg/960px-%D0%9F%D0%BE%D1%80%D1%82_%D0%9E%D0%BB%D1%8F,_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB.,_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F.jpg",
+    "alt": "Порт Оля, Астраханская обл., Россия",
+    "author": "Editor-2026-new",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D1%80%D1%82_%D0%9E%D0%BB%D1%8F,_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB.,_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Astrakan_Reserve-11.jpg/960px-Astrakan_Reserve-11.jpg",
+    "alt": "Astrakan Reserve-11",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-11.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Astrakan_Reserve-9.jpg/960px-Astrakan_Reserve-9.jpg",
+    "alt": "Astrakan Reserve-9",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-9.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Astrakan_Reserve-7.jpg/960px-Astrakan_Reserve-7.jpg",
+    "alt": "Astrakan Reserve-7",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-7.jpg",
+    "near": true
+   }
+  ],
+  "mumra": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_18.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_18.jpg",
+    "alt": "Дельта Волги заповедник 18",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_18.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_15.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_15.jpg",
+    "alt": "Дельта Волги заповедник 15",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_15.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Astrakan_Reserve-4.jpg/960px-Astrakan_Reserve-4.jpg",
+    "alt": "Astrakan Reserve-4",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-4.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Astrakan_Reserve-9.jpg/960px-Astrakan_Reserve-9.jpg",
+    "alt": "Astrakan Reserve-9",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-9.jpg",
+    "near": true
+   }
+  ],
+  "zelenga": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_2.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_2.jpg",
+    "alt": "Дельта Волги заповедник 2",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_2.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_3.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_3.jpg",
+    "alt": "Дельта Волги заповедник 3",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_3.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Astrakan_Reserve-3.jpg/960px-Astrakan_Reserve-3.jpg",
+    "alt": "Astrakan Reserve-3",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-3.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Astrakan_Reserve-5.jpg/960px-Astrakan_Reserve-5.jpg",
+    "alt": "Astrakan Reserve-5",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-5.jpg",
+    "near": true
+   }
+  ],
+  "volodarsky-eriki": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_1.jpg",
+    "alt": "Дельта Волги заповедник 1",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_1.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_13.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_13.jpg",
+    "alt": "Дельта Волги заповедник 13",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_13.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_12.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_12.jpg",
+    "alt": "Дельта Волги заповедник 12",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_12.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_6.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_6.jpg",
+    "alt": "Дельта Волги заповедник 6",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_6.jpg",
+    "near": true
+   }
+  ],
+  "petrovskiy": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Gandurino_River_near_Khmelyovka.jpg/960px-Gandurino_River_near_Khmelyovka.jpg",
+    "alt": "Gandurino River near Khmelyovka",
+    "author": "Dor Shabashewitz",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gandurino_River_near_Khmelyovka.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Astrakan_Reserve-3.jpg/960px-Astrakan_Reserve-3.jpg",
+    "alt": "Astrakan Reserve-3",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-3.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Astrakan_Reserve-11.jpg/960px-Astrakan_Reserve-11.jpg",
+    "alt": "Astrakan Reserve-11",
+    "author": "Ferdinando sacchetti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakan_Reserve-11.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/%D0%92%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D0%B2%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B3%D0%BB%D0%B0%D0%B4%D1%8C.jpg/960px-%D0%92%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D0%B2%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B3%D0%BB%D0%B0%D0%B4%D1%8C.jpg",
+    "alt": "Водная волжская гладь",
+    "author": "Cuma2020",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D0%B2%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B3%D0%BB%D0%B0%D0%B4%D1%8C.jpg",
+    "near": true
+   }
+  ],
+  "lebedinoe": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_8.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_8.jpg",
+    "alt": "Дельта Волги заповедник 8",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_8.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_6.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_6.jpg",
+    "alt": "Дельта Волги заповедник 6",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_6.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_11.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_11.jpg",
+    "alt": "Дельта Волги заповедник 11",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_11.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Swans._Volga-Akhtuba_floodplain.JPG/960px-Swans._Volga-Akhtuba_floodplain.JPG",
+    "alt": "Swans. Volga-Akhtuba floodplain",
+    "author": "администрация Волгоградской области",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Swans._Volga-Akhtuba_floodplain.JPG",
+    "near": true
+   }
+  ],
+  "narimanov": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg/960px-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg",
+    "alt": "Волга Кировский район Астрахань",
+    "author": "Vladislav Bezrukov",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Volga_near_Astrakhan.jpg/960px-Volga_near_Astrakhan.jpg",
+    "alt": "Volga near Astrakhan",
+    "author": "Sergey Sebelev",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Volga_near_Astrakhan.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg/960px-%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg",
+    "alt": "Вид на волгу с острова - panoramio",
+    "author": "stallewar",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%94%D0%B5%D0%B4%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%A5%D1%83%D1%82%D0%BE%D1%80%D0%B0_-_panoramio.jpg/960px-%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%94%D0%B5%D0%B4%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%A5%D1%83%D1%82%D0%BE%D1%80%D0%B0_-_panoramio.jpg",
+    "alt": "Волга возле Дедушкиного Хутора - panoramio",
+    "author": "Андрей Матвеев",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%94%D0%B5%D0%B4%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%A5%D1%83%D1%82%D0%BE%D1%80%D0%B0_-_panoramio.jpg",
+    "near": true
+   }
+  ],
+  "nariman-city": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2_(2).jpg/960px-%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2_(2).jpg",
+    "alt": "Город Нариманов (2)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2_(2).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2._2009.jpg/960px-%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2._2009.jpg",
+    "alt": "Город Нариманов. 2009",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%BE%D0%B4_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2._2009.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%B5.jpg/960px-%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%B5.jpg",
+    "alt": "Здание в Нариманове",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%B5.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/%D0%A2%D1%80%D0%B0%D0%BD%D0%B7%D0%B8%D1%82%D0%BE%D0%BC_%D0%BF%D0%BE_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D1%83.jpg/960px-%D0%A2%D1%80%D0%B0%D0%BD%D0%B7%D0%B8%D1%82%D0%BE%D0%BC_%D0%BF%D0%BE_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D1%83.jpg",
+    "alt": "Транзитом по Нариманову",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A2%D1%80%D0%B0%D0%BD%D0%B7%D0%B8%D1%82%D0%BE%D0%BC_%D0%BF%D0%BE_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D1%83.jpg"
+   }
+  ],
+  "akhtubinsk": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/%D0%9C%D0%BE%D1%81%D1%82_%D0%B2_%D0%97%D0%B0%D1%80%D0%B5%D1%87%D1%8C%D0%B5.JPG/960px-%D0%9C%D0%BE%D1%81%D1%82_%D0%B2_%D0%97%D0%B0%D1%80%D0%B5%D1%87%D1%8C%D0%B5.JPG",
+    "alt": "Мост в Заречье",
+    "author": "Екатерина",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%BE%D1%81%D1%82_%D0%B2_%D0%97%D0%B0%D1%80%D0%B5%D1%87%D1%8C%D0%B5.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio.jpg/960px-Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio.jpg",
+    "alt": "Akhtubinsky District, Astrakhan Oblast, Russia - panoramio",
+    "author": "Шансон-Серпухов",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Karasun_lake_-_panoramio.jpg",
+    "alt": "Karasun lake - panoramio",
+    "author": "Denis Solodovnikov",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karasun_lake_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/%D0%9A%D0%B0%D1%80%D1%88%D0%B5%D0%B2%D0%B8%D1%82%D0%BE%D0%B5_-_panoramio_(2).jpg/960px-%D0%9A%D0%B0%D1%80%D1%88%D0%B5%D0%B2%D0%B8%D1%82%D0%BE%D0%B5_-_panoramio_(2).jpg",
+    "alt": "Каршевитое - panoramio (2)",
+    "author": "vyacheslav dudin",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D1%88%D0%B5%D0%B2%D0%B8%D1%82%D0%BE%D0%B5_-_panoramio_(2).jpg"
+   }
+  ],
+  "akhtubinsk-city": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/2018-08-07_13-52._%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA_(1).jpg/960px-2018-08-07_13-52._%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA_(1).jpg",
+    "alt": "2018-08-07 13-52. Ахтубинск (1)",
+    "author": "Чръный человек",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018-08-07_13-52._%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA_(1).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/2018-08-07_13-52._%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA_(2).jpg/960px-2018-08-07_13-52._%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA_(2).jpg",
+    "alt": "2018-08-07 13-52. Ахтубинск (2)",
+    "author": "Чръный человек",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018-08-07_13-52._%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA_(2).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA.JPG/960px-%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA.JPG",
+    "alt": "Площадь Ленина Ахтубинск",
+    "author": "Екатерина",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0_%D0%90%D1%85%D1%82%D1%83%D0%B1%D0%B8%D0%BD%D1%81%D0%BA.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD_%22%D0%97%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0_%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%22_%D0%BD%D0%BE%D1%87%D1%8C%D1%8E.JPG/960px-%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD_%22%D0%97%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0_%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%22_%D0%BD%D0%BE%D1%87%D1%8C%D1%8E.JPG",
+    "alt": "Фонтан \"Звезда Победы\" ночью",
+    "author": "Katalinks",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD_%22%D0%97%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0_%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%22_%D0%BD%D0%BE%D1%87%D1%8C%D1%8E.JPG"
+   }
+  ],
+  "kharabali-akhtuba": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0.jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0.jpg",
+    "alt": "Харабали. Природа",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg",
+    "alt": "Харабали. Природа (2)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(3).jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(3).jpg",
+    "alt": "Харабали. Природа (3)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(3).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(4).jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(4).jpg",
+    "alt": "Харабали. Природа (4)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(4).jpg"
+   }
+  ],
+  "kharabali-city": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/%D0%A5%D1%80%D0%B0%D0%BC_%D0%92%D0%BE%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5_%D0%93%D0%BE%D1%81%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F_%D0%B2_%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8_(6).jpg/960px-%D0%A5%D1%80%D0%B0%D0%BC_%D0%92%D0%BE%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5_%D0%93%D0%BE%D1%81%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F_%D0%B2_%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8_(6).jpg",
+    "alt": "Храм Вознесение Господня в Харабали (6)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D1%80%D0%B0%D0%BC_%D0%92%D0%BE%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5_%D0%93%D0%BE%D1%81%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F_%D0%B2_%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8_(6).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(5).jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(5).jpg",
+    "alt": "Харабали. Природа (5)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(5).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg/960px-%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg",
+    "alt": "Харабали. Природа (2)",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8._%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0_(2).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/%D0%97%D0%BD%D0%B0%D0%BA_%D0%BF%D1%80%D0%B8_%D0%B2%D1%8A%D0%B5%D0%B7%D0%B4%D0%B5_%D0%B2_%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8.jpg/960px-%D0%97%D0%BD%D0%B0%D0%BA_%D0%BF%D1%80%D0%B8_%D0%B2%D1%8A%D0%B5%D0%B7%D0%B4%D0%B5_%D0%B2_%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8.jpg",
+    "alt": "Знак при въезде в Харабали",
+    "author": "Илга Гондарева",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%BD%D0%B0%D0%BA_%D0%BF%D1%80%D0%B8_%D0%B2%D1%8A%D0%B5%D0%B7%D0%B4%D0%B5_%D0%B2_%D0%A5%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D0%BB%D0%B8.jpg"
+   }
+  ],
+  "verkhny-baskunchak": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Verkhny_Baskunchak.JPG/960px-Verkhny_Baskunchak.JPG",
+    "alt": "Verkhny Baskunchak",
+    "author": "Dogad75",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Verkhny_Baskunchak.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%D0%92%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg/960px-%D0%92%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg",
+    "alt": "Вокзал станции Верхний Баскунчак",
+    "author": "Георгий Долгопский",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg/960px-%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg",
+    "alt": "Баскунчак - panoramio",
+    "author": "Сашка Денисов",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Verkhny_Baskunchak_1.JPG/960px-Verkhny_Baskunchak_1.JPG",
+    "alt": "Verkhny Baskunchak 1",
+    "author": "Dogad75",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Verkhny_Baskunchak_1.JPG"
+   }
+  ],
+  "baskunchak": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg/960px-%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg",
+    "alt": "Озеро Баскунчак",
+    "author": "Brummelissa",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA1.jpg/960px-%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA1.jpg",
+    "alt": "Баскунчак1",
+    "author": "Екатерина",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/%D0%9F%D0%B5%D1%89%D0%B5%D1%80%D0%B0_%D0%B3%D0%BE%D1%80%D1%8B_%D0%91%D0%BE%D0%B3%D0%B4%D0%BE_%D1%81_%D0%B2%D0%B8%D0%B4%D0%BE%D0%BC_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg/960px-%D0%9F%D0%B5%D1%89%D0%B5%D1%80%D0%B0_%D0%B3%D0%BE%D1%80%D1%8B_%D0%91%D0%BE%D0%B3%D0%B4%D0%BE_%D1%81_%D0%B2%D0%B8%D0%B4%D0%BE%D0%BC_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg",
+    "alt": "Пещера горы Богдо с видом на озеро Баскунчак",
+    "author": "Попрошаев Сергей",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B5%D1%89%D0%B5%D1%80%D0%B0_%D0%B3%D0%BE%D1%80%D1%8B_%D0%91%D0%BE%D0%B3%D0%B4%D0%BE_%D1%81_%D0%B2%D0%B8%D0%B4%D0%BE%D0%BC_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg/960px-%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg",
+    "alt": "Восточный берег озера Баскунчак - panoramio",
+    "author": "Denis Solodovnikov",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg"
+   }
+  ],
+  "kordonnaya-balka": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg/960px-%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg",
+    "alt": "Восточный берег озера Баскунчак - panoramio",
+    "author": "Denis Solodovnikov",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B3_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0_%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(9).jpg/960px-Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(9).jpg",
+    "alt": "Akhtubinsky District, Astrakhan Oblast, Russia - panoramio (9)",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(9).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(11).jpg/960px-Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(11).jpg",
+    "alt": "Akhtubinsky District, Astrakhan Oblast, Russia - panoramio (11)",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(11).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(1).jpg/960px-Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(1).jpg",
+    "alt": "Akhtubinsky District, Astrakhan Oblast, Russia - panoramio (1)",
+    "author": "Александр Юхименко",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akhtubinsky_District,_Astrakhan_Oblast,_Russia_-_panoramio_(1).jpg"
+   }
+  ],
+  "akhtuba-floodplain": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flood._Volga-Akhtuba_floodplain.JPG/960px-Flood._Volga-Akhtuba_floodplain.JPG",
+    "alt": "Flood. Volga-Akhtuba floodplain",
+    "author": "администрация Волгоградской области",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flood._Volga-Akhtuba_floodplain.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lotuses._Volga-Akhtuba_floodplain.jpg/960px-Lotuses._Volga-Akhtuba_floodplain.jpg",
+    "alt": "Lotuses. Volga-Akhtuba floodplain",
+    "author": "администрация Волгоградской области",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lotuses._Volga-Akhtuba_floodplain.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Swans._Volga-Akhtuba_floodplain.JPG/960px-Swans._Volga-Akhtuba_floodplain.JPG",
+    "alt": "Swans. Volga-Akhtuba floodplain",
+    "author": "администрация Волгоградской области",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Swans._Volga-Akhtuba_floodplain.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Erik_Kashirin._Volga-Akhtuba_floodplain.JPG/960px-Erik_Kashirin._Volga-Akhtuba_floodplain.JPG",
+    "alt": "Erik Kashirin. Volga-Akhtuba floodplain",
+    "author": "администрация Волгоградской области",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erik_Kashirin._Volga-Akhtuba_floodplain.JPG"
+   }
+  ],
+  "lotus-delta": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_14.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_14.jpg",
+    "alt": "Дельта Волги заповедник 14",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_14.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_5.jpg/960px-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_5.jpg",
+    "alt": "Дельта Волги заповедник 5",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA_5.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg/960px-%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg",
+    "alt": "Астраханский биосферный заповедник. Лотосовое поле. Сентябрь 2016",
+    "author": "ЕленаЕв",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B8%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA._%D0%9B%D0%BE%D1%82%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5._%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C_2016.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/%D0%9B%D0%BE%D1%82%D0%BE%D1%81_%D0%B2_%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B5_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8.jpg/960px-%D0%9B%D0%BE%D1%82%D0%BE%D1%81_%D0%B2_%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B5_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8.jpg",
+    "alt": "Лотос в дельте Волги",
+    "author": "Anastasia Galyamicheva",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%BE%D1%82%D0%BE%D1%81_%D0%B2_%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B5_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8.jpg"
+   }
+  ],
+  "volga-embankment": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/%D0%92%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D0%B2_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D0%B8_2020-02.jpg/960px-%D0%92%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D0%B2_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D0%B8_2020-02.jpg",
+    "alt": "Волжская набережная в Астрахани 2020-02",
+    "author": "Svetlov Artem",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D0%B2_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D0%B8_2020-02.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8,_%D1%83%D0%BB%D0%B8%D1%86%D0%B0_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D1%8F_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0.jpg/960px-%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8,_%D1%83%D0%BB%D0%B8%D1%86%D0%B0_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D1%8F_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0.jpg",
+    "alt": "Набережная Волги, улица Анатолия Сергеева",
+    "author": "Jumylis",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8,_%D1%83%D0%BB%D0%B8%D1%86%D0%B0_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D1%8F_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg/960px-%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg",
+    "alt": "Вид на волгу с острова - panoramio",
+    "author": "stallewar",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Astrakhan_Volga_River_P5101027_2200.jpg/960px-Astrakhan_Volga_River_P5101027_2200.jpg",
+    "alt": "Astrakhan Volga River P5101027 2200",
+    "author": "Alexxx1979",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakhan_Volga_River_P5101027_2200.jpg"
+   }
+  ],
+  "astrakhan-kremlin": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Astrakhan_Kremlin_Red_Gate_Tower_P5090903_2475.jpg/960px-Astrakhan_Kremlin_Red_Gate_Tower_P5090903_2475.jpg",
+    "alt": "Astrakhan Kremlin Red Gate Tower P5090903 2475",
+    "author": "Alexxx1979",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakhan_Kremlin_Red_Gate_Tower_P5090903_2475.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Gate_Church_of_St._Nicholas_the_Wonderworker_(view_from_the_Astrakhan_Kremlin_territory).jpg/960px-Gate_Church_of_St._Nicholas_the_Wonderworker_(view_from_the_Astrakhan_Kremlin_territory).jpg",
+    "alt": "Gate Church of St. Nicholas the Wonderworker (view from the Astrakhan Kremlin territory)",
+    "author": "Vityavo",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_Church_of_St._Nicholas_the_Wonderworker_(view_from_the_Astrakhan_Kremlin_territory).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Astrakhan_Kremlin_Cathedral_of_the_Assumption_and_the_cathedral_bell_tower_with_Prechistinsky_Gate_P5090795_2475.jpg/960px-Astrakhan_Kremlin_Cathedral_of_the_Assumption_and_the_cathedral_bell_tower_with_Prechistinsky_Gate_P5090795_2475.jpg",
+    "alt": "Astrakhan Kremlin Cathedral of the Assumption and the cathedral bell tower with Prechistinsky Gate P5090795 2475",
+    "author": "Alexxx1979",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrakhan_Kremlin_Cathedral_of_the_Assumption_and_the_cathedral_bell_tower_with_Prechistinsky_Gate_P5090795_2475.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Dormition_Cathedral_of_the_Astrakhan_Kremlin_(view_from_the_Prechistenskaya_Bell_Tower).jpg/960px-Dormition_Cathedral_of_the_Astrakhan_Kremlin_(view_from_the_Prechistenskaya_Bell_Tower).jpg",
+    "alt": "Dormition Cathedral of the Astrakhan Kremlin (view from the Prechistenskaya Bell Tower)",
+    "author": "Vityavo",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dormition_Cathedral_of_the_Astrakhan_Kremlin_(view_from_the_Prechistenskaya_Bell_Tower).jpg"
+   }
+  ],
+  "bogdo": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Mount_Bolshoye_Bogdo_27.jpg/960px-Mount_Bolshoye_Bogdo_27.jpg",
+    "alt": "Mount Bolshoye Bogdo 27",
+    "author": "VladimirPF",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Bolshoye_Bogdo_27.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B5_%D0%91%D0%BE%D0%B3%D0%B4%D0%BE.JPG/960px-%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B5_%D0%91%D0%BE%D0%B3%D0%B4%D0%BE.JPG",
+    "alt": "Большое Богдо",
+    "author": "Ринат Исаев",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B5_%D0%91%D0%BE%D0%B3%D0%B4%D0%BE.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Mount_Bolshoye_Bogdo_16.jpg/960px-Mount_Bolshoye_Bogdo_16.jpg",
+    "alt": "Mount Bolshoye Bogdo 16",
+    "author": "VladimirPF",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Bolshoye_Bogdo_16.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Mount_Bolshoye_Bogdo_01.jpg/960px-Mount_Bolshoye_Bogdo_01.jpg",
+    "alt": "Mount Bolshoye Bogdo 01",
+    "author": "VladimirPF",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Bolshoye_Bogdo_01.jpg"
+   }
+  ],
+  "damchik-zapovednik": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/%D0%AF%D1%81%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B5%D0%BD%D1%8C_%D0%B2_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B5.jpg/960px-%D0%AF%D1%81%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B5%D0%BD%D1%8C_%D0%B2_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B5.jpg",
+    "alt": "Ясный день в заповеднике",
+    "author": "Lashkov17",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%AF%D1%81%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B5%D0%BD%D1%8C_%D0%B2_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B5.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/%D0%9E%D1%81%D0%B5%D0%BD%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D1%80%D1%8F_%D0%B2_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B5_(%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8).jpg/960px-%D0%9E%D1%81%D0%B5%D0%BD%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D1%80%D1%8F_%D0%B2_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B5_(%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8).jpg",
+    "alt": "Осенняя заря в заповеднике (дельта Волги)",
+    "author": "Lashkov17",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D1%81%D0%B5%D0%BD%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D1%80%D1%8F_%D0%B2_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B5_(%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0_%D0%92%D0%BE%D0%BB%D0%B3%D0%B8).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%D0%A2%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BA%D0%B5.jpg/960px-%D0%A2%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BA%D0%B5.jpg",
+    "alt": "Туманный рассвет на реке",
+    "author": "Lashkov17",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A2%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BA%D0%B5.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/%D0%9B%D0%B5%D1%82%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D1%80%D1%8F_%D1%81_%D0%BB%D0%BE%D1%82%D0%BE%D1%81%D0%B0%D0%BC%D0%B8.jpg/960px-%D0%9B%D0%B5%D1%82%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D1%80%D1%8F_%D1%81_%D0%BB%D0%BE%D1%82%D0%BE%D1%81%D0%B0%D0%BC%D0%B8.jpg",
+    "alt": "Летняя заря с лотосами",
+    "author": "Lashkov17",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B5%D1%82%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D1%80%D1%8F_%D1%81_%D0%BB%D0%BE%D1%82%D0%BE%D1%81%D0%B0%D0%BC%D0%B8.jpg"
+   }
+  ],
+  "nizhny-baskunchak": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_9.jpg/960px-%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_9.jpg",
+    "alt": "Баскунчак 9",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_9.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_7.jpg/960px-%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_7.jpg",
+    "alt": "Баскунчак 7",
+    "author": "Александра Зайцева",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_7.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B2%D0%B5%D1%80%D0%B1%D0%BB%D1%8E%D0%B4.jpg/960px-%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B2%D0%B5%D1%80%D0%B1%D0%BB%D1%8E%D0%B4.jpg",
+    "alt": "Астраханский верблюд",
+    "author": "Дмитрий Алтунин",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B2%D0%B5%D1%80%D0%B1%D0%BB%D1%8E%D0%B4.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_(7).JPG/960px-%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_(7).JPG",
+    "alt": "Баскунчак (7)",
+    "author": "NovikovDIgor",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D0%BA%D1%83%D0%BD%D1%87%D0%B0%D0%BA_(7).JPG"
+   }
+  ],
+  "selitrennoe": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/%D0%A0%D0%B0%D1%81%D0%BA%D0%BE%D0%BF%D0%BA%D0%B8._%D0%93%D0%BE%D1%80%D0%BD_%D0%BF%D0%BE_%D0%BE%D0%B1%D0%B6%D0%B8%D0%B3%D1%83_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B0.JPG/960px-%D0%A0%D0%B0%D1%81%D0%BA%D0%BE%D0%BF%D0%BA%D0%B8._%D0%93%D0%BE%D1%80%D0%BD_%D0%BF%D0%BE_%D0%BE%D0%B1%D0%B6%D0%B8%D0%B3%D1%83_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B0.JPG",
+    "alt": "Раскопки. Горн по обжигу кирпича",
+    "author": "Oksana harab",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%B0%D1%81%D0%BA%D0%BE%D0%BF%D0%BA%D0%B8._%D0%93%D0%BE%D1%80%D0%BD_%D0%BF%D0%BE_%D0%BE%D0%B1%D0%B6%D0%B8%D0%B3%D1%83_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B0.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/%D0%A1%D0%B5%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%89%D0%B5_(2).jpg/960px-%D0%A1%D0%B5%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%89%D0%B5_(2).jpg",
+    "alt": "Селитренное городище (2)",
+    "author": "lavrov",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B5%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%89%D0%B5_(2).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ghengisid's_palace_tile_decor_detail.jpg/960px-Ghengisid's_palace_tile_decor_detail.jpg",
+    "alt": "Ghengisid's palace tile decor detail",
+    "author": "shakko",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ghengisid's_palace_tile_decor_detail.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/%D0%A1%D0%B5%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%BE%D1%81%D1%82%D1%8C.jpg/960px-%D0%A1%D0%B5%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%BE%D1%81%D1%82%D1%8C.jpg",
+    "alt": "Селитренное поверхность",
+    "author": "lavrov",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B5%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%BE%D1%81%D1%82%D1%8C.jpg"
+   }
+  ],
+  "astrakhan-volga": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Volga_near_Astrakhan.jpg/960px-Volga_near_Astrakhan.jpg",
+    "alt": "Volga near Astrakhan",
+    "author": "Sergey Sebelev",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Volga_near_Astrakhan.jpg",
+    "near": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C_%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D1%80_%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_17_%D0%BF%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%8C.jpg/960px-%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C_%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D1%80_%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_17_%D0%BF%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%8C.jpg",
+    "alt": "Астрахань Набережная р Волга 17 пристань",
+    "author": "автор неизвестен",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D1%8C_%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D1%80_%D0%92%D0%BE%D0%BB%D0%B3%D0%B0_17_%D0%BF%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%8C.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/%D0%97%D0%B0%D1%8F%D1%87%D1%8C%D1%8F_%D0%92%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B2_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D0%B8.jpg/960px-%D0%97%D0%B0%D1%8F%D1%87%D1%8C%D1%8F_%D0%92%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B2_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D0%B8.jpg",
+    "alt": "Заячья Воложка в Астрахани",
+    "author": "автор неизвестен",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D1%8F%D1%87%D1%8C%D1%8F_%D0%92%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B2_%D0%90%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%B0%D0%BD%D0%B8.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg/960px-%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg",
+    "alt": "Вид на волгу с острова - panoramio",
+    "author": "stallewar",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D0%B2%D0%BE%D0%BB%D0%B3%D1%83_%D1%81_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0_-_panoramio.jpg",
+    "near": true
+   }
+  ]
+ },
+ "fish": {
+  "zander": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sandre_%28Sander_lucioperca%29.jpg/960px-Sandre_%28Sander_lucioperca%29.jpg",
+    "alt": "Судак",
+    "author": "Tylwyth Eldar",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sandre_%28Sander_lucioperca%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Hal_-_Sander_lucioperca_-_1.jpg/960px-Hal_-_Sander_lucioperca_-_1.jpg",
+    "alt": "Судак",
+    "author": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hal_-_Sander_lucioperca_-_1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/StizostedionLuciopercaAquarium.JPG/960px-StizostedionLuciopercaAquarium.JPG",
+    "alt": "Судак",
+    "author": "Piet Spaans",
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:StizostedionLuciopercaAquarium.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Sander_lucioperca%2C_Acquario_del_Po.jpg/960px-Sander_lucioperca%2C_Acquario_del_Po.jpg",
+    "alt": "Судак",
+    "author": "Basilicofresco",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sander_lucioperca%2C_Acquario_del_Po.jpg"
+   }
+  ],
+  "pike": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Esox_lucius_ZOO_1.jpg/960px-Esox_lucius_ZOO_1.jpg",
+    "alt": "Щука",
+    "author": "Jik jik",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esox_lucius_ZOO_1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Esox_lucius_Echinger_Weiher.jpg/960px-Esox_lucius_Echinger_Weiher.jpg",
+    "alt": "Щука",
+    "author": "Peter Kölbl",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esox_lucius_Echinger_Weiher.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Esox_lucius_Prague_Vltava_2.jpg/960px-Esox_lucius_Prague_Vltava_2.jpg",
+    "alt": "Щука",
+    "author": "Karelj",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esox_lucius_Prague_Vltava_2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Hecht_Hoeglwoerther_See.jpg/960px-Hecht_Hoeglwoerther_See.jpg",
+    "alt": "Щука",
+    "author": "Thomas Then",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hecht_Hoeglwoerther_See.jpg"
+   }
+  ],
+  "catfish": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Silurus_glanis_01.jpg/960px-Silurus_glanis_01.jpg",
+    "alt": "Сом",
+    "author": "Dieter Florian",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silurus_glanis_01.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Silurus_glanis_02.jpg/960px-Silurus_glanis_02.jpg",
+    "alt": "Сом",
+    "author": "Dieter Florian",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silurus_glanis_02.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/European_Catfish_%28Silurus_glanis%29_%2813532570755%29.jpg/960px-European_Catfish_%28Silurus_glanis%29_%2813532570755%29.jpg",
+    "alt": "Сом",
+    "author": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_Catfish_%28Silurus_glanis%29_%2813532570755%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Silure_dans_un_filet.JPG/960px-Silure_dans_un_filet.JPG",
+    "alt": "Сом",
+    "author": "Epop",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silure_dans_un_filet.JPG"
+   }
+  ],
+  "carp": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cyprinus_carpio_2008_G1_%28cropped%29.jpg/960px-Cyprinus_carpio_2008_G1_%28cropped%29.jpg",
+    "alt": "Сазан",
+    "author": "George Chernilevsky",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cyprinus_carpio_2008_G1_%28cropped%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Common_Carp_%28Cyprinus_carpio%29_%282%29_%2851222524751%29.jpg/960px-Common_Carp_%28Cyprinus_carpio%29_%282%29_%2851222524751%29.jpg",
+    "alt": "Сазан",
+    "author": "USFWS Mountain Prairie",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Common_Carp_%28Cyprinus_carpio%29_%282%29_%2851222524751%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/%D0%9A%D0%B0%D1%80%D0%BF.jpg/960px-%D0%9A%D0%B0%D1%80%D0%BF.jpg",
+    "alt": "Сазан",
+    "author": "Роман Алексеевич Е",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D0%BF.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Carp_%28Cyprinus_carpio%29_in_aquarium.JPG/960px-Carp_%28Cyprinus_carpio%29_in_aquarium.JPG",
+    "alt": "Сазан",
+    "author": "Reaperman",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carp_%28Cyprinus_carpio%29_in_aquarium.JPG"
+   }
+  ],
+  "asp": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jonge_roofblei_op_witte_achtergrond.jpg/960px-Jonge_roofblei_op_witte_achtergrond.jpg",
+    "alt": "Жерех",
+    "author": "Peter van der Sluijs",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jonge_roofblei_op_witte_achtergrond.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Jonkie_roofblei.jpg/960px-Jonkie_roofblei.jpg",
+    "alt": "Жерех",
+    "author": "Peter van der Sluijs",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jonkie_roofblei.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aspius_aspius_Prague_Vltava_1_%28cropped%29.jpg/960px-Aspius_aspius_Prague_Vltava_1_%28cropped%29.jpg",
+    "alt": "Жерех",
+    "author": "Karelj",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aspius_aspius_Prague_Vltava_1_%28cropped%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/%D0%96%D0%B5%D1%80%D0%B5%D1%85.jpg/960px-%D0%96%D0%B5%D1%80%D0%B5%D1%85.jpg",
+    "alt": "Жерех",
+    "author": "Вадим де Голь",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%96%D0%B5%D1%80%D0%B5%D1%85.jpg"
+   }
+  ],
+  "bream": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bronze_coloured_Abramis_brama.jpg/960px-Bronze_coloured_Abramis_brama.jpg",
+    "alt": "Лещ",
+    "author": "Piet Spaans (viridiflavus)",
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bronze_coloured_Abramis_brama.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Carp_bream1.jpg/960px-Carp_bream1.jpg",
+    "alt": "Лещ",
+    "author": "Микова Наталия",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carp_bream1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Abramis_brama_Prague_Vltava_1.jpg/960px-Abramis_brama_Prague_Vltava_1.jpg",
+    "alt": "Лещ",
+    "author": "Karelj",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abramis_brama_Prague_Vltava_1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Abramis_brama_by_RpM.JPG/960px-Abramis_brama_by_RpM.JPG",
+    "alt": "Лещ",
+    "author": "Reaperman",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abramis_brama_by_RpM.JPG"
+   }
+  ],
+  "perch": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Perca_fluviatilis_-_Perche_commune_-_European_perch_%28cropped%29.jpg/960px-Perca_fluviatilis_-_Perche_commune_-_European_perch_%28cropped%29.jpg",
+    "alt": "Окунь",
+    "author": "Gilles San Martin",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perca_fluviatilis_-_Perche_commune_-_European_perch_%28cropped%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flinke_baars_van_22_cm_gevangen_aan_een_made_in_een_haven.jpg/960px-Flinke_baars_van_22_cm_gevangen_aan_een_made_in_een_haven.jpg",
+    "alt": "Окунь",
+    "author": "Peter van der Sluijs",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flinke_baars_van_22_cm_gevangen_aan_een_made_in_een_haven.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/PercheCommune.jpg/960px-PercheCommune.jpg",
+    "alt": "Окунь",
+    "author": "Dgp.martin",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PercheCommune.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Persico_Reale.jpg/960px-Persico_Reale.jpg",
+    "alt": "Окунь",
+    "author": "Cemg",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Persico_Reale.jpg"
+   }
+  ],
+  "roach": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Rutilusrutilus38cm_2143x1060.JPG/960px-Rutilusrutilus38cm_2143x1060.JPG",
+    "alt": "Плотва",
+    "author": "Viridiflavus",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rutilusrutilus38cm_2143x1060.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rutilus_rutilus_Prague_Vltava_3.jpg/960px-Rutilus_rutilus_Prague_Vltava_3.jpg",
+    "alt": "Плотва",
+    "author": "Karelj",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rutilus_rutilus_Prague_Vltava_3.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Rutilus_rutilus_by_Algirdas_cropped.jpg/960px-Rutilus_rutilus_by_Algirdas_cropped.jpg",
+    "alt": "Плотва",
+    "author": "Algirdas",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rutilus_rutilus_by_Algirdas_cropped.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Blausteinsee_Tierwelt_03.jpg/960px-Blausteinsee_Tierwelt_03.jpg",
+    "alt": "Плотва",
+    "author": "Ullrich Mühlhoff",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blausteinsee_Tierwelt_03.jpg"
+   }
+  ],
+  "gustera": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Kolblei.JPG/960px-Kolblei.JPG",
+    "alt": "Густера",
+    "author": "Piet Spaans",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kolblei.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Blicca_bjoerkna_close.jpg/960px-Blicca_bjoerkna_close.jpg",
+    "alt": "Густера",
+    "author": "автор неизвестен",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blicca_bjoerkna_close.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Blicca_bjoerkna.jpg/960px-Blicca_bjoerkna.jpg",
+    "alt": "Густера",
+    "author": "автор неизвестен",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blicca_bjoerkna.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Blicca_bjoerkna_transparent_bg.png/960px-Blicca_bjoerkna_transparent_bg.png",
+    "alt": "Густера",
+    "author": "Algirdas, Andreas Plank",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blicca_bjoerkna_transparent_bg.png"
+   }
+  ],
+  "chekhon": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Ciosa.jpg/960px-Ciosa.jpg",
+    "alt": "Чехонь",
+    "author": "-serwacy01-",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciosa.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/%D0%A7%D1%83%D1%85%D0%BE%D0%BD%D1%8C.JPG/960px-%D0%A7%D1%83%D1%85%D0%BE%D0%BD%D1%8C.JPG",
+    "alt": "Чехонь",
+    "author": "В.С. Білецький",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A7%D1%83%D1%85%D0%BE%D0%BD%D1%8C.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Pelecus_cultratus_208422285.jpg/960px-Pelecus_cultratus_208422285.jpg",
+    "alt": "Чехонь",
+    "author": "Kudaibergen Amirekul",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelecus_cultratus_208422285.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pelecus_cultratus_464985613.jpg/960px-Pelecus_cultratus_464985613.jpg",
+    "alt": "Чехонь",
+    "author": "Paulius Rupšas",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelecus_cultratus_464985613.jpg"
+   }
+  ],
+  "rudd": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Scardinius_erythropthalmus_2009_G1.jpg/960px-Scardinius_erythropthalmus_2009_G1.jpg",
+    "alt": "Краснопёрка",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scardinius_erythropthalmus_2009_G1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Rotfeder_Rudd.jpg/960px-Rotfeder_Rudd.jpg",
+    "alt": "Краснопёрка",
+    "author": "Olaf Nies",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rotfeder_Rudd.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Common_rudd_wroclaw_zoo.jpg/960px-Common_rudd_wroclaw_zoo.jpg",
+    "alt": "Краснопёрка",
+    "author": "Iidkk",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Common_rudd_wroclaw_zoo.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/De_ruisvoorn_goede_sportvis.jpg/960px-De_ruisvoorn_goede_sportvis.jpg",
+    "alt": "Краснопёрка",
+    "author": "Peter van der Sluijs",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:De_ruisvoorn_goede_sportvis.jpg"
+   }
+  ],
+  "tench": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Tinca_tinca_Prague_Vltava_1.jpg/960px-Tinca_tinca_Prague_Vltava_1.jpg",
+    "alt": "Линь",
+    "author": "Karelj",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tinca_tinca_Prague_Vltava_1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tench_%28Tinca_tinca%29_%2813532518743%29.jpg/960px-Tench_%28Tinca_tinca%29_%2813532518743%29.jpg",
+    "alt": "Линь",
+    "author": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tench_%28Tinca_tinca%29_%2813532518743%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/FemaleTench1.JPG/960px-FemaleTench1.JPG",
+    "alt": "Линь",
+    "author": "Viridiflavus",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FemaleTench1.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Tinca_tinca_Prague_Vltava_3.jpg/960px-Tinca_tinca_Prague_Vltava_3.jpg",
+    "alt": "Линь",
+    "author": "Karelj",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tinca_tinca_Prague_Vltava_3.jpg"
+   }
+  ],
+  "crucian": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Carassius_gibelio_2008_G1.jpg/960px-Carassius_gibelio_2008_G1.jpg",
+    "alt": "Карась",
+    "author": "George Chernilevsky",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carassius_gibelio_2008_G1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Carassius_gibelio_2008_G3.jpg/960px-Carassius_gibelio_2008_G3.jpg",
+    "alt": "Карась",
+    "author": "George Chernilevsky",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carassius_gibelio_2008_G3.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Carassius_gibelio_dark_2009_G1.jpg/960px-Carassius_gibelio_dark_2009_G1.jpg",
+    "alt": "Карась",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carassius_gibelio_dark_2009_G1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/CarassiusAuratusGibelio.JPG/960px-CarassiusAuratusGibelio.JPG",
+    "alt": "Карась",
+    "author": "Piet Spaans",
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CarassiusAuratusGibelio.JPG"
+   }
+  ],
+  "grasscarp": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Ctenopharyngodon_idella_01_Pengo.jpg/960px-Ctenopharyngodon_idella_01_Pengo.jpg",
+    "alt": "Белый амур",
+    "author": "автор неизвестен",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ctenopharyngodon_idella_01_Pengo.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hal_-_Ctenopharyngodon_idella_-_1.jpg/960px-Hal_-_Ctenopharyngodon_idella_-_1.jpg",
+    "alt": "Белый амур",
+    "author": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hal_-_Ctenopharyngodon_idella_-_1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Grass_Carp.jpg/960px-Grass_Carp.jpg",
+    "alt": "Белый амур",
+    "author": "Engbretson, Eric",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grass_Carp.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Grass_Carp_%28Ctenopharyngodon_idella%29_%2852209716029%29.jpg/960px-Grass_Carp_%28Ctenopharyngodon_idella%29_%2852209716029%29.jpg",
+    "alt": "Белый амур",
+    "author": "USFWS Mountain Prairie",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grass_Carp_%28Ctenopharyngodon_idella%29_%2852209716029%29.jpg"
+   }
+  ],
+  "silvercarp": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Silver_Carp_Adult_%28Hypophthalmichthys_molitrix%29.jpg/960px-Silver_Carp_Adult_%28Hypophthalmichthys_molitrix%29.jpg",
+    "alt": "Толстолобик",
+    "author": "USFWS Mountain-Prairie",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silver_Carp_Adult_%28Hypophthalmichthys_molitrix%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Silver_Carp_Adult_%28Hypophthalmichthys_molitrix%29_%282%29.jpg/960px-Silver_Carp_Adult_%28Hypophthalmichthys_molitrix%29_%282%29.jpg",
+    "alt": "Толстолобик",
+    "author": "USFWS Mountain-Prairie",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silver_Carp_Adult_%28Hypophthalmichthys_molitrix%29_%282%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Hypophthalmichthys_molitrix.png/960px-Hypophthalmichthys_molitrix.png",
+    "alt": "Толстолобик",
+    "author": "GreenLipstickLesbian, Ellicrum",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hypophthalmichthys_molitrix.png"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Juvenil_Silver_Carp_%28Hypophthalmichthys_molitrix%29.jpg/960px-Juvenil_Silver_Carp_%28Hypophthalmichthys_molitrix%29.jpg",
+    "alt": "Толстолобик",
+    "author": "USFWS Mountain-Prairie",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juvenil_Silver_Carp_%28Hypophthalmichthys_molitrix%29.jpg"
+   }
+  ],
+  "chub": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Leucisus_cephalus_2006-07-01.JPG/960px-Leucisus_cephalus_2006-07-01.JPG",
+    "alt": "Голавль",
+    "author": "Algirdas",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leucisus_cephalus_2006-07-01.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Alet_%28Leuciscus_cephalus%29.jpg/960px-Alet_%28Leuciscus_cephalus%29.jpg",
+    "alt": "Голавль",
+    "author": "Christa Rohrbach",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alet_%28Leuciscus_cephalus%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Leucisus_cephalus_resize.jpg/960px-Leucisus_cephalus_resize.jpg",
+    "alt": "Голавль",
+    "author": "Algirdas",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leucisus_cephalus_resize.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/MH-Fische_im_Haus_Ruhrnatur_-_D%C3%B6bel_02.jpg/960px-MH-Fische_im_Haus_Ruhrnatur_-_D%C3%B6bel_02.jpg",
+    "alt": "Голавль",
+    "author": "Dat doris",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MH-Fische_im_Haus_Ruhrnatur_-_D%C3%B6bel_02.jpg"
+   }
+  ],
+  "bersh": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_7%29_%286102596637%29.jpg/960px-Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_7%29_%286102596637%29.jpg",
+    "alt": "Берш",
+    "author": "Emil Walter",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_7%29_%286102596637%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Nouveaux_m%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_imp%C3%A9riale_des_naturalistes_de_Moscou_%281832%29_%2814767156444%29.jpg/960px-Nouveaux_m%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_imp%C3%A9riale_des_naturalistes_de_Moscou_%281832%29_%2814767156444%29.jpg",
+    "alt": "Берш",
+    "author": "Московское общество любителей природы",
+    "license": "No restrictions",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nouveaux_m%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_imp%C3%A9riale_des_naturalistes_de_Moscou_%281832%29_%2814767156444%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/FMIB_47983_Lucioperca_volgensis_%28Pallas%29.jpeg/960px-FMIB_47983_Lucioperca_volgensis_%28Pallas%29.jpeg",
+    "alt": "Берш",
+    "author": "Harry Govier Seeley",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FMIB_47983_Lucioperca_volgensis_%28Pallas%29.jpeg"
+   }
+  ],
+  "sinets": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Abramis_ballerus.jpg",
+    "alt": "Синец",
+    "author": "автор неизвестен",
+    "license": "Attribution",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abramis_ballerus.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Ballerus_ballerus_Hungary.jpg",
+    "alt": "Синец",
+    "author": "Akos Harka",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ballerus_ballerus_Hungary.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/D._Marcus_Elieser_Bloch%27s%2C_aus%C3%BCbenden_Arztes_zu_Berlin_%C3%96konomische_Naturgeschichte_der_Fische_Deutschlands_-_mit_sieben_und_dreyssig_Kupfertafeln_nach_Originalen_%281783%29_%2820990241231%29.jpg/960px-D._Marcus_Elieser_Bloch%27s%2C_aus%C3%BCbenden_Arztes_zu_Berlin_%C3%96konomische_Naturgeschichte_der_Fische_Deutschlands_-_mit_sieben_und_dreyssig_Kupfertafeln_nach_Originalen_%281783%29_%2820990241231%29.jpg",
+    "alt": "Синец",
+    "author": "Marcus Elieser Bloch",
+    "license": "No restrictions",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:D._Marcus_Elieser_Bloch%27s%2C_aus%C3%BCbenden_Arztes_zu_Berlin_%C3%96konomische_Naturgeschichte_der_Fische_Deutschlands_-_mit_sieben_und_dreyssig_Kupfertafeln_nach_Originalen_%281783%29_%2820990241231%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_41%29_%286103150232%29.jpg/960px-Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_41%29_%286103150232%29.jpg",
+    "alt": "Синец",
+    "author": "Emil Walter",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_41%29_%286103150232%29.jpg"
+   }
+  ],
+  "sapa": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Ballerus_sapa.JPG",
+    "alt": "Сапа (белоглазка)",
+    "author": "Vladimir Yu. Arkhipov",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ballerus_sapa.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Donaubrasem_4-22-2009_12-36-06_AM.JPG/960px-Donaubrasem_4-22-2009_12-36-06_AM.JPG",
+    "alt": "Сапа (белоглазка)",
+    "author": "Viridiflavus",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Donaubrasem_4-22-2009_12-36-06_AM.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_42%29_%286102604885%29.jpg/960px-Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_42%29_%286102604885%29.jpg",
+    "alt": "Сапа (белоглазка)",
+    "author": "Emil Walter",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unsere_S%C3%BC%C3%9Fwasserfische_%28Tafel_42%29_%286102604885%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/FMIB_48090_Abramis_sapa_%28Pallas%29.jpeg/960px-FMIB_48090_Abramis_sapa_%28Pallas%29.jpeg",
+    "alt": "Сапа (белоглазка)",
+    "author": "Harry Govier Seeley",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FMIB_48090_Abramis_sapa_%28Pallas%29.jpeg"
+   }
+  ]
+ },
+ "species": {
+  "Pelecanus crispus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pelecanus_crispus_Herberstein.jpg/960px-Pelecanus_crispus_Herberstein.jpg",
+    "alt": "Кудрявый пеликан",
+    "author": "Marion Schneider & Christoph Aistleitner",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelecanus_crispus_Herberstein.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Dalmatian_Pelican_Pelecanus_crispus_by_Dr._Raju_Kasambe_DSCN6899_%283%29.jpg/960px-Dalmatian_Pelican_Pelecanus_crispus_by_Dr._Raju_Kasambe_DSCN6899_%283%29.jpg",
+    "alt": "Кудрявый пеликан",
+    "author": "Dr. Raju Kasambe",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dalmatian_Pelican_Pelecanus_crispus_by_Dr._Raju_Kasambe_DSCN6899_%283%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/%D0%9F%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%D0%BD_03.jpg/960px-%D0%9F%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%D0%BD_03.jpg",
+    "alt": "Кудрявый пеликан",
+    "author": "Корзун Андрей",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%D0%BD_03.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Dalmatian_Pelican_Pelecanus_crispus%2C_Gir_NP%2C_India.jpg/960px-Dalmatian_Pelican_Pelecanus_crispus%2C_Gir_NP%2C_India.jpg",
+    "alt": "Кудрявый пеликан",
+    "author": "Yuktijoshi24",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dalmatian_Pelican_Pelecanus_crispus%2C_Gir_NP%2C_India.jpg"
+   }
+  ],
+  "Nelumbo nucifera": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Sacred_lotus_Nelumbo_nucifera.jpg/960px-Sacred_lotus_Nelumbo_nucifera.jpg",
+    "alt": "Лотос орехоносный",
+    "author": "T.Voekler",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sacred_lotus_Nelumbo_nucifera.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Nelumbo-nucifera-3-_1200.jpg",
+    "alt": "Лотос орехоносный",
+    "author": "Fan Wen",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nelumbo-nucifera-3-_1200.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nelumbo_nucifera_LOTUS_bud.jpg/960px-Nelumbo_nucifera_LOTUS_bud.jpg",
+    "alt": "Лотос орехоносный",
+    "author": "Anand2202",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nelumbo_nucifera_LOTUS_bud.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lotus_field_in_Namegata%2C_Ibaraki_04.jpg/960px-Lotus_field_in_Namegata%2C_Ibaraki_04.jpg",
+    "alt": "Лотос орехоносный",
+    "author": "Σ64",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lotus_field_in_Namegata%2C_Ibaraki_04.jpg"
+   }
+  ],
+  "Cygnus olor": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/CygneVaires.jpg/960px-CygneVaires.jpg",
+    "alt": "Лебедь-шипун",
+    "author": "Sanchezn",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CygneVaires.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/20090512_Trezzo_7667_1024x768.jpg/960px-20090512_Trezzo_7667_1024x768.jpg",
+    "alt": "Лебедь-шипун",
+    "author": "Fabbbio",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20090512_Trezzo_7667_1024x768.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Mute_Swan_attacking_Mallard_Family_%287617017146%29.jpg/960px-Mute_Swan_attacking_Mallard_Family_%287617017146%29.jpg",
+    "alt": "Лебедь-шипун",
+    "author": "nottsexminer",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mute_Swan_attacking_Mallard_Family_%287617017146%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Cygne_tubercul%C3%A9_juv%C3%A9nile_%28Cygnus_olor%29_%2808%29.jpg/960px-Cygne_tubercul%C3%A9_juv%C3%A9nile_%28Cygnus_olor%29_%2808%29.jpg",
+    "alt": "Лебедь-шипун",
+    "author": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cygne_tubercul%C3%A9_juv%C3%A9nile_%28Cygnus_olor%29_%2808%29.jpg"
+   }
+  ],
+  "Ardea alba": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Great_egret_%28great_egret_%28Ardea_alba%29_at_Federsee%2C_Germany%29_at_Federsee.jpg/960px-Great_egret_%28great_egret_%28Ardea_alba%29_at_Federsee%2C_Germany%29_at_Federsee.jpg",
+    "alt": "Большая белая цапля",
+    "author": "Hobbyfotowiki",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_egret_%28great_egret_%28Ardea_alba%29_at_Federsee%2C_Germany%29_at_Federsee.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Great_Egret_%28Ardea_alba%29_in_Breeding_Plumage%2C_Cape_May_County%2C_New_Jersey%2C_USA_%28cropped%29.png/960px-Great_Egret_%28Ardea_alba%29_in_Breeding_Plumage%2C_Cape_May_County%2C_New_Jersey%2C_USA_%28cropped%29.png",
+    "alt": "Большая белая цапля",
+    "author": "Chuck Homler (FocusOnWildlife.Me)",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Egret_%28Ardea_alba%29_in_Breeding_Plumage%2C_Cape_May_County%2C_New_Jersey%2C_USA_%28cropped%29.png"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Great_Egret_during_mating_season_at_Smith_Oaks_Sanctuary%2C_High_Island_-_edited.jpg/960px-Great_Egret_during_mating_season_at_Smith_Oaks_Sanctuary%2C_High_Island_-_edited.jpg",
+    "alt": "Большая белая цапля",
+    "author": "Frank Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Egret_during_mating_season_at_Smith_Oaks_Sanctuary%2C_High_Island_-_edited.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Ardea_alba_chaliki.jpg",
+    "alt": "Большая белая цапля",
+    "author": "Gastcrf at Greek Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ardea_alba_chaliki.jpg"
+   }
+  ],
+  "Platalea leucorodia": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/SL_Bundala_NP_asv2020-01_img06.jpg/960px-SL_Bundala_NP_asv2020-01_img06.jpg",
+    "alt": "Колпица",
+    "author": "A.Savin",
+    "license": "FAL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SL_Bundala_NP_asv2020-01_img06.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Eurasian_Spoonbill_Walking_Ranganathittu_Karnataka_Jan24_A7C_09151.jpg/960px-Eurasian_Spoonbill_Walking_Ranganathittu_Karnataka_Jan24_A7C_09151.jpg",
+    "alt": "Колпица",
+    "author": "Timothy A. Gonsalves",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eurasian_Spoonbill_Walking_Ranganathittu_Karnataka_Jan24_A7C_09151.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Esp%C3%A1tula_-_Platalea_leucorodia_%28Threskiornithidae%29_%286847740268%29.jpg/960px-Esp%C3%A1tula_-_Platalea_leucorodia_%28Threskiornithidae%29_%286847740268%29.jpg",
+    "alt": "Колпица",
+    "author": "Juan Emilio from Las Palmas de Gran Canaria, España",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esp%C3%A1tula_-_Platalea_leucorodia_%28Threskiornithidae%29_%286847740268%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Eurasian_Spoonbill_%28Platalea_leucorodia%29_%2820727335492%29.jpg/960px-Eurasian_Spoonbill_%28Platalea_leucorodia%29_%2820727335492%29.jpg",
+    "alt": "Колпица",
+    "author": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eurasian_Spoonbill_%28Platalea_leucorodia%29_%2820727335492%29.jpg"
+   }
+  ],
+  "Anser anser": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Greylag_Goose_-_St_James%27s_Park%2C_London_-_Nov_2006.jpg/960px-Greylag_Goose_-_St_James%27s_Park%2C_London_-_Nov_2006.jpg",
+    "alt": "Серый гусь",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Greylag_Goose_-_St_James%27s_Park%2C_London_-_Nov_2006.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Anser_anser_EM1B5927_%2836071281286%29.jpg/960px-Anser_anser_EM1B5927_%2836071281286%29.jpg",
+    "alt": "Серый гусь",
+    "author": "Bengt Nyman from Vaxholm, Sweden",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anser_anser_EM1B5927_%2836071281286%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Anser_anser_2_%28Piotr_Kuczynski%29.jpg/960px-Anser_anser_2_%28Piotr_Kuczynski%29.jpg",
+    "alt": "Серый гусь",
+    "author": "Piotr Kuczynski",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anser_anser_2_%28Piotr_Kuczynski%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Birds_of_Sweden_2016_44.jpg/960px-Birds_of_Sweden_2016_44.jpg",
+    "alt": "Серый гусь",
+    "author": "Bengt Nyman",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Birds_of_Sweden_2016_44.jpg"
+   }
+  ],
+  "Sus scrofa": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Locha%28js%29.jpg/960px-Locha%28js%29.jpg",
+    "alt": "Кабан",
+    "author": "Jerzy Strzelecki",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Locha%28js%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Sus_scrofa_davidi.jpg",
+    "alt": "Кабан",
+    "author": "Flickr user stream of Paul Asman and Jill Lenoble",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sus_scrofa_davidi.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/TAUZoo_eman110.JPG/960px-TAUZoo_eman110.JPG",
+    "alt": "Кабан",
+    "author": "eman",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TAUZoo_eman110.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Jabal%C3%AD_13._F._FOTO-ARDEIDAS.jpg/960px-Jabal%C3%AD_13._F._FOTO-ARDEIDAS.jpg",
+    "alt": "Кабан",
+    "author": "FOTO-ARDEIDAS",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jabal%C3%AD_13._F._FOTO-ARDEIDAS.jpg"
+   }
+  ],
+  "Phalacrocorax carbo": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Great_cormorant_%28Phalacrocorax_carbo%29%2C.jpg/960px-Great_cormorant_%28Phalacrocorax_carbo%29%2C.jpg",
+    "alt": "Большой баклан",
+    "author": "Shino jacob koottanad",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_cormorant_%28Phalacrocorax_carbo%29%2C.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/2021-05-05_Phalacrocorax_carbo_carbo%2C_Killingworth_Lake%2C_Northumberland_2-1.jpg/960px-2021-05-05_Phalacrocorax_carbo_carbo%2C_Killingworth_Lake%2C_Northumberland_2-1.jpg",
+    "alt": "Большой баклан",
+    "author": "MPF",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2021-05-05_Phalacrocorax_carbo_carbo%2C_Killingworth_Lake%2C_Northumberland_2-1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Phalacrocorax_carbo_Vic.jpg/960px-Phalacrocorax_carbo_Vic.jpg",
+    "alt": "Большой баклан",
+    "author": "JJ Harrison",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phalacrocorax_carbo_Vic.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Great_cormorant_at_Tenn%C5%8Dji_Park_in_Osaka%2C_December_2023_-_6091.jpg/960px-Great_cormorant_at_Tenn%C5%8Dji_Park_in_Osaka%2C_December_2023_-_6091.jpg",
+    "alt": "Большой баклан",
+    "author": "Laitche",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_cormorant_at_Tenn%C5%8Dji_Park_in_Osaka%2C_December_2023_-_6091.jpg"
+   }
+  ],
+  "Ardea cinerea": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Grey_Heron_in_front_of_flowers.jpg/960px-Grey_Heron_in_front_of_flowers.jpg",
+    "alt": "Серая цапля",
+    "author": "Jalex lb",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grey_Heron_in_front_of_flowers.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grey_Heron._AMSM4086.jpg/960px-Grey_Heron._AMSM4086.jpg",
+    "alt": "Серая цапля",
+    "author": "Savithri Singh",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grey_Heron._AMSM4086.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Grey_Heron_%2854990114762%29_%28cropped%29.jpg/960px-Grey_Heron_%2854990114762%29_%28cropped%29.jpg",
+    "alt": "Серая цапля",
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grey_Heron_%2854990114762%29_%28cropped%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flickr_-_don_macauley_-_Grey_Heron.jpg/960px-Flickr_-_don_macauley_-_Grey_Heron.jpg",
+    "alt": "Серая цапля",
+    "author": "Donald Macauley",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flickr_-_don_macauley_-_Grey_Heron.jpg"
+   }
+  ],
+  "Merops apiaster": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/%C5%9Eahl%C3%BBr-33.jpg/960px-%C5%9Eahl%C3%BBr-33.jpg",
+    "alt": "Золотистая щурка",
+    "author": "Dûrzan cîrano",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C5%9Eahl%C3%BBr-33.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Guepier_d%27europe_au_parc_national_Ichkeul.jpg/960px-Guepier_d%27europe_au_parc_national_Ichkeul.jpg",
+    "alt": "Золотистая щурка",
+    "author": "Elgollimoh",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guepier_d%27europe_au_parc_national_Ichkeul.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Merops_apiaster_%28%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D1%81%D1%82%D0%B0%D1%8F_%D1%89%D1%83%D1%80%D0%BA%D0%B0%29.jpg/960px-Merops_apiaster_%28%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D1%81%D1%82%D0%B0%D1%8F_%D1%89%D1%83%D1%80%D0%BA%D0%B0%29.jpg",
+    "alt": "Золотистая щурка",
+    "author": "Ekytza",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Merops_apiaster_%28%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D1%81%D1%82%D0%B0%D1%8F_%D1%89%D1%83%D1%80%D0%BA%D0%B0%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Bee-eater_%2819270331108%29.jpg/960px-Bee-eater_%2819270331108%29.jpg",
+    "alt": "Золотистая щурка",
+    "author": "Andy Morffew from Itchen Abbas, Hampshire, UK",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bee-eater_%2819270331108%29.jpg"
+   }
+  ],
+  "Haliaeetus albicilla": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Haliaeetus_albicilla%2C_Mull_2.jpg/960px-Haliaeetus_albicilla%2C_Mull_2.jpg",
+    "alt": "Орлан-белохвост",
+    "author": "Jacob Spinks from England",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Haliaeetus_albicilla%2C_Mull_2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Seeadler_684-2.jpg",
+    "alt": "Орлан-белохвост",
+    "author": "Frank Liebig",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seeadler_684-2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/White-tailed_Eagle_34.jpg/960px-White-tailed_Eagle_34.jpg",
+    "alt": "Орлан-белохвост",
+    "author": "Администрация Волгоградской области",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:White-tailed_Eagle_34.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Merikotkas_kanarbikus.jpg/960px-Merikotkas_kanarbikus.jpg",
+    "alt": "Орлан-белохвост",
+    "author": "Karl Adami",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Merikotkas_kanarbikus.jpg"
+   }
+  ],
+  "Vulpes vulpes": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/PEI-002_-_Red_Fox_%282015%29.jpg/960px-PEI-002_-_Red_Fox_%282015%29.jpg",
+    "alt": "Лисица",
+    "author": "Dennis G. Jarvis",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PEI-002_-_Red_Fox_%282015%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/North_American_Red_Fox.jpg/960px-North_American_Red_Fox.jpg",
+    "alt": "Лисица",
+    "author": "Lvaughn7",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:North_American_Red_Fox.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg/960px-Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg",
+    "alt": "Лисица",
+    "author": "ClaudiaTen",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Red_Fox_%28Vulpes_vulpes%29_-British_Wildlife_Centre-8.jpg/960px-Red_Fox_%28Vulpes_vulpes%29_-British_Wildlife_Centre-8.jpg",
+    "alt": "Лисица",
+    "author": "Keven Law",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Fox_%28Vulpes_vulpes%29_-British_Wildlife_Centre-8.jpg"
+   }
+  ],
+  "Canis aureus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Golden_Jackal%2C_Canis_aureus_in_Huai_Kha_Khaeng.jpg/960px-Golden_Jackal%2C_Canis_aureus_in_Huai_Kha_Khaeng.jpg",
+    "alt": "Шакал обыкновенный",
+    "author": "tontantravel",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Jackal%2C_Canis_aureus_in_Huai_Kha_Khaeng.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/%D7%AA%D7%9F_%D7%91%D7%90%D7%97%D7%95_%D7%A0%D7%95%D7%91.jpg/960px-%D7%AA%D7%9F_%D7%91%D7%90%D7%97%D7%95_%D7%A0%D7%95%D7%91.jpg",
+    "alt": "Шакал обыкновенный",
+    "author": "Liat Gordon",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D7%AA%D7%9F_%D7%91%D7%90%D7%97%D7%95_%D7%A0%D7%95%D7%91.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Canis_aureus_revivim2.JPG/960px-Canis_aureus_revivim2.JPG",
+    "alt": "Шакал обыкновенный",
+    "author": "Felagund",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canis_aureus_revivim2.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/033_Golden_jackal_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg/960px-033_Golden_jackal_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg",
+    "alt": "Шакал обыкновенный",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:033_Golden_jackal_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg"
+   }
+  ],
+  "Ondatra zibethicus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Muskrat%2C_Wood_Lake%2C_Richfield_Minnesota.jpg/960px-Muskrat%2C_Wood_Lake%2C_Richfield_Minnesota.jpg",
+    "alt": "Ондатра",
+    "author": "Margaret Soll Photography",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muskrat%2C_Wood_Lake%2C_Richfield_Minnesota.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Muskrat_eating_plant.jpg/960px-Muskrat_eating_plant.jpg",
+    "alt": "Ондатра",
+    "author": "Linda Tanner",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muskrat_eating_plant.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Muskrat_swimming_Ottawa.jpg/960px-Muskrat_swimming_Ottawa.jpg",
+    "alt": "Ондатра",
+    "author": "D. Gordon E. Robertson",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muskrat_swimming_Ottawa.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/01-sbis-10-03.jpg",
+    "alt": "Ондатра",
+    "author": "Diginatur",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:01-sbis-10-03.jpg"
+   }
+  ],
+  "Trapa natans": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Trapa_natans_flower.jpg",
+    "alt": "Чилим (водяной орех)",
+    "author": "Georg Schramayr",
+    "license": "CC BY-SA 1.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trapa_natans_flower.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Trapa_natans_kz6.JPG/960px-Trapa_natans_kz6.JPG",
+    "alt": "Чилим (водяной орех)",
+    "author": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trapa_natans_kz6.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Trapa_natans_BOGA.jpg/960px-Trapa_natans_BOGA.jpg",
+    "alt": "Чилим (водяной орех)",
+    "author": "MurielBendel",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trapa_natans_BOGA.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Trapa_natans_-_Garden_lilypads.jpg/960px-Trapa_natans_-_Garden_lilypads.jpg",
+    "alt": "Чилим (водяной орех)",
+    "author": "Dasha",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trapa_natans_-_Garden_lilypads.jpg"
+   }
+  ],
+  "Phragmites australis": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/20111101Phragmites_australis08.jpg/960px-20111101Phragmites_australis08.jpg",
+    "alt": "Тростник южный",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20111101Phragmites_australis08.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/20111101Phragmites_australis13.jpg/960px-20111101Phragmites_australis13.jpg",
+    "alt": "Тростник южный",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20111101Phragmites_australis13.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/20141228Phragmites_australis1.jpg/960px-20141228Phragmites_australis1.jpg",
+    "alt": "Тростник южный",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20141228Phragmites_australis1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Schwielowsee-Schilfrohrguertel-01.jpg/960px-Schwielowsee-Schilfrohrguertel-01.jpg",
+    "alt": "Тростник южный",
+    "author": "Botaurus stellaris",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schwielowsee-Schilfrohrguertel-01.jpg"
+   }
+  ],
+  "Typha": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ribnjak_Jegerseg_-_rogoz.jpg/960px-Ribnjak_Jegerseg_-_rogoz.jpg",
+    "alt": "Рогоз",
+    "author": "Silverije",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ribnjak_Jegerseg_-_rogoz.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/2022-07-26_10_59_59_A_Broadleaf_Cattail_along_a_small_tributary_of_the_Delaware_River_adjacent_to_New_Jersey_State_Route_29_%28River_Road%29_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg/960px-2022-07-26_10_59_59_A_Broadleaf_Cattail_along_a_small_tributary_of_the_Delaware_River_adjacent_to_New_Jersey_State_Route_29_%28River_Road%29_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg",
+    "alt": "Рогоз",
+    "author": "Famartin",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022-07-26_10_59_59_A_Broadleaf_Cattail_along_a_small_tributary_of_the_Delaware_River_adjacent_to_New_Jersey_State_Route_29_%28River_Road%29_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cattails_on_Reed_Bingham_Island.JPG/960px-Cattails_on_Reed_Bingham_Island.JPG",
+    "alt": "Рогоз",
+    "author": "Michael Rivera",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cattails_on_Reed_Bingham_Island.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Typha_angustifolia_4-eheep_%285098005620%29.jpg/960px-Typha_angustifolia_4-eheep_%285098005620%29.jpg",
+    "alt": "Рогоз",
+    "author": "Superior National Forest",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Typha_angustifolia_4-eheep_%285098005620%29.jpg"
+   }
+  ],
+  "Nymphaea alba": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg/960px-2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg",
+    "alt": "Кувшинка белая",
+    "author": "Jacek Halicki",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Nymphaea_alba_in_Duisburg.jpg/960px-Nymphaea_alba_in_Duisburg.jpg",
+    "alt": "Кувшинка белая",
+    "author": "DerHexer",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nymphaea_alba_in_Duisburg.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/20150623Nymphaea_alba2.jpg/960px-20150623Nymphaea_alba2.jpg",
+    "alt": "Кувшинка белая",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150623Nymphaea_alba2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Nymphaea_alba_0002.JPG/960px-Nymphaea_alba_0002.JPG",
+    "alt": "Кувшинка белая",
+    "author": "H. Zell",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nymphaea_alba_0002.JPG"
+   }
+  ],
+  "Salix alba": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Salix_alba_004.jpg/960px-Salix_alba_004.jpg",
+    "alt": "Ива белая (тал)",
+    "author": "Willow",
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salix_alba_004.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Salix_alba_020.jpg/960px-Salix_alba_020.jpg",
+    "alt": "Ива белая (тал)",
+    "author": "Willow",
+    "license": "CC BY 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salix_alba_020.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/20110716Salix_alba.jpg/960px-20110716Salix_alba.jpg",
+    "alt": "Ива белая (тал)",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20110716Salix_alba.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Salix_alba_leaves.jpg/960px-Salix_alba_leaves.jpg",
+    "alt": "Ива белая (тал)",
+    "author": "MPF",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salix_alba_leaves.jpg"
+   }
+  ],
+  "Populus nigra": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Four_Poplars.jpg/960px-Four_Poplars.jpg",
+    "alt": "Тополь чёрный (осокорь)",
+    "author": "Cherubino",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Four_Poplars.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/20120815Bach_Leopoldswiesen_Hockenheim08.jpg/960px-20120815Bach_Leopoldswiesen_Hockenheim08.jpg",
+    "alt": "Тополь чёрный (осокорь)",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20120815Bach_Leopoldswiesen_Hockenheim08.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Populus_nigra_kz1.jpg/960px-Populus_nigra_kz1.jpg",
+    "alt": "Тополь чёрный (осокорь)",
+    "author": "Kenraiz",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Populus_nigra_kz1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Populus_nigra_sl4.jpg/960px-Populus_nigra_sl4.jpg",
+    "alt": "Тополь чёрный (осокорь)",
+    "author": "Stefan.lefnaer",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Populus_nigra_sl4.jpg"
+   }
+  ],
+  "Iris pseudacorus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Yellow_Iris_Iris_pseudacorus_Flower_1469px.jpg/960px-Yellow_Iris_Iris_pseudacorus_Flower_1469px.jpg",
+    "alt": "Ирис жёлтый (касатик)",
+    "author": "Derek Ramsey (Ram-Man)",
+    "license": "GFDL 1.2",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_Iris_Iris_pseudacorus_Flower_1469px.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/20140504Iris_pseudacorus2.jpg/960px-20140504Iris_pseudacorus2.jpg",
+    "alt": "Ирис жёлтый (касатик)",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20140504Iris_pseudacorus2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%28MHNT%29_Iris_pseudacorus_flower.jpg/960px-%28MHNT%29_Iris_pseudacorus_flower.jpg",
+    "alt": "Ирис жёлтый (касатик)",
+    "author": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%28MHNT%29_Iris_pseudacorus_flower.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Gele_lis_%28Iris_pseudacorus%29.jpg/960px-Gele_lis_%28Iris_pseudacorus%29.jpg",
+    "alt": "Ирис жёлтый (касатик)",
+    "author": "Paardbart",
+    "license": "CC BY-SA 3.0 nl",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gele_lis_%28Iris_pseudacorus%29.jpg"
+   }
+  ],
+  "Quercus robur": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Zapis-0454-Kolare-hrast-luznjak-spomenik-prirode_20150828_1335.jpg/960px-Zapis-0454-Kolare-hrast-luznjak-spomenik-prirode_20150828_1335.jpg",
+    "alt": "Дуб черешчатый",
+    "author": "Zblagojevic",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zapis-0454-Kolare-hrast-luznjak-spomenik-prirode_20150828_1335.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Quercus_robur_JPG_%28d1%29.jpg/960px-Quercus_robur_JPG_%28d1%29.jpg",
+    "alt": "Дуб черешчатый",
+    "author": "Jean-Pol GRANDMONT",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quercus_robur_JPG_%28d1%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/20121113Quercus_robur_Schleiwiese.jpg/960px-20121113Quercus_robur_Schleiwiese.jpg",
+    "alt": "Дуб черешчатый",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20121113Quercus_robur_Schleiwiese.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Quercus_robur_acorns_in_Tuntorp_1.jpg/960px-Quercus_robur_acorns_in_Tuntorp_1.jpg",
+    "alt": "Дуб черешчатый",
+    "author": "W.carter",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quercus_robur_acorns_in_Tuntorp_1.jpg"
+   }
+  ],
+  "Artemisia": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Artemisia_maritima_Seriphidium_maritimum_Robertstown_Estuary_Ireland_%2852259423322%29.jpg/960px-Artemisia_maritima_Seriphidium_maritimum_Robertstown_Estuary_Ireland_%2852259423322%29.jpg",
+    "alt": "Полынь",
+    "author": "Sam Thomas",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artemisia_maritima_Seriphidium_maritimum_Robertstown_Estuary_Ireland_%2852259423322%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Artemisia_%C2%BF_nilagirica_%28C.B.Clarke%29_Pamp._%3F_%2850579198241%29.jpg/960px-Artemisia_%C2%BF_nilagirica_%28C.B.Clarke%29_Pamp._%3F_%2850579198241%29.jpg",
+    "alt": "Полынь",
+    "author": "Dinesh Valke from Thane, India",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artemisia_%C2%BF_nilagirica_%28C.B.Clarke%29_Pamp._%3F_%2850579198241%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Machipatre_%28Kannada_%E0%B2%AE%E0%B2%BE%E0%B2%9A%E0%B2%BF%E0%B2%AA%E0%B2%A4%E0%B3%8D%E0%B2%B0%E0%B3%86%29_%2830468835363%29.jpg/960px-Machipatre_%28Kannada_%E0%B2%AE%E0%B2%BE%E0%B2%9A%E0%B2%BF%E0%B2%AA%E0%B2%A4%E0%B3%8D%E0%B2%B0%E0%B3%86%29_%2830468835363%29.jpg",
+    "alt": "Полынь",
+    "author": "Dinesh Valke from Thane, India",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machipatre_%28Kannada_%E0%B2%AE%E0%B2%BE%E0%B2%9A%E0%B2%BF%E0%B2%AA%E0%B2%A4%E0%B3%8D%E0%B2%B0%E0%B3%86%29_%2830468835363%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Artemisia_sp._absnd_%281%29.jpg/960px-Artemisia_sp._absnd_%281%29.jpg",
+    "alt": "Полынь",
+    "author": "Amirh. absnd",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artemisia_sp._absnd_%281%29.jpg"
+   }
+  ],
+  "Butomus umbellatus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bloem_van_een_Zwanenbloem_%28Butomus_umbellatus%29%2C_16-06-2026._%28d.j.b.%29.jpg/960px-Bloem_van_een_Zwanenbloem_%28Butomus_umbellatus%29%2C_16-06-2026._%28d.j.b.%29.jpg",
+    "alt": "Сусак зонтичный",
+    "author": "Dominicus Johannes Bergsma",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bloem_van_een_Zwanenbloem_%28Butomus_umbellatus%29%2C_16-06-2026._%28d.j.b.%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Butomus_umbellatus_-_harilik_luigelill_Keilas.jpg/960px-Butomus_umbellatus_-_harilik_luigelill_Keilas.jpg",
+    "alt": "Сусак зонтичный",
+    "author": "Ivar Leidus",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Butomus_umbellatus_-_harilik_luigelill_Keilas.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/20170718Butomus_umbellatus2.jpg/960px-20170718Butomus_umbellatus2.jpg",
+    "alt": "Сусак зонтичный",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20170718Butomus_umbellatus2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/20170718Butomus_umbellatus1.jpg/960px-20170718Butomus_umbellatus1.jpg",
+    "alt": "Сусак зонтичный",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20170718Butomus_umbellatus1.jpg"
+   }
+  ],
+  "Nuphar lutea": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nuphar_lutea_%28Detail%29_24072005-1.jpg/960px-Nuphar_lutea_%28Detail%29_24072005-1.jpg",
+    "alt": "Кубышка жёлтая",
+    "author": "автор неизвестен",
+    "license": "CC BY-SA 2.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nuphar_lutea_%28Detail%29_24072005-1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/%D0%93%D0%BB%D0%B5%CC%81%D1%87%D0%B8%D0%BA%D0%B8_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D1%96%2C_%D0%BB%D0%B0%D1%82%D0%B0%CC%81%D1%82%D1%82%D1%8F_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D0%B5_%D0%B0%D0%B1%D0%BE_%D0%BA%D1%83%D0%B1%D0%B8%CC%81%D1%88%D0%BA%D0%B0_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D0%B0_%28Nuphar_lutea%29_19.jpg/960px-%D0%93%D0%BB%D0%B5%CC%81%D1%87%D0%B8%D0%BA%D0%B8_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D1%96%2C_%D0%BB%D0%B0%D1%82%D0%B0%CC%81%D1%82%D1%82%D1%8F_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D0%B5_%D0%B0%D0%B1%D0%BE_%D0%BA%D1%83%D0%B1%D0%B8%CC%81%D1%88%D0%BA%D0%B0_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D0%B0_%28Nuphar_lutea%29_19.jpg",
+    "alt": "Кубышка жёлтая",
+    "author": "OlexandrBohdanets",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BB%D0%B5%CC%81%D1%87%D0%B8%D0%BA%D0%B8_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D1%96%2C_%D0%BB%D0%B0%D1%82%D0%B0%CC%81%D1%82%D1%82%D1%8F_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D0%B5_%D0%B0%D0%B1%D0%BE_%D0%BA%D1%83%D0%B1%D0%B8%CC%81%D1%88%D0%BA%D0%B0_%D0%B6%D0%BE%CC%81%D0%B2%D1%82%D0%B0_%28Nuphar_lutea%29_19.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/%D0%97%D0%B1%D0%B8%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BE%D1%80%D0%BD%D1%96%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA._%D0%A3%D0%B3%D1%80%D1%83%D0%BF%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B3%D0%BB%D0%B5%D1%87%D0%B8%D0%BA%D1%96%D0%B2_%D0%B6%D0%BE%D0%B2%D1%82%D0%B8%D1%85.jpg/960px-%D0%97%D0%B1%D0%B8%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BE%D1%80%D0%BD%D1%96%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA._%D0%A3%D0%B3%D1%80%D1%83%D0%BF%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B3%D0%BB%D0%B5%D1%87%D0%B8%D0%BA%D1%96%D0%B2_%D0%B6%D0%BE%D0%B2%D1%82%D0%B8%D1%85.jpg",
+    "alt": "Кубышка жёлтая",
+    "author": "Oksana Golovko",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B1%D0%B8%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BE%D1%80%D0%BD%D1%96%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA._%D0%A3%D0%B3%D1%80%D1%83%D0%BF%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B3%D0%BB%D0%B5%D1%87%D0%B8%D0%BA%D1%96%D0%B2_%D0%B6%D0%BE%D0%B2%D1%82%D0%B8%D1%85.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Nuphar_lutea_1_ms.jpg/960px-Nuphar_lutea_1_ms.jpg",
+    "alt": "Кубышка жёлтая",
+    "author": "Manfred Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nuphar_lutea_1_ms.jpg"
+   }
+  ],
+  "Tamarix": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Tamarix_gallica01.jpg/960px-Tamarix_gallica01.jpg",
+    "alt": "Гребенщик (тамарикс)",
+    "author": "Meneerke bloem",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tamarix_gallica01.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tamarix_gallica_bloemen.jpg/960px-Tamarix_gallica_bloemen.jpg",
+    "alt": "Гребенщик (тамарикс)",
+    "author": "TeunSpaans",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tamarix_gallica_bloemen.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Tamaris3.jpg/960px-Tamaris3.jpg",
+    "alt": "Гребенщик (тамарикс)",
+    "author": "Anthere",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tamaris3.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Passoscuro_-_Foce_del_Rio_Tre_Denari_6.jpg/960px-Passoscuro_-_Foce_del_Rio_Tre_Denari_6.jpg",
+    "alt": "Гребенщик (тамарикс)",
+    "author": "AleM20",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Passoscuro_-_Foce_del_Rio_Tre_Denari_6.jpg"
+   }
+  ],
+  "Emys orbicularis": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Emys_orbicularis_PT.jpg/960px-Emys_orbicularis_PT.jpg",
+    "alt": "Болотная черепаха",
+    "author": "João Manuel Lemos Lima",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emys_orbicularis_PT.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Emys_orbicularis_esemplare_adulto_nel_suo_tipico_habitat.jpg/960px-Emys_orbicularis_esemplare_adulto_nel_suo_tipico_habitat.jpg",
+    "alt": "Болотная черепаха",
+    "author": "Maurizio.amendolia",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emys_orbicularis_esemplare_adulto_nel_suo_tipico_habitat.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Emys_orbicularis_2020_G3.jpg/960px-Emys_orbicularis_2020_G3.jpg",
+    "alt": "Болотная черепаха",
+    "author": "George Chernilevsky",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emys_orbicularis_2020_G3.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/European_Pond_Turtle_%28Emys_orbicularis%29_crossing_the_road_..._%2852075928820%29.jpg/960px-European_Pond_Turtle_%28Emys_orbicularis%29_crossing_the_road_..._%2852075928820%29.jpg",
+    "alt": "Болотная черепаха",
+    "author": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_Pond_Turtle_%28Emys_orbicularis%29_crossing_the_road_..._%2852075928820%29.jpg"
+   }
+  ],
+  "Natrix tessellata": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dice_snake_%28Natrix_tessellata%29%2C_Nera_River_Gorges%2C_Banat_Mountains%2C_SW_Romania_%2834570674564%29.jpg/960px-Dice_snake_%28Natrix_tessellata%29%2C_Nera_River_Gorges%2C_Banat_Mountains%2C_SW_Romania_%2834570674564%29.jpg",
+    "alt": "Водяной уж",
+    "author": "Frank Vassen from Brussels, Belgium",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dice_snake_%28Natrix_tessellata%29%2C_Nera_River_Gorges%2C_Banat_Mountains%2C_SW_Romania_%2834570674564%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2017-05-21_W%C3%BCrfelnatter_at_Nahe_River_shore_BME_WiTi_08.jpg/960px-2017-05-21_W%C3%BCrfelnatter_at_Nahe_River_shore_BME_WiTi_08.jpg",
+    "alt": "Водяной уж",
+    "author": "Wild Tibbi",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-05-21_W%C3%BCrfelnatter_at_Nahe_River_shore_BME_WiTi_08.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/W%C3%BCrfelnatter_Natrix_Tessellata_2.jpg/960px-W%C3%BCrfelnatter_Natrix_Tessellata_2.jpg",
+    "alt": "Водяной уж",
+    "author": "Henry Sonnet",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:W%C3%BCrfelnatter_Natrix_Tessellata_2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Snakes_in_Ab%C5%9Feron_Milli_Park%C4%B1.jpg/960px-Snakes_in_Ab%C5%9Feron_Milli_Park%C4%B1.jpg",
+    "alt": "Водяной уж",
+    "author": "Mistelblume",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snakes_in_Ab%C5%9Feron_Milli_Park%C4%B1.jpg"
+   }
+  ],
+  "Lacerta agilis": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Lacerta_agilis_male_2013_G6.jpg/960px-Lacerta_agilis_male_2013_G6.jpg",
+    "alt": "Прыткая ящерица",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lacerta_agilis_male_2013_G6.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lacerta_agilis_male_4.JPG/960px-Lacerta_agilis_male_4.JPG",
+    "alt": "Прыткая ящерица",
+    "author": "Christoph Caina",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lacerta_agilis_male_4.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Lacerta_agilis_04.jpg/960px-Lacerta_agilis_04.jpg",
+    "alt": "Прыткая ящерица",
+    "author": "Nicolas Weghaupt",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lacerta_agilis_04.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lacerta_agilis_Ukraine_1083.jpg/960px-Lacerta_agilis_Ukraine_1083.jpg",
+    "alt": "Прыткая ящерица",
+    "author": "Podaliriy55",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lacerta_agilis_Ukraine_1083.jpg"
+   }
+  ],
+  "Vipera renardi": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Vipera_renardi_Volgograd.jpg/960px-Vipera_renardi_Volgograd.jpg",
+    "alt": "Степная гадюка",
+    "author": "Daor1009",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vipera_renardi_Volgograd.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/%D0%93%D0%B0%D0%B4%D1%8E%D0%BA%D0%B0_%D1%81%D1%82%D0%B5%D0%BF%D0%BE%D0%B2%D0%B0.jpg/960px-%D0%93%D0%B0%D0%B4%D1%8E%D0%BA%D0%B0_%D1%81%D1%82%D0%B5%D0%BF%D0%BE%D0%B2%D0%B0.jpg",
+    "alt": "Степная гадюка",
+    "author": "Сергій Марков",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B0%D0%B4%D1%8E%D0%BA%D0%B0_%D1%81%D1%82%D0%B5%D0%BF%D0%BE%D0%B2%D0%B0.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Meadow_viper.jpg/960px-Meadow_viper.jpg",
+    "alt": "Степная гадюка",
+    "author": "Ryzhkov Sergey",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meadow_viper.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/%D0%93%D0%B0%D0%B4%D1%8E%D0%BA%D0%B0_%D1%81%D1%82%D0%B5%D0%BF%D0%BE%D0%B2%D0%B0_2._%D0%A5%D0%BE%D1%80%D1%82%D0%B8%D1%86%D1%8F.jpg/960px-%D0%93%D0%B0%D0%B4%D1%8E%D0%BA%D0%B0_%D1%81%D1%82%D0%B5%D0%BF%D0%BE%D0%B2%D0%B0_2._%D0%A5%D0%BE%D1%80%D1%82%D0%B8%D1%86%D1%8F.jpg",
+    "alt": "Степная гадюка",
+    "author": "Петроченко Віктор Іванович",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B0%D0%B4%D1%8E%D0%BA%D0%B0_%D1%81%D1%82%D0%B5%D0%BF%D0%BE%D0%B2%D0%B0_2._%D0%A5%D0%BE%D1%80%D1%82%D0%B8%D1%86%D1%8F.jpg"
+   }
+  ],
+  "Phrynocephalus guttatus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Phrynocephalus_guttatus_photo.jpg/960px-Phrynocephalus_guttatus_photo.jpg",
+    "alt": "Круглоголовка-вертихвостка",
+    "author": "Vladimir Yu. Arkhipov",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phrynocephalus_guttatus_photo.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Phrynocephalus_guttatus_alpherakii_171745964.jpg/960px-Phrynocephalus_guttatus_alpherakii_171745964.jpg",
+    "alt": "Круглоголовка-вертихвостка",
+    "author": "Анатолий Озерной / Anatoliy Ozernoy",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phrynocephalus_guttatus_alpherakii_171745964.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Phrynocephalus_alpherakii.jpg/960px-Phrynocephalus_alpherakii.jpg",
+    "alt": "Круглоголовка-вертихвостка",
+    "author": "Avustfel",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phrynocephalus_alpherakii.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Phrynocephalus_guttatus_Volgograd2.jpg/960px-Phrynocephalus_guttatus_Volgograd2.jpg",
+    "alt": "Круглоголовка-вертихвостка",
+    "author": "Daor1009",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phrynocephalus_guttatus_Volgograd2.jpg"
+   }
+  ],
+  "Pelophylax ridibundus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Marsh_frog_%28Pelophylax_ridibundus%29_Nazilli.jpg/960px-Marsh_frog_%28Pelophylax_ridibundus%29_Nazilli.jpg",
+    "alt": "Озёрная лягушка",
+    "author": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marsh_frog_%28Pelophylax_ridibundus%29_Nazilli.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Marsh_frog_%28Pelophylax_ridibundus%29_Nazilli_2.jpg/960px-Marsh_frog_%28Pelophylax_ridibundus%29_Nazilli_2.jpg",
+    "alt": "Озёрная лягушка",
+    "author": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marsh_frog_%28Pelophylax_ridibundus%29_Nazilli_2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Chillfrog.jpg/960px-Chillfrog.jpg",
+    "alt": "Озёрная лягушка",
+    "author": "Cinder1280",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chillfrog.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Grenouille_Rieuse_%2811%29.jpg/960px-Grenouille_Rieuse_%2811%29.jpg",
+    "alt": "Озёрная лягушка",
+    "author": "Cangadoba",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grenouille_Rieuse_%2811%29.jpg"
+   }
+  ],
+  "Bufotes viridis": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Groene_pad_-_green_toad_-_Bufotes_viridis.jpg/960px-Groene_pad_-_green_toad_-_Bufotes_viridis.jpg",
+    "alt": "Зелёная жаба",
+    "author": "Bouke ten Cate",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Groene_pad_-_green_toad_-_Bufotes_viridis.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bufotes_viridis_04%2801%29._Khortytsia.jpg/960px-Bufotes_viridis_04%2801%29._Khortytsia.jpg",
+    "alt": "Зелёная жаба",
+    "author": "Петроченко Віктор Іванович",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bufotes_viridis_04%2801%29._Khortytsia.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/BufoViridisCallingMale.jpg/960px-BufoViridisCallingMale.jpg",
+    "alt": "Зелёная жаба",
+    "author": "Christian Fischer",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BufoViridisCallingMale.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Wechselkr%C3%B6te_gerettet_in_der_Not.jpg/960px-Wechselkr%C3%B6te_gerettet_in_der_Not.jpg",
+    "alt": "Зелёная жаба",
+    "author": "Christa1111",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wechselkr%C3%B6te_gerettet_in_der_Not.jpg"
+   }
+  ],
+  "Hyla arborea": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Hyla_arborea_%2834034773855%29.jpg/960px-Hyla_arborea_%2834034773855%29.jpg",
+    "alt": "Обыкновенная квакша",
+    "author": "xulescu_g",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyla_arborea_%2834034773855%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Hyla_arborea_on_Phragmites.jpg/960px-Hyla_arborea_on_Phragmites.jpg",
+    "alt": "Обыкновенная квакша",
+    "author": "Nicolas Weghaupt",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyla_arborea_on_Phragmites.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/European_tree_frog_%28Hyla_arborea%29_on_hemp-agrimony_%28Eupatorium_cannabinum%29.jpg/960px-European_tree_frog_%28Hyla_arborea%29_on_hemp-agrimony_%28Eupatorium_cannabinum%29.jpg",
+    "alt": "Обыкновенная квакша",
+    "author": "Stijn99",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_tree_frog_%28Hyla_arborea%29_on_hemp-agrimony_%28Eupatorium_cannabinum%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/European_tree_frog_%28Hyla_arborea%29.jpg/960px-European_tree_frog_%28Hyla_arborea%29.jpg",
+    "alt": "Обыкновенная квакша",
+    "author": "Stijn99",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_tree_frog_%28Hyla_arborea%29.jpg"
+   }
+  ],
+  "Anax imperator": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Anax_Imperator_I_%2842759508601%29.jpg/960px-Anax_Imperator_I_%2842759508601%29.jpg",
+    "alt": "Дозорщик-император",
+    "author": "Rolf Dietrich Brecher from Germany",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anax_Imperator_I_%2842759508601%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Anax_imperator_%28male%29%2C_Prague%2C_Rokytka_river.jpg/960px-Anax_imperator_%28male%29%2C_Prague%2C_Rokytka_river.jpg",
+    "alt": "Дозорщик-император",
+    "author": "Skot",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anax_imperator_%28male%29%2C_Prague%2C_Rokytka_river.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Anax_Imperator_II_%2828885499178%29.jpg/960px-Anax_Imperator_II_%2828885499178%29.jpg",
+    "alt": "Дозорщик-император",
+    "author": "Rolf Dietrich Brecher from Germany",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anax_Imperator_II_%2828885499178%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Anax_imperator_011.jpg/960px-Anax_imperator_011.jpg",
+    "alt": "Дозорщик-император",
+    "author": "Nicolas Weghaupt",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anax_imperator_011.jpg"
+   }
+  ],
+  "Papilio machaon": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Open_wing_basking_position_of_Papilio_machaon_Linnaeus%2C_1758_-_Common_Yellow_Swallowtail_WLB_IMG_0322.jpg/960px-Open_wing_basking_position_of_Papilio_machaon_Linnaeus%2C_1758_-_Common_Yellow_Swallowtail_WLB_IMG_0322.jpg",
+    "alt": "Махаон",
+    "author": "Thamblyok",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Open_wing_basking_position_of_Papilio_machaon_Linnaeus%2C_1758_-_Common_Yellow_Swallowtail_WLB_IMG_0322.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Papilio_machaon_butterfly1.jpg/960px-Papilio_machaon_butterfly1.jpg",
+    "alt": "Махаон",
+    "author": "Anush Mkrtchyan",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_butterfly1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%D1%81%D1%80%D0%B5%D0%B4%D0%B8_%D1%81%D1%83%D1%85%D0%BE%D0%B9_%D1%82%D1%80%D0%B0%D0%B2%D1%8B.jpg/960px-%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%D1%81%D1%80%D0%B5%D0%B4%D0%B8_%D1%81%D1%83%D1%85%D0%BE%D0%B9_%D1%82%D1%80%D0%B0%D0%B2%D1%8B.jpg",
+    "alt": "Махаон",
+    "author": "26D",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%D1%81%D1%80%D0%B5%D0%B4%D0%B8_%D1%81%D1%83%D1%85%D0%BE%D0%B9_%D1%82%D1%80%D0%B0%D0%B2%D1%8B.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%D0%BD%D0%B0_%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D0%BD%D0%B5_%D0%B3%D0%BE%D1%80%D1%8B.jpg/960px-%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%D0%BD%D0%B0_%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D0%BD%D0%B5_%D0%B3%D0%BE%D1%80%D1%8B.jpg",
+    "alt": "Махаон",
+    "author": "Elana Lyssenko",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%D0%BD%D0%B0_%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D0%BD%D0%B5_%D0%B3%D0%BE%D1%80%D1%8B.jpg"
+   }
+  ],
+  "Mantis religiosa": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Europ%C3%A4ische_Gottesanbeterin_%28Mantis_religiosa%29_01.jpg/960px-Europ%C3%A4ische_Gottesanbeterin_%28Mantis_religiosa%29_01.jpg",
+    "alt": "Богомол обыкновенный",
+    "author": "Stephan Sprinz",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Europ%C3%A4ische_Gottesanbeterin_%28Mantis_religiosa%29_01.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Gottesanbeterin_%2855485855334%29.jpg/960px-Gottesanbeterin_%2855485855334%29.jpg",
+    "alt": "Богомол обыкновенный",
+    "author": "Thomas Heins",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gottesanbeterin_%2855485855334%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Europ%C3%A4ische_Gottesanbeterin_%28Oktober_2026%29.jpg/960px-Europ%C3%A4ische_Gottesanbeterin_%28Oktober_2026%29.jpg",
+    "alt": "Богомол обыкновенный",
+    "author": "Romzig",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Europ%C3%A4ische_Gottesanbeterin_%28Oktober_2026%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/European_Praying_Mantis_2.jpg/960px-European_Praying_Mantis_2.jpg",
+    "alt": "Богомол обыкновенный",
+    "author": "Paul Harrison",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_Praying_Mantis_2.jpg"
+   }
+  ],
+  "Locusta migratoria": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Locusta_migratoria_%2822299588392%29.jpg/960px-Locusta_migratoria_%2822299588392%29.jpg",
+    "alt": "Перелётная саранча",
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Locusta_migratoria_%2822299588392%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Locusta_migratoria_%28gregarious_phase%29_%285012171245%29.jpg/960px-Locusta_migratoria_%28gregarious_phase%29_%285012171245%29.jpg",
+    "alt": "Перелётная саранча",
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Locusta_migratoria_%28gregarious_phase%29_%285012171245%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Locusta_migratoria_migratoria_typical.jpg/960px-Locusta_migratoria_migratoria_typical.jpg",
+    "alt": "Перелётная саранча",
+    "author": "Eastolany",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Locusta_migratoria_migratoria_typical.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Criquet_migrateur_gr%C3%A9gaire.jpg/960px-Criquet_migrateur_gr%C3%A9gaire.jpg",
+    "alt": "Перелётная саранча",
+    "author": "MichelLecoq",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Criquet_migrateur_gr%C3%A9gaire.jpg"
+   }
+  ],
+  "Latrodectus tredecimguttatus": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Latrodectus_tredecimguttatus_%28malmignatta%29.jpg/960px-Latrodectus_tredecimguttatus_%28malmignatta%29.jpg",
+    "alt": "Каракурт",
+    "author": "Onofrio Panzarino",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latrodectus_tredecimguttatus_%28malmignatta%29.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Latrodectus_tredecimguttatus_female.jpg/960px-Latrodectus_tredecimguttatus_female.jpg",
+    "alt": "Каракурт",
+    "author": "Kork (Wikimedia Commons)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latrodectus_tredecimguttatus_female.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Latrodectus_tridecimguttatus.jpg/960px-Latrodectus_tridecimguttatus.jpg",
+    "alt": "Каракурт",
+    "author": "Alfried H., Germany",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latrodectus_tridecimguttatus.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/%D0%9E%D0%BC%D1%8B%D1%80%D1%82%D2%9B%D0%B0%D1%81%D1%8B%D0%B7%D0%B4%D0%B0%D1%80.jpg/960px-%D0%9E%D0%BC%D1%8B%D1%80%D1%82%D2%9B%D0%B0%D1%81%D1%8B%D0%B7%D0%B4%D0%B0%D1%80.jpg",
+    "alt": "Каракурт",
+    "author": "Crazy.time2017",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%BC%D1%8B%D1%80%D1%82%D2%9B%D0%B0%D1%81%D1%8B%D0%B7%D0%B4%D0%B0%D1%80.jpg"
+   }
+  ],
+  "Lycosa singoriensis": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/%D0%A2%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%83%D0%BB.jpg/960px-%D0%A2%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%83%D0%BB.jpg",
+    "alt": "Южнорусский тарантул",
+    "author": "Сергій Марков",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%83%D0%BB.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Spider_Lycosa_singoriensis.jpg/960px-Spider_Lycosa_singoriensis.jpg",
+    "alt": "Южнорусский тарантул",
+    "author": "Vongiawe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spider_Lycosa_singoriensis.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/%D0%A2%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%83%D0%BB_%D0%BF%D1%96%D0%B2%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D1%80%D1%83%D1%81%D1%8C%D0%BA%D0%B8%D0%B9.jpg/960px-%D0%A2%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%83%D0%BB_%D0%BF%D1%96%D0%B2%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D1%80%D1%83%D1%81%D1%8C%D0%BA%D0%B8%D0%B9.jpg",
+    "alt": "Южнорусский тарантул",
+    "author": "Сергій Марков",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%83%D0%BB_%D0%BF%D1%96%D0%B2%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D1%80%D1%83%D1%81%D1%8C%D0%BA%D0%B8%D0%B9.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%D0%9D%D0%B0_%D0%B2%D1%96%D1%80%D0%B0%D0%B6%D0%B0%D1%85.jpg/960px-%D0%9D%D0%B0_%D0%B2%D1%96%D1%80%D0%B0%D0%B6%D0%B0%D1%85.jpg",
+    "alt": "Южнорусский тарантул",
+    "author": "Рысь Роман",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0_%D0%B2%D1%96%D1%80%D0%B0%D0%B6%D0%B0%D1%85.jpg"
+   }
+  ]
+ }
+}
