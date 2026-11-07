@@ -52,7 +52,8 @@
     teaser: null, tours: null, progress: null, spots: null, spotsMeta: null, spotLocs: [],
     chat: { msgs: [], loaded: false, loading: false, sending: false, on: true, left: null, limit: 20, draft: "", err: "", place: false, scroll: false },
     stack: [], rootTab: "tours", loading: {}, errors: {},
-    seen: new Set(lsGet("stepMedalsSeen", [])), fresh: new Set(), planSel: "3m", sharing: false
+    seen: new Set(lsGet("stepMedalsSeen", [])), fresh: new Set(), planSel: "3m", sharing: false,
+    promo: null, promoOpen: false, promoBusy: false, promoErr: "", promoDraft: ""
   };
 
   /* ---------------- запросы к серверу ---------------- */
@@ -82,9 +83,17 @@
     too_long: "Слишком длинный вопрос: до 500 знаков.",
     bad_image: "Картинка не подошла. Обновите приложение и повторите.",
     share_unavailable: "Telegram не принял картинку. Повторите чуть позже.",
+    promo_invalid: "Такого промокода нет. Проверьте буквы и цифры: код выглядит как STEP-XXXX-XXXX.",
+    promo_used: "Этот промокод уже использован.",
+    promo_locked: "Слишком много неверных кодов. Попробуйте позже.",
+    promo_busy: "Этим промокодом сейчас оплачивает другой человек. Повторите через 15 минут.",
+    promo_plan: "Этот промокод действует на другой тариф.",
     server: "Ошибка на сервере. Повторите позже."
   };
-  function errText(e) { return (e && ERR[e.code]) || "Не получилось: " + ((e && e.code) || "ошибка"); }
+  function errText(e) {
+    if (e && e.code === "promo_plan" && e.data && e.data.plan) { const p = S.plans.find(x => x.id === e.data.plan); if (p) return "Этот промокод действует только на тариф «" + p.title + "»."; }
+    return (e && ERR[e.code]) || "Не получилось: " + ((e && e.code) || "ошибка");
+  }
   function apiErr(code, status, data) { const e = new Error(code); e.code = code; e.status = status || 0; e.data = data || null; e.isApi = true; return e; }
   async function api(path, opts) {
     opts = opts || {};
@@ -1046,31 +1055,77 @@
   /* ---------------- покупка Pro ---------------- */
   function planCard(pl) {
     const monthly = (S.plans.find(x => x.months === 1) || {}).stars;
+    const pm = S.promo && S.promo.plan === pl.id ? S.promo : null;     // на этот тариф действует введённый скидочный промокод
+    const stars = pm ? pm.stars : pl.stars;
     const save = monthly && pl.months > 1 ? Math.round((1 - pl.stars / (monthly * pl.months)) * 100) : 0;
-    const per = "≈ " + Math.round(pl.stars / Math.max(1, pl.months)) + " ⭐ / мес";
+    const short = pl.days > 0 && pl.days < 28;                       // ознакомительный тариф на несколько дней
+    const per = short ? "на " + pl.days + " " + plural(pl.days, "день", "дня", "дней") + ", без автопродления" : "≈ " + Math.round(stars / Math.max(1, pl.months)) + " ⭐ / мес";
     const on = pl.id === S.planSel;
-    return h("button", { class: "plan" + (on ? " sel" : "") + (pl.id === "12m" ? " best" : ""), type: "button", "aria-pressed": on ? "true" : "false", onclick: () => { S.planSel = pl.id; rerender(); } },
+    return h("button", { class: "plan" + (on ? " sel" : "") + (pl.id === "12m" ? " best" : "") + (short ? " intro" : "") + (pm ? " promo" : ""), type: "button", "aria-pressed": on ? "true" : "false", onclick: () => { S.planSel = pl.id; rerender(); } },
       h("span", { class: "radio" }),
       h("b", { class: "ttl", text: pl.title }),
-      h("b", { class: "price", text: pl.stars + " ⭐" }),
+      h("b", { class: "price", text: stars + " ⭐" }),
       h("small", { class: "per", text: per }),
-      h("em", { text: save > 0 ? "−" + save + "%" : "" }),
-      pl.id === "12m" && h("span", { class: "tag", text: "Выгодно" }));
+      h("em", { text: pm ? "−" + pm.pct + "%" : save > 0 ? "−" + save + "%" : "" }),
+      pl.id === "12m" && h("span", { class: "tag", text: "Выгодно" }),
+      short && h("span", { class: "tag", text: "Знакомство" }));
+  }
+  /* ---- промокоды: бесплатный открывает Pro сразу, скидочный меняет цену своего тарифа в счёте ---- */
+  async function applyPromo() {
+    const code = String(S.promoDraft || "").trim();
+    if (!code || S.promoBusy) return;
+    if (!API || !initData()) { S.promoErr = "Откройте атлас в Telegram, чтобы применить промокод."; return rerender(); }
+    S.promoBusy = true; S.promoErr = ""; rerender();
+    try {
+      const r = await api("/api/promo", { body: { code } });
+      if (r.type === "free") {
+        S.promoOpen = false; S.promoDraft = ""; S.promoBusy = false;
+        toast("Промокод принят: Pro открыт на " + r.days + " " + plural(r.days, "день", "дня", "дней") + ".", 6000);
+        await refresh();
+        if (S.pro) { S.stack = []; open("tours"); } else rerender();
+        return;
+      }
+      S.promo = { code: r.code, pct: r.pct, plan: r.plan, stars: r.stars, base: r.base };
+      S.planSel = r.plan; S.promoOpen = false; S.promoDraft = "";
+      toast("Скидка −" + r.pct + "% применена к тарифу «" + r.planTitle + "».", 5000);
+    } catch (e) { S.promoErr = errText(e); }
+    S.promoBusy = false; rerender();
+  }
+  function promoBlock() {
+    if (S.status !== "ok") return null;
+    if (S.promo) {
+      const pl = S.plans.find(x => x.id === S.promo.plan);
+      return h("div", { class: "promo-on", role: "status" },
+        h("div", null, h("b", { text: S.promo.code }), h("small", { text: "Промокод: −" + S.promo.pct + "% на тариф «" + (pl ? pl.title : S.promo.plan) + "»: " + S.promo.stars + " ⭐ вместо " + S.promo.base + " ⭐" })),
+        h("button", { class: "linkbtn", type: "button", text: "Убрать", onclick: () => { S.promo = null; rerender(); } }));
+    }
+    if (!S.promoOpen) return h("button", { class: "linkbtn promo-link", type: "button", text: "Есть промокод?", onclick: () => { S.promoOpen = true; rerender(); setTimeout(() => { const i = $$("promoInput"); if (i) i.focus({ preventScroll: true }); }, 30); } });
+    const input = h("input", { id: "promoInput", class: "promo-input", type: "text", maxlength: "24", placeholder: "STEP-XXXX-XXXX", autocomplete: "off", autocapitalize: "characters", autocorrect: "off", spellcheck: "false", "aria-label": "Промокод", disabled: S.promoBusy });
+    input.value = S.promoDraft;
+    input.addEventListener("input", () => { S.promoDraft = input.value; });
+    input.addEventListener("keydown", ev => { if (ev.key === "Enter") { ev.preventDefault(); S.promoDraft = input.value; applyPromo(); } });
+    return h("div", { class: "promo-form" },
+      h("div", { class: "promo-row" }, input, h("button", { class: "btn", type: "button", text: S.promoBusy ? "Проверяю…" : "Применить", disabled: S.promoBusy, onclick: () => { S.promoDraft = input.value; applyPromo(); } })),
+      S.promoErr ? h("p", { class: "promo-err", role: "alert", text: S.promoErr }) : null);
   }
   async function buy() {
     if (!API) return toast("Оплата пока не подключена: Pro скоро откроется.", 5000);
     if (!initData()) return toast("Откройте атлас в Telegram, чтобы оплатить.", 5000);
     try {
-      const r = await api("/api/invoice", { body: { plan: S.planSel } });
+      const withPromo = S.promo && S.promo.plan === S.planSel ? S.promo.code : "";
+      const r = await api("/api/invoice", { body: withPromo ? { plan: S.planSel, promo: withPromo } : { plan: S.planSel } });
       const t = tg();
       if (t && typeof t.openInvoice === "function") {
         t.openInvoice(r.link, async status => {
-          if (status === "paid") { toast("Оплачено. Открываем Pro…", 5000); for (let i = 0; i < 8 && !S.pro; i++) { await pause(1500); await refresh(); } if (S.pro) { S.stack = []; open("tours"); } else toast("Платёж прошёл, Pro включится через минуту. Откройте раздел снова.", 7000); }
+          if (status === "paid") { S.promo = null; toast("Оплачено. Открываем Pro…", 5000); for (let i = 0; i < 8 && !S.pro; i++) { await pause(1500); await refresh(); } if (S.pro) { S.stack = []; open("tours"); } else toast("Платёж прошёл, Pro включится через минуту. Откройте раздел снова.", 7000); }
           else if (status === "cancelled") toast("Оплата отменена.");
           else if (status === "failed") toast("Оплата не прошла. Повторите или напишите в поддержку: /paysupport у бота.", 6000);
         });
       } else openExternal(r.link);
-    } catch (e) { toast(errText(e), 6000); }
+    } catch (e) {
+      if (/^promo_(invalid|used|plan)$/.test(e && e.code)) { S.promo = null; rerender(); }          // код больше не годится: цена вернётся к обычной
+      toast(errText(e), 6500);
+    }
   }
   VIEWS.offer = function (a) {
     const list = tourListSource();
@@ -1092,7 +1147,8 @@
           h("div", null, h("b", { text: String(toursN) }), h("small", { text: plural(toursN, "тур", "тура", "туров") })),
           h("div", null, h("b", { text: String(spotsN) }), h("small", { text: plural(spotsN, "место", "места", "мест") })),
           h("div", null, h("b", { text: String(medalsTotal) }), h("small", { text: plural(medalsTotal, "медаль", "медали", "медалей") }))))));
-    nodes.push(h("h2", { class: "section-h", text: "Выберите срок" }), h("div", { class: "plans" }, S.plans.map(planCard)));
+    if (S.plans.length && !S.plans.some(p => p.id === S.planSel)) S.planSel = (S.plans.find(p => p.id === "3m") || S.plans.find(p => (p.days || 30) >= 28) || S.plans[0]).id;   // выбранного тарифа нет в списке
+    nodes.push(h("h2", { class: "section-h", text: "Выберите срок" }), h("div", { class: "plans" }, S.plans.map(planCard)), promoBlock());
     nodes.push(h("h2", { class: "section-h", text: "Награды, которые можно собрать" }), medalStrip(showcaseMedals()));
     nodes.push(h("h2", { class: "section-h", text: "Что входит" }));
     nodes.push(h("div", { class: "perk-grid" }, [
@@ -1104,7 +1160,7 @@
       ["card", "Карточка медали", "рыба, вес, место и время: можно отправить другу"],
       ["chat", "Петрович", "нейросеть-рыбак отвечает на вопросы про снасти, сезон и запреты, а про остальное шутит"]
     ].map(x => h("div", { class: "perk" }, icon(x[0]), h("b", { text: x[1] }), h("small", { text: x[2] })))));
-    const pay = h("button", { class: "btn gold big", type: "button", disabled: !canBuy, text: canBuy ? "Оплатить " + ((S.plans.find(p => p.id === S.planSel) || {}).stars || "") + " ⭐" : S.status === "noapi" ? "Скоро" : S.status === "notg" ? "Откройте в Telegram" : "Нет связи с сервером", onclick: buy });
+    const pay = h("button", { class: "btn gold big", type: "button", disabled: !canBuy, text: canBuy ? "Оплатить " + ((S.promo && S.promo.plan === S.planSel ? S.promo.stars : (S.plans.find(p => p.id === S.planSel) || {}).stars) || "") + " ⭐" : S.status === "noapi" ? "Скоро" : S.status === "notg" ? "Откройте в Telegram" : "Нет связи с сервером", onclick: buy });
     nodes.push(h("p", { class: "pro-note", text: S.status === "noapi" ? "Оплата Telegram Stars подключается. Цены ориентировочные и могут измениться до запуска." : "Условия и возврат — команды /terms и /paysupport у бота @AtlasFishingbot. Прогноз клёва, туры и места — подсказки по открытым данным, не гарантия улова и не проверка законности ловли." }));
     nodes.push(h("div", { class: "pay-bar" }, pay, canBuy && h("small", { text: "Оплата в Telegram Stars, подписка не продлевается сама" })));
     return { title: "СТЕПЬ Pro", label: "ПОДПИСКА", nodes };
